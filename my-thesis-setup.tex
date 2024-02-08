@@ -1,0 +1,78 @@
+% !TEX root = my-thesis.tex
+
+
+% **************************************************
+% Files' Character Encoding
+% **************************************************
+\PassOptionsToPackage{utf8}{inputenc}
+\usepackage{inputenc}
+
+
+% **************************************************
+% Information and Commands for Reuse
+% **************************************************
+\newcommand{\thesisTitle}{Análisis de los errores incurridos en la localización de fuentes de actividad neuronal por diversas suposiciones en los valores de conductividad cerebral}
+\newcommand{\thesisName}{Óscar E. Colunga González}
+\newcommand{\thesisSubject}{Documentation}
+\newcommand{\thesisDate}{\today}
+\newcommand{\thesisVersion}{My First Draft}
+
+\newcommand{\thesisFirstReviewer}{Dr. Mauricio Carrillo Tripp}
+\newcommand{\thesisFirstReviewerUniversity}{\protect{Clean Thesis Style University}}
+\newcommand{\thesisFirstReviewerDepartment}{Department of Clean Thesis Style}
+
+\newcommand{\thesisSecondReviewer}{Dr. Moisés Santillán Zerón}
+\newcommand{\thesisSecondReviewerUniversity}{\protect{Clean Thesis Style University}}
+\newcommand{\thesisSecondReviewerDepartment}{Department of Clean Thesis Style}
+
+\newcommand{\thesisFirstSupervisor}{Dra. Dania Gutiérrez Ruíz}
+%\newcommand{\thesisSecondSupervisor}{John Smith}
+
+\newcommand{\thesisUniversity}{\protect{Clean Thesis Style University}}
+\newcommand{\thesisUniversityDepartment}{Department of Clean Thesis Style}
+\newcommand{\thesisUniversityInstitute}{Institute for Clean Thesis Dev}
+\newcommand{\thesisUniversityGroup}{Clean Thesis Group (CTG)}
+\newcommand{\thesisUniversityCity}{City}
+\newcommand{\thesisUniversityStreetAddress}{Street address}
+\newcommand{\thesisUniversityPostalCode}{Postal Code}
+
+
+% **************************************************
+% Debug LaTeX Information
+% **************************************************
+%\listfiles
+
+
+% **************************************************
+% Load and Configure Packages
+% **************************************************
+\usepackage[english]{babel} % babel system, adjust the language of the content
+\PassOptionsToPackage{% setup clean thesis style
+    figuresep=colon,%
+    hangfigurecaption=false,%
+    hangsection=true,%
+    hangsubsection=true,%
+    sansserif=false,%
+    configurelistings=true,%
+    colorize=full,%
+    colortheme=bluemagenta,%
+    configurebiblatex=true,%
+    bibsys=bibtex,%
+    bibfile=/Users/kui07/OneDrive/Documentos/Cinvestav/Citations/Tesis,%
+    bibstyle=ieee,%
+    bibsorting=none,%
+}{cleanthesis}
+\usepackage{cleanthesis}
+
+\hypersetup{% setup the hyperref-package options
+    pdftitle={\thesisTitle},    %   - title (PDF meta)
+    pdfsubject={\thesisSubject},%   - subject (PDF meta)
+    pdfauthor={\thesisName},    %   - author (PDF meta)
+    plainpages=false,           %   -
+    colorlinks=false,           %   - colorize links?
+    pdfborder={0 0 0},          %   -
+    breaklinks=true,            %   - allow line break inside links
+    bookmarksnumbered=true,     %
+    bookmarksopen=true          %
+}
+
