@@ -1,9 +1,8 @@
 % !TEX root = ../my-thesis.tex
 %
 \chapter{Metodología}
+
 \label{sec:methodology}
-
-
 %\begin{figure}[htb]
 %	\includegraphics[width=\textwidth]{gfx/Clean-Thesis-Figure}
 %	\caption{Figure example: \textit{(a)} example part one, \textit{(c)} example part two; \textit{(c)} example part three}
@@ -99,8 +98,6 @@ Con la información recopilada de la anatomía del sujeto se generó mediante el
 \end{figure}
 
 
-
-
 \section{Variación de la conductividad y cálculo de la matriz de ganancia por el método de elementos de frontera}
 \label{sec:methodology:openmeeg}
 
@@ -119,7 +116,7 @@ Teniendo satisfechos los requisitos para la solución del problema directo este 
 
 
 \section{Problema Inverso del EEG}
-\label{sec:system:inverse}
+\label{sec:methodology:inverse}
 
 Como su nombre lo indica; la contraparte del problema directo del EEG es el problema inverso. Si el problema directo se enfoca en obtener una solución para el campo eléctrico generado sobre un volumen conductor a partir de una fuente de corriente, el problema inverso consiste en identificar la posición de dichas fuentes de actividad eléctrica al modelar la amplitud de los dipolos eléctricos y seleccionando los que tengan una mayor actividad \cite{Baillet2001}. Para su cálculo es necesario: las mediciones de EEG que en nuestro caso son las obtenidas mediante el problema directo, el volumen conductor, ya la matriz de ganancia con su correspondiente mapa del sistema de EEG.
 
@@ -127,12 +124,9 @@ Dado que nuestro objetivo es la estimación del BSCR la forma en la que se imple
 
 \section{Implementación del Problema Inverso del EEG}
 
-Al igual que en la implementación del problema directo se uso en parte el software Brainstorm en Matlab, específicamente las librerías pertinentes para el procesado de las mediciones de EEG, estas fueron extraídas y modificadas para manejar de forma óptima el procesamiento de nuestro gran volumen de información. Como se mencionó anteriormente, el problema inverso da como resultado un mapa del índice de actividad neuronal sobre el volumen geométricamente realista, detallando como se propaga el campo eléctrico desde su origen en la corteza cerebral, hasta la superficie de la capa más externa, pasando por las fases internas FIGURA IMAGING KERNEL THROUGHOUT LAYERS. Para la solución del problema inverso se eligió el método de filtrado espacial \emph{Beamforming} linealmente constreñido de varianza mínima (LCMV\footnote{Linearly constrained minimum variance beamforming}) diseñado por VanVeen y Buckley\cite{VanVeen1988}, la implementación de este filtro que se incluye en Brainstorm produce mapas del pseudo índice de actividad neuronal (PNAI) llamado así por las modificaciones realizadas por Mosher \emph{et al.}\cite{Jaiswal2020} al Beamformer de VanVeen.
+Al igual que en la implementación del problema directo se utilizó en parte el software Brainstorm en Matlab, específicamente las librerías pertinentes para el procesado de las mediciones de EEG, estas fueron extraídas y modificadas para manejar de forma óptima el procesamiento de nuestro gran volumen de información. Como se mencionó anteriormente, el problema inverso da como resultado un mapa del índice de actividad neuronal sobre el volumen geométricamente realista, detallando como se propaga el campo eléctrico desde su origen en la corteza cerebral, hasta la superficie de la capa más externa, pasando por las fases internas FIGURA IMAGING KERNEL THROUGHOUT LAYERS. Para la solución del problema inverso se eligió el método de filtrado espacial utilizando el \emph{beamformer} linealmente constreñido de varianza mínima (LCMV del inglés Linearly constrained minimum variance) diseñado por VanVeen y Buckley\cite{VanVeen1988}, la implementación de este filtro que se incluye en la suite de Brainstorm produce mapas del pseudo-índice de actividad neuronal (PNAI) llamado así por las modificaciones realizadas por Mosher \emph{et al.}\cite{Jaiswal2020} al Beamformer de VanVeen.
 
 Este método de procesado digital de señales filtra...
-
-
-
 
 
 
