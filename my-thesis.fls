@@ -1236,12 +1236,6 @@ INPUT c:/texlive/2021/texmf-dist/fonts/vf/adobe/bookman/pbkli8t.vf
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/adobe/bookman/pbkli8r.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/vf/bitstrea/charter/bchri8t.vf
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/bitstrea/charter/bchri8r.tfm
-INPUT c:/texlive/2021/texmf-dist/fonts/vf/bitstrea/charter/bchr8t.vf
-INPUT c:/texlive/2021/texmf-dist/fonts/tfm/bitstrea/charter/bchr8r.tfm
-INPUT c:/texlive/2021/texmf-dist/fonts/vf/bitstrea/charter/bchr8t.vf
-INPUT c:/texlive/2021/texmf-dist/fonts/tfm/bitstrea/charter/bchr8r.tfm
-INPUT c:/texlive/2021/texmf-dist/fonts/vf/bitstrea/charter/bchr8t.vf
-INPUT c:/texlive/2021/texmf-dist/fonts/tfm/bitstrea/charter/bchr8r.tfm
 INPUT c:/texlive/2021/texmf-dist/fonts/tfm/public/tex-gyre/ec-qhvb.tfm
 INPUT ./content/chapter-objectives.tex
 INPUT ./content/chapter-objectives.tex
@@ -1309,6 +1303,8 @@ INPUT ./gfx//modelo.jpg
 INPUT ./gfx//modelo.jpg
 INPUT ./gfx//modelo.jpg
 INPUT ./gfx//modelo.jpg
+INPUT c:/texlive/2021/texmf-dist/fonts/vf/bitstrea/charter/bchr8t.vf
+INPUT c:/texlive/2021/texmf-dist/fonts/tfm/bitstrea/charter/bchr8r.tfm
 INPUT ./my-thesis.lof
 INPUT my-thesis.lof
 INPUT my-thesis.lof

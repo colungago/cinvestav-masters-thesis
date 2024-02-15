@@ -331,6 +331,251 @@
     \field{year}{2001}
   \endentry
 
+  \entry{Baillet2001}{article}{}
+    \name{author}{3}{}{%
+      {{hash=BS}{%
+         family={Baillet},
+         familyi={B\bibinitperiod},
+         given={Sylvain},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=MJC}{%
+         family={Mosher},
+         familyi={M\bibinitperiod},
+         given={John\bibnamedelima C.},
+         giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=LRM}{%
+         family={Leahy},
+         familyi={L\bibinitperiod},
+         given={Richard\bibnamedelima M.},
+         giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BS+1}
+    \strng{fullhash}{BSMJCLRM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \verb{doi}
+    \verb 10.1109/79.962275
+    \endverb
+    \field{issn}{10535888}
+    \field{number}{6}
+    \field{pages}{14\bibrangedash 30}
+    \field{title}{{Electromagnetic brain mapping}}
+    \field{volume}{18}
+    \verb{file}
+    \verb :C$\backslash$:/Users/kui07/OneDrive - CINVESTAV/Tesis/Papers/Baillet
+    \verb MosherLeahy{\_}IEEESPMAG{\_}Nov2001 (3).pdf:pdf
+    \endverb
+    \field{journaltitle}{IEEE Signal Processing Magazine}
+    \field{year}{2001}
+  \endentry
+
+  \entry{VanVeen1997}{article}{}
+    \name{author}{4}{}{%
+      {{hash=VBD}{%
+         family={{Van Veen}},
+         familyi={V\bibinitperiod},
+         given={Barry\bibnamedelima D.},
+         giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=VW}{%
+         family={{Van Drongelen}},
+         familyi={V\bibinitperiod},
+         given={Wim},
+         giveni={W\bibinitperiod},
+      }}%
+      {{hash=YM}{%
+         family={Yuchtman},
+         familyi={Y\bibinitperiod},
+         given={Moshe},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SA}{%
+         family={Suzuki},
+         familyi={S\bibinitperiod},
+         given={Akifumi},
+         giveni={A\bibinitperiod},
+      }}%
+    }
+    \keyw{Dipole localization,EEG localization,Linearly constrained minimum
+  variance filter,MEG localization,Reference electrode,Spatial filtering}
+    \strng{namehash}{VBD+1}
+    \strng{fullhash}{VBDVWYMSA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    A spatial filtering method for localizing sources of brain electrical
+  activity from surface recordings is described and analyzed. The spatial
+  filters are implemented as a weighted sum of the data recorded at different
+  sites. The weights are chosen to minimize the filter output power subject to
+  a linear constraint. The linear constraint forces the filter to pass brain
+  electrical activity from a specified location, while the power minimization
+  attenuates activity originating at other locations. The estimated output
+  power as a function of location is normalized by the estimated noise power as
+  a function of location to obtain a neural activity index map. Locations of
+  source activity correspond to maxima in the neural activity index map. The
+  method does not require any prior assumptions about the number of active
+  sources of their geometry because it exploits the spatial covariance of the
+  source electrical activity. This paper presents a development and analysis of
+  the method and explores its sensitivity to deviations between actual and
+  assumed data models. The effect on the algorithm of covariance matrix
+  estimation, correlation between sources, and choice of reference is
+  discussed. Simulated and measured data is used to illustrate the efficacy of
+  the approach.%
+    }
+    \verb{doi}
+    \verb 10.1109/10.623056
+    \endverb
+    \field{issn}{00189294}
+    \field{number}{9}
+    \field{pages}{867\bibrangedash 880}
+    \field{title}{{Localization of brain electrical activity via linearly
+  constrained minimum variance spatial filtering}}
+    \field{volume}{44}
+    \verb{file}
+    \verb :C$\backslash$:/Users/kui07/OneDrive - CINVESTAV/Tesis/Papers/10.6230
+    \verb 56.pdf:pdf
+    \endverb
+    \field{journaltitle}{IEEE Transactions on Biomedical Engineering}
+    \field{year}{1997}
+  \endentry
+
+  \entry{Jaiswal2020}{article}{}
+    \name{author}{12}{}{%
+      {{hash=JA}{%
+         family={Jaiswal},
+         familyi={J\bibinitperiod},
+         given={Amit},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=NJ}{%
+         family={Nenonen},
+         familyi={N\bibinitperiod},
+         given={Jukka},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Stenroos},
+         familyi={S\bibinitperiod},
+         given={Matti},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GA}{%
+         family={Gramfort},
+         familyi={G\bibinitperiod},
+         given={Alexandre},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=DSS}{%
+         family={Dalal},
+         familyi={D\bibinitperiod},
+         given={Sarang\bibnamedelima S.},
+         giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+      {{hash=WBU}{%
+         family={Westner},
+         familyi={W\bibinitperiod},
+         given={Britta\bibnamedelima U.},
+         giveni={B\bibinitperiod\bibinitdelim U\bibinitperiod},
+      }}%
+      {{hash=LV}{%
+         family={Litvak},
+         familyi={L\bibinitperiod},
+         given={Vladimir},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=MJC}{%
+         family={Mosher},
+         familyi={M\bibinitperiod},
+         given={John\bibnamedelima C.},
+         giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=SJM}{%
+         family={Schoffelen},
+         familyi={S\bibinitperiod},
+         given={Jan\bibnamedelima Mathijs},
+         giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+      {{hash=WC}{%
+         family={Witton},
+         familyi={W\bibinitperiod},
+         given={Caroline},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=OR}{%
+         family={Oostenveld},
+         familyi={O\bibinitperiod},
+         given={Robert},
+         giveni={R\bibinitperiod},
+      }}%
+      {{hash=PL}{%
+         family={Parkkonen},
+         familyi={P\bibinitperiod},
+         given={Lauri},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Elsevier Ltd}%
+    }
+    \keyw{Beamformers,EEG,LCMV,MEG,Open-source analysis toolboxes,Source
+  modeling}
+    \strng{namehash}{JA+1}
+    \strng{fullhash}{JANJSMGADSSWBULVMJCSJMWCORPL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    Beamformers are applied for estimating spatiotemporal characteristics of
+  neuronal sources underlying measured MEG/EEG signals. Several MEG analysis
+  toolboxes include an implementation of a linearly constrained
+  minimum-variance (LCMV) beamformer. However, differences in implementations
+  and in their results complicate the selection and application of beamformers
+  and may hinder their wider adoption in research and clinical use.
+  Additionally, combinations of different MEG sensor types (such as
+  magnetometers and planar gradiometers) and application of preprocessing
+  methods for interference suppression, such as signal space separation (SSS),
+  can affect the results in different ways for different implementations. So
+  far, a systematic evaluation of the different implementations has not been
+  performed. Here, we compared the localization performance of the LCMV
+  beamformer pipelines in four widely used open-source toolboxes (MNE-Python,
+  FieldTrip, DAiSS (SPM12), and Brainstorm) using datasets both with and
+  without SSS interference suppression. We analyzed MEG data that were i)
+  simulated, ii) recorded from a static and moving phantom, and iii) recorded
+  from a healthy volunteer receiving auditory, visual, and somatosensory
+  stimulation. We also investigated the effects of SSS and the combination of
+  the magnetometer and gradiometer signals. We quantified how localization
+  error and point-spread volume vary with the signal-to-noise ratio (SNR) in
+  all four toolboxes. When applied carefully to MEG data with a typical SNR
+  (3–15 ​dB), all four toolboxes localized the sources reliably; however,
+  they differed in their sensitivity to preprocessing parameters. As expected,
+  localizations were highly unreliable at very low SNR, but we found high
+  localization error also at very high SNRs for the first three toolboxes while
+  Brainstorm showed greater robustness but with lower spatial resolution. We
+  also found that the SNR improvement offered by SSS led to more accurate
+  localization.%
+    }
+    \verb{doi}
+    \verb 10.1016/j.neuroimage.2020.116797
+    \endverb
+    \field{issn}{10959572}
+    \field{number}{March}
+    \field{pages}{116797}
+    \field{title}{{Comparison of beamformer implementations for MEG source
+  localization}}
+    \verb{url}
+    \verb https://doi.org/10.1016/j.neuroimage.2020.116797
+    \endverb
+    \field{volume}{216}
+    \verb{file}
+    \verb :C$\backslash$:/Users/kui07/OneDrive - CINVESTAV/Tesis/Papers/1-s2.0-
+    \verb S1053811920302846-main.pdf:pdf
+    \endverb
+    \field{journaltitle}{NeuroImage}
+    \field{year}{2020}
+  \endentry
+
   \entry{Grech2008}{article}{}
     \name{author}{9}{}{%
       {{hash=GR}{%
@@ -654,6 +899,55 @@
     \verb s/McCann2019{\_}Article{\_}VariationInReportedHumanHeadTi.pdf:pdf
     \endverb
     \field{year}{2019}
+  \endentry
+
+  \entry{VanVeen1988}{article}{}
+    \name{author}{2}{}{%
+      {{hash=VBD}{%
+         family={{Van Veen}},
+         familyi={V\bibinitperiod},
+         given={Barry\bibnamedelima D.},
+         giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=BKM}{%
+         family={Buckley},
+         familyi={B\bibinitperiod},
+         given={Kevin\bibnamedelima M.},
+         giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{VBDBKM1}
+    \strng{fullhash}{VBDBKM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    A beamformer is a processor used in conjunction with an array of sensors to
+  provide a versatile form of spatial filtering. The sensor array collects
+  spatial samples of propagating wave fields, which are processed by the
+  beamformer. The objective is to estimate the signal arriving from a desired
+  direction in the presence of noise and interfering signals. A beamformer
+  performs spatial filtering to separate signals that have overlapping
+  frequency content but originate from different spatial locations. This paper
+  provides an overview of beamforming from a signal processing perspective,
+  with an emphasis on recent research. Data independent, statistically optimum,
+  adaptive, and partially adaptive beamforming are discussed. {\textcopyright}
+  1988 IEEE%
+    }
+    \verb{doi}
+    \verb 10.1109/53.665
+    \endverb
+    \field{isbn}{8104000004}
+    \field{issn}{07407467}
+    \field{number}{2}
+    \field{pages}{4\bibrangedash 24}
+    \field{title}{{Beamforming: A Versatile Approach to Spatial Filtering}}
+    \field{volume}{5}
+    \verb{file}
+    \verb :C$\backslash$:/Users/kui07/OneDrive - CINVESTAV/Tesis/Papers/53.665.
+    \verb pdf:pdf
+    \endverb
+    \field{journaltitle}{IEEE ASSP Magazine}
+    \field{year}{1988}
   \endentry
 
   \entry{Gutierrez2004}{article}{}
@@ -1256,230 +1550,6 @@
     \field{journaltitle}{IEEE Transactions on Medical Imaging}
     \field{year}{2005}
     \warn{\item Invalid format of field 'month'}
-  \endentry
-
-  \entry{Baillet2001}{article}{}
-    \name{author}{3}{}{%
-      {{hash=BS}{%
-         family={Baillet},
-         familyi={B\bibinitperiod},
-         given={Sylvain},
-         giveni={S\bibinitperiod},
-      }}%
-      {{hash=MJC}{%
-         family={Mosher},
-         familyi={M\bibinitperiod},
-         given={John\bibnamedelima C.},
-         giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
-      }}%
-      {{hash=LRM}{%
-         family={Leahy},
-         familyi={L\bibinitperiod},
-         given={Richard\bibnamedelima M.},
-         giveni={R\bibinitperiod\bibinitdelim M\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{BS+1}
-    \strng{fullhash}{BSMJCLRM1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \verb{doi}
-    \verb 10.1109/79.962275
-    \endverb
-    \field{issn}{10535888}
-    \field{number}{6}
-    \field{pages}{14\bibrangedash 30}
-    \field{title}{{Electromagnetic brain mapping}}
-    \field{volume}{18}
-    \verb{file}
-    \verb :C$\backslash$:/Users/kui07/OneDrive - CINVESTAV/Tesis/Papers/Baillet
-    \verb MosherLeahy{\_}IEEESPMAG{\_}Nov2001 (3).pdf:pdf
-    \endverb
-    \field{journaltitle}{IEEE Signal Processing Magazine}
-    \field{year}{2001}
-  \endentry
-
-  \entry{VanVeen1988}{article}{}
-    \name{author}{2}{}{%
-      {{hash=VBD}{%
-         family={{Van Veen}},
-         familyi={V\bibinitperiod},
-         given={Barry\bibnamedelima D.},
-         giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod},
-      }}%
-      {{hash=BKM}{%
-         family={Buckley},
-         familyi={B\bibinitperiod},
-         given={Kevin\bibnamedelima M.},
-         giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{VBDBKM1}
-    \strng{fullhash}{VBDBKM1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{abstract}{%
-    A beamformer is a processor used in conjunction with an array of sensors to
-  provide a versatile form of spatial filtering. The sensor array collects
-  spatial samples of propagating wave fields, which are processed by the
-  beamformer. The objective is to estimate the signal arriving from a desired
-  direction in the presence of noise and interfering signals. A beamformer
-  performs spatial filtering to separate signals that have overlapping
-  frequency content but originate from different spatial locations. This paper
-  provides an overview of beamforming from a signal processing perspective,
-  with an emphasis on recent research. Data independent, statistically optimum,
-  adaptive, and partially adaptive beamforming are discussed. {\textcopyright}
-  1988 IEEE%
-    }
-    \verb{doi}
-    \verb 10.1109/53.665
-    \endverb
-    \field{isbn}{8104000004}
-    \field{issn}{07407467}
-    \field{number}{2}
-    \field{pages}{4\bibrangedash 24}
-    \field{title}{{Beamforming: A Versatile Approach to Spatial Filtering}}
-    \field{volume}{5}
-    \verb{file}
-    \verb :C$\backslash$:/Users/kui07/OneDrive - CINVESTAV/Tesis/Papers/53.665.
-    \verb pdf:pdf
-    \endverb
-    \field{journaltitle}{IEEE ASSP Magazine}
-    \field{year}{1988}
-  \endentry
-
-  \entry{Jaiswal2020}{article}{}
-    \name{author}{12}{}{%
-      {{hash=JA}{%
-         family={Jaiswal},
-         familyi={J\bibinitperiod},
-         given={Amit},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=NJ}{%
-         family={Nenonen},
-         familyi={N\bibinitperiod},
-         given={Jukka},
-         giveni={J\bibinitperiod},
-      }}%
-      {{hash=SM}{%
-         family={Stenroos},
-         familyi={S\bibinitperiod},
-         given={Matti},
-         giveni={M\bibinitperiod},
-      }}%
-      {{hash=GA}{%
-         family={Gramfort},
-         familyi={G\bibinitperiod},
-         given={Alexandre},
-         giveni={A\bibinitperiod},
-      }}%
-      {{hash=DSS}{%
-         family={Dalal},
-         familyi={D\bibinitperiod},
-         given={Sarang\bibnamedelima S.},
-         giveni={S\bibinitperiod\bibinitdelim S\bibinitperiod},
-      }}%
-      {{hash=WBU}{%
-         family={Westner},
-         familyi={W\bibinitperiod},
-         given={Britta\bibnamedelima U.},
-         giveni={B\bibinitperiod\bibinitdelim U\bibinitperiod},
-      }}%
-      {{hash=LV}{%
-         family={Litvak},
-         familyi={L\bibinitperiod},
-         given={Vladimir},
-         giveni={V\bibinitperiod},
-      }}%
-      {{hash=MJC}{%
-         family={Mosher},
-         familyi={M\bibinitperiod},
-         given={John\bibnamedelima C.},
-         giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod},
-      }}%
-      {{hash=SJM}{%
-         family={Schoffelen},
-         familyi={S\bibinitperiod},
-         given={Jan\bibnamedelima Mathijs},
-         giveni={J\bibinitperiod\bibinitdelim M\bibinitperiod},
-      }}%
-      {{hash=WC}{%
-         family={Witton},
-         familyi={W\bibinitperiod},
-         given={Caroline},
-         giveni={C\bibinitperiod},
-      }}%
-      {{hash=OR}{%
-         family={Oostenveld},
-         familyi={O\bibinitperiod},
-         given={Robert},
-         giveni={R\bibinitperiod},
-      }}%
-      {{hash=PL}{%
-         family={Parkkonen},
-         familyi={P\bibinitperiod},
-         given={Lauri},
-         giveni={L\bibinitperiod},
-      }}%
-    }
-    \list{publisher}{1}{%
-      {Elsevier Ltd}%
-    }
-    \keyw{Beamformers,EEG,LCMV,MEG,Open-source analysis toolboxes,Source
-  modeling}
-    \strng{namehash}{JA+1}
-    \strng{fullhash}{JANJSMGADSSWBULVMJCSJMWCORPL1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{abstract}{%
-    Beamformers are applied for estimating spatiotemporal characteristics of
-  neuronal sources underlying measured MEG/EEG signals. Several MEG analysis
-  toolboxes include an implementation of a linearly constrained
-  minimum-variance (LCMV) beamformer. However, differences in implementations
-  and in their results complicate the selection and application of beamformers
-  and may hinder their wider adoption in research and clinical use.
-  Additionally, combinations of different MEG sensor types (such as
-  magnetometers and planar gradiometers) and application of preprocessing
-  methods for interference suppression, such as signal space separation (SSS),
-  can affect the results in different ways for different implementations. So
-  far, a systematic evaluation of the different implementations has not been
-  performed. Here, we compared the localization performance of the LCMV
-  beamformer pipelines in four widely used open-source toolboxes (MNE-Python,
-  FieldTrip, DAiSS (SPM12), and Brainstorm) using datasets both with and
-  without SSS interference suppression. We analyzed MEG data that were i)
-  simulated, ii) recorded from a static and moving phantom, and iii) recorded
-  from a healthy volunteer receiving auditory, visual, and somatosensory
-  stimulation. We also investigated the effects of SSS and the combination of
-  the magnetometer and gradiometer signals. We quantified how localization
-  error and point-spread volume vary with the signal-to-noise ratio (SNR) in
-  all four toolboxes. When applied carefully to MEG data with a typical SNR
-  (3–15 ​dB), all four toolboxes localized the sources reliably; however,
-  they differed in their sensitivity to preprocessing parameters. As expected,
-  localizations were highly unreliable at very low SNR, but we found high
-  localization error also at very high SNRs for the first three toolboxes while
-  Brainstorm showed greater robustness but with lower spatial resolution. We
-  also found that the SNR improvement offered by SSS led to more accurate
-  localization.%
-    }
-    \verb{doi}
-    \verb 10.1016/j.neuroimage.2020.116797
-    \endverb
-    \field{issn}{10959572}
-    \field{number}{March}
-    \field{pages}{116797}
-    \field{title}{{Comparison of beamformer implementations for MEG source
-  localization}}
-    \verb{url}
-    \verb https://doi.org/10.1016/j.neuroimage.2020.116797
-    \endverb
-    \field{volume}{216}
-    \verb{file}
-    \verb :C$\backslash$:/Users/kui07/OneDrive - CINVESTAV/Tesis/Papers/1-s2.0-
-    \verb S1053811920302846-main.pdf:pdf
-    \endverb
-    \field{journaltitle}{NeuroImage}
-    \field{year}{2020}
   \endentry
 \enddatalist
 \endinput
