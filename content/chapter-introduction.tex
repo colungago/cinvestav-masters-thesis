@@ -13,13 +13,15 @@
 \section{Problema Directo del EEG}
 \label{sec:methodology:direct}
 
-Para generar mediciones simuladas de EEG es necesario resolver el problema directo, el cual consiste en calcular el potencial eléctrico presente en el cuero cabelludo mediante el modelado de la transducción de la corriente eléctrica generada por una fuente posicionada en la corteza cerebral, en este caso siendo modelada como un dipolo eléctrico que representa la actividad neuronal en eventos de respuesta evocada (ER) \cite{Mosher1999, Hallez2007}. 
+Las señales electroenecefalográficas se ajustan al modelo electromagnético de las ecuaciones de Maxwell, aunque en su versión cuasi-estática
+(debido a que son señales de muy baja frecuencia). Entonces, la generación de la señal de EEG puede ser replicada matemáticamente mediante la
+solución del problema directo; el cual consiste en calcular el potencial eléctrico presente en el cuero cabelludo mediante el modelado de la transducción de la corriente eléctrica generada por una fuente posicionada en la corteza cerebral, en este caso siendo modelada como un dipolo eléctrico que representa la actividad neuronal en eventos de respuesta evocada (ER) \cite{Mosher1999, Hallez2007}. 
 
-Dadas las condiciones cuasi-estáticas del EEG \cite{Plonsey1967} el cálculo del potencial generado por el dipolo de corriente con momento dipolar $ \mathbf{d} = \partial\emph{e}_{\mathbf{d}}$ con posición $\mathbf{r}_{dip}$ en un medio conductor infinito con conductividad $\sigma$ se describe por:
+Dadas las condiciones cuasi-estáticas del EEG \cite{Plonsey1967} el cálculo del potencial generado por el dipolo de corriente con momento dipolar $ \mathbf{d} = \partial\emph{e}_{\mathbf{d}}$ con posición $\mathbf{r}_{q}$ en un medio conductor infinito con conductividad $\sigma$ se describe por:
 
 \begin{equation}
 	\label{fdip}
-	V(\mathbf{r},\mathbf{r}_{dip},\mathbf{d})=\frac{\mathbf{d}\cdot(\mathbf{r}-\mathbf{r}_{dip})}{4\pi \sigma {||\mathbf{r}-\mathbf{r}_{dip}||}^{3}}\text{,}
+	V(\mathbf{r},\mathbf{r}_{dip},\mathbf{d})=\frac{\mathbf{d}\cdot(\mathbf{r}-\mathbf{r}_{q})}{4\pi \sigma {||\mathbf{r}-\mathbf{r}_{q}||}^{3}}\text{,}
 \end{equation}
 
 con $\mathbf{r}$ siendo la posición donde el potencial es calculado \cite{Hallez2007}.
@@ -42,7 +44,9 @@ Considerando que la solución se busca en un volumen conductor de múltiples int
 	V(r) = \frac{2\sigma_{0}}{\sigma_{r}^{-} + {\sigma_{r}^{+}}} V_{0}(r) + \frac{1}{2\pi} \sum_{k=1}^{R}\frac{\sigma_{k}^{-}-\sigma_{k}^{+}}{\sigma_{r}^{-}-\sigma_{r}^{+}} \sum_{j=1}^{N_{S_{k}}} \int_{\Delta_{S_{k,j}}} V(r') \frac{r'-r}{||r'-r||^3}\partial S_{k}\text{,}
 \end{equation}
 
-cuya integral se calcula sobre $\Delta_{S_{j},k}$, el j-ésimo triángulo en la superficie $S_{j}$, y $R$ es el número de interfaces en el volumen \cite{Hallez2007}.
+cuya integral se calcula sobre $\Delta_{S_{j},k}$, el j-ésimo triángulo en la superficie $S_{j}$, y $R$ es el número de interfaces en el volumen \cite{Hallez2007}. 
+
+Tanto en \cref{bem} como en \cref{bem2} se observa el rol que la razón entre las conductividades de los compartimentos internos y externos juega en el cálculo del potencial en el volumen conductor. Esta razón es de particular interés en el presente trabajo, ya que se busca estimarla a partir de las mediciones de EEG.
 
 Estas ecuaciones pueden ser transformadas en un set de ecuaciones lineares:
 
@@ -58,7 +62,7 @@ Donde $V$ y $V_{0}$ son vectores que denotan el potencial buscado en cada nodo y
 
 Como su nombre lo indica; la contraparte del problema directo del EEG es el problema inverso. Si el problema directo se enfoca en obtener una solución para el campo eléctrico generado sobre un volumen conductor a partir de una fuente de corriente, el problema inverso consiste en identificar la posición de dichas fuentes de actividad eléctrica al modelar la amplitud de los dipolos eléctricos y seleccionando los que tengan una mayor actividad \cite{Baillet2001}. Para su cálculo es necesario: las mediciones de EEG que en nuestro caso son las obtenidas mediante el problema directo, el volumen conductor, y la matriz de ganancia con su correspondiente plantilla del sistema de EEG.
 
-El beamformer LCMV es un filtro espacial que aplicado a la solución del problema inverso, relaciona el campo electromagnético medido en el exterior y superficie de la cabeza con la actividad neuronal subyacente utilizando la covarianza de las señales medidas y los modelos de actividad de las fuentes y transferencia de señal entre estas y los sensores, que en nuestro caso se trata de la matriz de ganancia computada con BEM. Los \emph{weights} o ponderación del filtro espacial se calculan para cada ubicación en la región de interés (ROI) y acorde a Van Veen y Jaiswal \cite{VanVeen1997,Jaiswal2020} su formulación es la siguiente:
+Existen muchas maneras de resolver el problema inverso neuroeléctrico. En años recientes, los métodos de filtrado espacial basados en la conformación de haces (\emph{beamforming}) han ganado popularidad. En particular, el conformador de haces de restricciones lineales y mínima varianza (LCMV del inglés \emph{linearly-constrained minimum variance beamfomer}) originalmente diseñado e introducido en las neurociencias por Van Veen y Van Drongele \cite{VanVeen1988, VanVeen1997}. La aplicación de este filtro espacial en la solución del problema inverso; relaciona el campo electromagnético medido en el exterior y superficie de la cabeza con la actividad neuronal subyacente, utilizando la covarianza de las señales medidas y los modelos de actividad de las fuentes y transferencia de señal entre estas y los sensores, que en nuestro caso, estos modelos corresponden a la matriz de ganancia generada con BEM. Los coeficientes de ponderación o pesos del filtro espacial se calculan para cada ubicación en la región de interés (ROI) y acorde a Van Veen y Jaiswal \cite{VanVeen1997,Jaiswal2020} su formulación es la siguiente:
 
 Sea $x$ una señal vector de forma $M \times 1$ de datos MEG o EEG medidos con $M$ sensores, y $N$ es el número de puntos en la ROI con coordenadas $r_j$, ($j = 1, ..., N$). Entonces la fuente $y(r_j)$ en cualquier punto $r_j$ puede ser estimada como la combinación ponderada de la medición $x$ con una matriz de $M \times 3$ denominada $W(r_j)$, de forma que
 
@@ -75,13 +79,13 @@ W^{T}(r_j) = (L^{T}(r_j)C^{-1}L(r_j))^{-1}L^{T}(r_j)C^{-1}
 Aquí $L(r_j)$ es la matriz de ganancia con forma $M \times 3$ que define la contribución de una fuente dipolar en la posición $r_j$ a la medición $x$, y $C$ es la matriz de covarianza calculada a partir de las mediciones de EEG o MEG. Para realizar la localización de las fuentes utilizando LCMV, se estima la varianza resultante $Var(y(r_j))$ en cada punto del espacio de la fuente \cite{VanVeen1997,Jaiswal2020}, en nuestro caso siendo la malla de la corteza cerebral, lo que resulta en
 
 \begin{equation}
-\widehat{\text{Var}}(y(r_j)) = \text{Trace}[L^{T}(r_j)C^{-1}L(r_j)]^{-1}.
+\widehat{\text{Var}}(y(r_j)) = \text{Traza}[L^{T}(r_j)C^{-1}L(r_j)]^{-1}.
 \end{equation}
 
-Por lo general, la señal medida está contaminada por ruido no uniformemente distribuido y por lo tanto, la varianza de la señal estimada se normaliza con la varianza del ruido proyectado $C_n$ calculada sobre parte de las mediciones en estado basal o en reposo (\emph{baseline noise}). Esta estimación normalizada es denomida Índice de Actividad Neural (NAI del inglés Neuronal Activity Index) \cite{VanVeen1997} y puede expresarse como
+Por lo general, la señal medida está contaminada por ruido no uniformemente distribuido y por lo tanto, la varianza de la señal estimada se normaliza con la varianza del ruido proyectado $C_n$ calculada sobre parte de las mediciones en estado basal o en reposo (\emph{baseline noise}). Esta estimación normalizada es denomida índice de actividad neural (NAI del inglés \emph{neuronal activity index}) \cite{VanVeen1997} y puede expresarse como
 
 \begin{equation}
-\text{NAI}(r_j) = \frac{\text{Trace}\left\{[L^{T}(r_j)C^{-1}L(r_j)]^{-1}\right\}}{\text{Trace}\left\{[L^{T}(r_j)C_n^{-1}L(r_j)]^{-1}\right\}}
+\text{NAI}(r_j) = \frac{\text{Traza}\left\{[L^{T}(r_j)C^{-1}L(r_j)]^{-1}\right\}}{\text{Traza}\left\{[L^{T}(r_j)C_n^{-1}L(r_j)]^{-1}\right\}}
 \end{equation}
 
 Al escanear y procesar todos los puntos en la región de interés en el espacio de la fuente, las mediciones de EEG y MEG se transforman en un mapa del NAI que puede ser proyectado sobre la misma malla de la corteza cerebral del modelo geométricamente realista, efectivamente resolviendo el problema inverso. Cabe mencionar que esta formulación es solo para un instante en el tiempo, lo que resulta en un snapshot de la actividad en ese momento de las mediciones de EEG/MEG, si se quiere observar el cambio de la actividad con respecto al tiempo, se tiene que calcular el kernel para el intervalo de interés.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.6.12)  15 FEB 2024 03:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021/W32TeX) (preloaded format=pdflatex 2021.6.12)  27 FEB 2024 00:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1204,20 +1204,20 @@ LaTeX Font Info:    Font shape `T1/pbk/m/it' in size <75> not available
  [1
 
 
-] [2] [3] [4]) (./content/chapter-objectives.tex [5] [6
-
-
-]
+] [2] [3] [4] [5]) (./content/chapter-objectives.tex [6]
 chapter 2.
 
 Overfull \hbox (10.94998pt too wide) in paragraph at lines 3--3
 [][][][][][][][] 
  []
 
-LaTeX Font Info:    Trying to load font information for TS1+bch on input line 21.
+LaTeX Font Info:    Trying to load font information for TS1+bch on input line 20.
 (c:/texlive/2021/texmf-dist/tex/latex/psnfss/ts1bch.fd
 File: ts1bch.fd 2004/10/18 font definitions for TS1/bch.
-)) (./content/chapter-related-work.tex [7] [8
+)) (./content/chapter-related-work.tex [7
+
+
+] [8
 
 
 ]
@@ -1238,56 +1238,56 @@ Overfull \hbox (10.94998pt too wide) in paragraph at lines 3--3
  []
 
 [11]
-<./gfx//pipeline.png, id=219, 1399.47844pt x 729.47531pt>
+<./gfx//pipeline.png, id=223, 1399.47844pt x 729.47531pt>
 File: ./gfx//pipeline.png Graphic file (type png)
 <use ./gfx//pipeline.png>
-Package pdftex.def Info: ./gfx//pipeline.png  used on input line 24.
+Package pdftex.def Info: ./gfx//pipeline.png  used on input line 23.
 (pdftex.def)             Requested size: 394.78204pt x 205.77663pt.
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 25.
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 24.
  [12 <./gfx//pipeline.png>]
-<./gfx//mri_coronal.png, id=229, 454.69875pt x 363.3575pt>
+<./gfx//mri_coronal.png, id=233, 454.69875pt x 363.3575pt>
 File: ./gfx//mri_coronal.png Graphic file (type png)
 <use ./gfx//mri_coronal.png>
-Package pdftex.def Info: ./gfx//mri_coronal.png  used on input line 41.
+Package pdftex.def Info: ./gfx//mri_coronal.png  used on input line 40.
 (pdftex.def)             Requested size: 193.44536pt x 154.58844pt.
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <9> not available
-(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 42.
-<./gfx//mri_sagital.png, id=230, 545.03625pt x 363.3575pt>
+(Font)              Font shape `T1/lmss/bx/n' tried instead on input line 41.
+<./gfx//mri_sagital.png, id=234, 545.03625pt x 363.3575pt>
 File: ./gfx//mri_sagital.png Graphic file (type png)
 <use ./gfx//mri_sagital.png>
-Package pdftex.def Info: ./gfx//mri_sagital.png  used on input line 47.
+Package pdftex.def Info: ./gfx//mri_sagital.png  used on input line 46.
 (pdftex.def)             Requested size: 193.44536pt x 128.96231pt.
-<./gfx//mri_axial.png, id=231, 454.69875pt x 435.6275pt>
+<./gfx//mri_axial.png, id=235, 454.69875pt x 435.6275pt>
 File: ./gfx//mri_axial.png Graphic file (type png)
 <use ./gfx//mri_axial.png>
-Package pdftex.def Info: ./gfx//mri_axial.png  used on input line 53.
+Package pdftex.def Info: ./gfx//mri_axial.png  used on input line 52.
 (pdftex.def)             Requested size: 193.44536pt x 185.33533pt.
  [13]
-<./gfx//cortex.jpg, id=249, 689.57625pt x 543.53062pt>
+<./gfx//cortex.jpg, id=253, 689.57625pt x 543.53062pt>
 File: ./gfx//cortex.jpg Graphic file (type jpg)
 <use ./gfx//cortex.jpg>
-Package pdftex.def Info: ./gfx//cortex.jpg  used on input line 69.
+Package pdftex.def Info: ./gfx//cortex.jpg  used on input line 68.
 (pdftex.def)             Requested size: 177.65071pt x 140.02081pt.
-<./gfx//inner.jpg, id=250, 906.38625pt x 659.46375pt>
+<./gfx//inner.jpg, id=254, 906.38625pt x 659.46375pt>
 File: ./gfx//inner.jpg Graphic file (type jpg)
 <use ./gfx//inner.jpg>
-Package pdftex.def Info: ./gfx//inner.jpg  used on input line 74.
+Package pdftex.def Info: ./gfx//inner.jpg  used on input line 73.
 (pdftex.def)             Requested size: 177.65071pt x 129.25401pt.
-<./gfx//outer.jpg, id=251, 829.59938pt x 649.67719pt>
+<./gfx//outer.jpg, id=255, 829.59938pt x 649.67719pt>
 File: ./gfx//outer.jpg Graphic file (type jpg)
 <use ./gfx//outer.jpg>
-Package pdftex.def Info: ./gfx//outer.jpg  used on input line 79.
+Package pdftex.def Info: ./gfx//outer.jpg  used on input line 78.
 (pdftex.def)             Requested size: 177.65071pt x 139.11281pt.
-<./gfx//head.jpg, id=252, 927.465pt x 699.36281pt>
+<./gfx//head.jpg, id=256, 927.465pt x 699.36281pt>
 File: ./gfx//head.jpg Graphic file (type jpg)
 <use ./gfx//head.jpg>
-Package pdftex.def Info: ./gfx//head.jpg  used on input line 84.
+Package pdftex.def Info: ./gfx//head.jpg  used on input line 83.
 (pdftex.def)             Requested size: 177.65071pt x 133.95811pt.
-<./gfx//modelo.jpg, id=253, 1071.25218pt x 746.03719pt>
+<./gfx//modelo.jpg, id=257, 1071.25218pt x 746.03719pt>
 File: ./gfx//modelo.jpg Graphic file (type jpg)
 <use ./gfx//modelo.jpg>
-Package pdftex.def Info: ./gfx//modelo.jpg  used on input line 95.
+Package pdftex.def Info: ./gfx//modelo.jpg  used on input line 94.
 (pdftex.def)             Requested size: 394.78204pt x 274.9366pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1342,18 +1342,18 @@ Package logreq Info: Writing requests to 'my-thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 31002 strings out of 478536
- 579150 string characters out of 5854226
- 1470033 words of memory out of 5000000
+ 31008 strings out of 478536
+ 579204 string characters out of 5854226
+ 1471121 words of memory out of 5000000
  48025 multiletter control sequences out of 15000+600000
- 558741 words of font info for 315 fonts, out of 8000000 for 9000
+ 559315 words of font info for 319 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  108i,21n,148p,10660b,1881s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2021/texmf-dist/fonts/enc/dvips/tex-gyre/q-ec.enc}<c:/texlive/2021/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmbx8.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/tex-gyre/qhvb.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/tex-gyre/qhvr.pfb><c:/texlive/2021/texmf-dist/fonts/type1/public/tex-gyre/qhvri.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/bookman/ubkli8a.pfb><c:/texlive/2021/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on my-thesis.pdf (36 pages, 3368656 bytes).
+Output written on my-thesis.pdf (36 pages, 3370762 bytes).
 PDF statistics:
- 561 PDF objects out of 1000 (max. 8388607)
- 466 compressed objects within 5 object streams
+ 567 PDF objects out of 1000 (max. 8388607)
+ 472 compressed objects within 5 object streams
  98 named destinations out of 1000 (max. 500000)
  78595 words of extra memory for PDF output out of 89155 (max. 10000000)
 

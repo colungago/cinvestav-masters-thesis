@@ -372,6 +372,55 @@
     \field{year}{2001}
   \endentry
 
+  \entry{VanVeen1988}{article}{}
+    \name{author}{2}{}{%
+      {{hash=VBD}{%
+         family={{Van Veen}},
+         familyi={V\bibinitperiod},
+         given={Barry\bibnamedelima D.},
+         giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+      {{hash=BKM}{%
+         family={Buckley},
+         familyi={B\bibinitperiod},
+         given={Kevin\bibnamedelima M.},
+         giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{VBDBKM1}
+    \strng{fullhash}{VBDBKM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{abstract}{%
+    A beamformer is a processor used in conjunction with an array of sensors to
+  provide a versatile form of spatial filtering. The sensor array collects
+  spatial samples of propagating wave fields, which are processed by the
+  beamformer. The objective is to estimate the signal arriving from a desired
+  direction in the presence of noise and interfering signals. A beamformer
+  performs spatial filtering to separate signals that have overlapping
+  frequency content but originate from different spatial locations. This paper
+  provides an overview of beamforming from a signal processing perspective,
+  with an emphasis on recent research. Data independent, statistically optimum,
+  adaptive, and partially adaptive beamforming are discussed. {\textcopyright}
+  1988 IEEE%
+    }
+    \verb{doi}
+    \verb 10.1109/53.665
+    \endverb
+    \field{isbn}{8104000004}
+    \field{issn}{07407467}
+    \field{number}{2}
+    \field{pages}{4\bibrangedash 24}
+    \field{title}{{Beamforming: A Versatile Approach to Spatial Filtering}}
+    \field{volume}{5}
+    \verb{file}
+    \verb :C$\backslash$:/Users/kui07/OneDrive - CINVESTAV/Tesis/Papers/53.665.
+    \verb pdf:pdf
+    \endverb
+    \field{journaltitle}{IEEE ASSP Magazine}
+    \field{year}{1988}
+  \endentry
+
   \entry{VanVeen1997}{article}{}
     \name{author}{4}{}{%
       {{hash=VBD}{%
@@ -899,55 +948,6 @@
     \verb s/McCann2019{\_}Article{\_}VariationInReportedHumanHeadTi.pdf:pdf
     \endverb
     \field{year}{2019}
-  \endentry
-
-  \entry{VanVeen1988}{article}{}
-    \name{author}{2}{}{%
-      {{hash=VBD}{%
-         family={{Van Veen}},
-         familyi={V\bibinitperiod},
-         given={Barry\bibnamedelima D.},
-         giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod},
-      }}%
-      {{hash=BKM}{%
-         family={Buckley},
-         familyi={B\bibinitperiod},
-         given={Kevin\bibnamedelima M.},
-         giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod},
-      }}%
-    }
-    \strng{namehash}{VBDBKM1}
-    \strng{fullhash}{VBDBKM1}
-    \field{labelnamesource}{author}
-    \field{labeltitlesource}{title}
-    \field{abstract}{%
-    A beamformer is a processor used in conjunction with an array of sensors to
-  provide a versatile form of spatial filtering. The sensor array collects
-  spatial samples of propagating wave fields, which are processed by the
-  beamformer. The objective is to estimate the signal arriving from a desired
-  direction in the presence of noise and interfering signals. A beamformer
-  performs spatial filtering to separate signals that have overlapping
-  frequency content but originate from different spatial locations. This paper
-  provides an overview of beamforming from a signal processing perspective,
-  with an emphasis on recent research. Data independent, statistically optimum,
-  adaptive, and partially adaptive beamforming are discussed. {\textcopyright}
-  1988 IEEE%
-    }
-    \verb{doi}
-    \verb 10.1109/53.665
-    \endverb
-    \field{isbn}{8104000004}
-    \field{issn}{07407467}
-    \field{number}{2}
-    \field{pages}{4\bibrangedash 24}
-    \field{title}{{Beamforming: A Versatile Approach to Spatial Filtering}}
-    \field{volume}{5}
-    \verb{file}
-    \verb :C$\backslash$:/Users/kui07/OneDrive - CINVESTAV/Tesis/Papers/53.665.
-    \verb pdf:pdf
-    \endverb
-    \field{journaltitle}{IEEE ASSP Magazine}
-    \field{year}{1988}
   \endentry
 
   \entry{Gutierrez2004}{article}{}
