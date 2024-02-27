@@ -1,65 +1,26 @@
-This is BibTeX, Version 0.99d (TeX Live 2021/W32TeX)
-Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
-The top-level auxiliary file: my-thesis.aux
-The style file: biblatex.bst
-Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
-Reallocated global_strs (elt_size=200001) to 20 items from 10.
-Reallocated glb_str_end (elt_size=4) to 20 items from 10.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-Database file #1: my-thesis-blx.bib
-Database file #2: /Users/kui07/OneDrive/Documentos/Cinvestav/Citations/Tesis.bib
-Biblatex version: 3.16
-Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
-Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 22 entries,
-            6393 wiz_defined-function locations,
-            1446 strings with 43987 characters,
-and the built_in function-call counts, 201614 in all, are:
-= -- 16015
-> -- 2714
-< -- 540
-+ -- 5322
-- -- 1285
-* -- 16403
-:= -- 24133
-add.period$ -- 0
-call.type$ -- 22
-change.case$ -- 206
-chr.to.int$ -- 47
-cite$ -- 42
-duplicate$ -- 19742
-empty$ -- 17816
-format.name$ -- 1940
-if$ -- 39787
-int.to.chr$ -- 0
-int.to.str$ -- 49
-missing$ -- 0
-newline$ -- 1180
-num.names$ -- 874
-pop$ -- 7962
-preamble$ -- 1
-purify$ -- 428
-quote$ -- 0
-skip$ -- 3869
-stack$ -- 0
-substring$ -- 31355
-swap$ -- 4191
-text.length$ -- 597
-text.prefix$ -- 0
-top$ -- 1
-type$ -- 736
-warning$ -- 0
-while$ -- 3198
-width$ -- 0
-write$ -- 1159
+[0] Config.pm:311> INFO - This is Biber 2.16
+[0] Config.pm:314> INFO - Logfile is 'my-thesis.blg'
+[227] biber-MSWIN32:340> INFO - === 
+[308] Biber.pm:415> INFO - Reading 'my-thesis.bcf'
+[640] Biber.pm:952> INFO - Found 21 citekeys in bib section 0
+[675] Biber.pm:4340> INFO - Processing section 0
+[693] Biber.pm:4531> INFO - Looking for bibtex format file '/Users/kui07/OneDrive/Documentos/Cinvestav/Citations/Tesis.bib' for section 0
+[785] bibtex.pm:1689> INFO - LaTeX decoding ...
+[965] bibtex.pm:1494> INFO - Found BibTeX data source '/Users/kui07/OneDrive/Documentos/Cinvestav/Citations/Tesis.bib'
+[1212] Utils.pm:395> WARN - legacy month field 'jul' in entry 'Rush1969' is not an integer - this will probably not sort properly.
+[1244] Utils.pm:395> WARN - legacy month field 'sep' in entry 'open' is not an integer - this will probably not sort properly.
+[1273] Utils.pm:395> WARN - legacy month field 'mar' in entry 'Holmes1998' is not an integer - this will probably not sort properly.
+[1297] Utils.pm:395> WARN - legacy month field 'feb' in entry 'Tadel2019' is not an integer - this will probably not sort properly.
+[1311] Utils.pm:395> WARN - legacy month field 'jan' in entry 'open2' is not an integer - this will probably not sort properly.
+[1318] Utils.pm:395> WARN - BibTeX subsystem: C:\Users\kui07\AppData\Local\Temp\biber_tmp_s4qv\197826dcdb4a1a4be1793c857e2388cf_29568.utf8, line 6, warning: 172 characters of junk seen at toplevel
+[1368] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1368] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1368] Biber.pm:4168> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[1368] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[1405] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1406] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1406] Biber.pm:4168> INFO - Sorting list 'none/global/518ED29525738CEBDAC49C49E60EA9D3/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[1406] Biber.pm:4174> INFO - No sort tailoring available for locale 'en-US'
+[1436] bbl.pm:654> INFO - Writing 'my-thesis.bbl' with encoding 'UTF-8'
+[1513] bbl.pm:757> INFO - Output to my-thesis.bbl
+[1513] Biber.pm:128> INFO - WARNINGS: 6
