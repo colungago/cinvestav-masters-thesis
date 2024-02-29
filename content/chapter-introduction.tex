@@ -8,6 +8,10 @@
 
 \cleanchapterquote{My own brain is to me the most unaccountable of machinery - always buzzing, humming, soaring roaring diving, and then buried in mud. And why? What's this passion for?}{Virgina Woolf}
 
+
+\cleanchapterquote{Mi propio cerebro es para mi la maquinaria más inexplicable - siempre papaloteando, murmullando, }{Virgina Woolf}
+
+
 \section{Electroencefalografía: uso clínico y herramienta de investigación}
 
 \section{Problema Directo del EEG}
@@ -67,24 +71,28 @@ Existen muchas maneras de resolver el problema inverso neuroeléctrico. En años
 Sea $x$ una señal vector de forma $M \times 1$ de datos MEG o EEG medidos con $M$ sensores, y $N$ es el número de puntos en la ROI con coordenadas $r_j$, ($j = 1, ..., N$). Entonces la fuente $y(r_j)$ en cualquier punto $r_j$ puede ser estimada como la combinación ponderada de la medición $x$ con una matriz de $M \times 3$ denominada $W(r_j)$, de forma que
 
 \begin{equation}
+	\label{beamformer}
 y(r_j) = W^{T}(r_j)x
 \end{equation}
 
 en esta ecuación $W(r_j)$ se conoce como el filtro espacial para una fuente en la posición $r_j$. Este tipo de filtro espacial produce un beamformer o formador de haces de tipo vectorial al estimar por separado la actividad para tres orientaciones de fuente ortogonales, correspondientes a las tres columnas de la matriz. Siguiendo el desarrollo de Van Veen y Jaiswal \cite{VanVeen1997,Jaiswal2020}, el filtro espacial $W(r_j)$ para el beamformer vectorial se define como
 
 \begin{equation}
+	\label{beamformer2}
 W^{T}(r_j) = (L^{T}(r_j)C^{-1}L(r_j))^{-1}L^{T}(r_j)C^{-1}
 \end{equation}
 
 Aquí $L(r_j)$ es la matriz de ganancia con forma $M \times 3$ que define la contribución de una fuente dipolar en la posición $r_j$ a la medición $x$, y $C$ es la matriz de covarianza calculada a partir de las mediciones de EEG o MEG. Para realizar la localización de las fuentes utilizando LCMV, se estima la varianza resultante $Var(y(r_j))$ en cada punto del espacio de la fuente \cite{VanVeen1997,Jaiswal2020}, en nuestro caso siendo la malla de la corteza cerebral, lo que resulta en
 
 \begin{equation}
+	\label{beamformer3}
 \widehat{\text{Var}}(y(r_j)) = \text{Traza}[L^{T}(r_j)C^{-1}L(r_j)]^{-1}.
 \end{equation}
 
 Por lo general, la señal medida está contaminada por ruido no uniformemente distribuido y por lo tanto, la varianza de la señal estimada se normaliza con la varianza del ruido proyectado $C_n$ calculada sobre parte de las mediciones en estado basal o en reposo (\emph{baseline noise}). Esta estimación normalizada es denomida índice de actividad neural (NAI del inglés \emph{neuronal activity index}) \cite{VanVeen1997} y puede expresarse como
 
 \begin{equation}
+	\label{beamformer4}
 \text{NAI}(r_j) = \frac{\text{Traza}\left\{[L^{T}(r_j)C^{-1}L(r_j)]^{-1}\right\}}{\text{Traza}\left\{[L^{T}(r_j)C_n^{-1}L(r_j)]^{-1}\right\}}
 \end{equation}
 
@@ -96,6 +104,9 @@ Al escanear y procesar todos los puntos en la región de interés en el espacio 
 La idea de estimar la razón de la conductividad cerebro/cráneo nace del uso del EEG como herramienta de localización de fuentes de actividad neuronal, las cuales son posibles de estimar con las mediciones del potencial eléctrico sobre el cuero cabelludo obtenidas de EEG en cada uno de sus electrodos, y subsecuentemente aplicando técnicas de procesamiento digital de señales en tales mediciones. La problemática de este acercamiento es que es necesario contar con un modelo \emph{a priori} de las posibles fuentes de actividad neuronal con la finalidad de tener puntos de referencia para la proyección de las mediciones de EEG y su ajuste al modelo. Este acercamiento a la estimación de fuentes de actividad neuronal se define como el problema directo (solución de un modelo de fuentes de actividad neuronal) y el problema inverso (solución para la localización de fuentes de actividad neuronal) del EEG \cite{Grech2008}. Dado que una parte del problema no puede ser resuelta sin tomar suposiciones de la solución de la otra y de los parámetros bioelectromagnéticos de los tejidos que componen la cabeza como las conductividades, este acercamiento se considera un problema abierto, en particular el problema inverso del EEG por la multitud de posibles voltajes resultantes y su inestabilidad derivada de la sensibilidad a pequeños cambios en los datos como el ruido generado por el equipo de EEG. 
 
 Cuando este procedimiento es implementado para la localización de fuentes de actividad neuronal, estas son las que se toman como variable independiente con la intención de encontrar la posición que mejor se ajusta a las mediciones, mientras que como se comentó anteriormente, las propiedades bioelectromagnéticas en particular la conductividad de los tejidos, se asumen como conocidas utilizando valores estándar (\emph{i.e.} $0.33\text{ S/m}$ para el cerebro y $0.0042 \text{ S/m}$ para el cráneo). Estos valores aunque son utilizados ampliamente en el área de las neurociencias \cite{Rush1968,Rush1969,Cohen1983}, han sido debatidos por múltiples estudios con acercamientos novedosos de la estimación de las conductividades obteniendo valores significativamente diferentes al estándar \cite{McCann2019}, hablando en términos de la razón de la conductividad cerebro/cráneo (BSCR \emph{Brain-scalp-conductivity-ratio}) esta es una diferencia hasta 4 veces mayor (1:80 vs 1:20). Dada la multitud de diferentes soluciones a una misma implementación del problema inverso del EEG, se puede considerar que el uso de diferentes valores de conductividad también pueden afectar al resultado y puede ser utilizado como una variable en el cálculo del problema inverso en donde el caso de estudio es la estimación de la razón de la conductividad misma, claro, teniendo en cuenta que no podemos tener dos variables independientes, tendríamos que mantener en este caso la posición de las fuentes de actividad neuronal como conocidas para la solución del problema inverso. 
+
+\section{Frontera de Cramer-Rao}
+\label{sec:system:conclusion}
 
 
 %El cerebro es un órgano de suma importancia, ya que es el responsable de la coordinación del sistema nervioso central en vertebrados y la mayoría de invertebrados. En el caso de los seres humanos el cerebro se divide, \emph{grosso modo}, en telencéfalo, cerebelo, y tronco del encéfalo, cada una de estas zonas llevan a cabo distintas funciones fisiológicas; además el cerebro se encuentra resguardado por el cráneo teniendo el fluido cerebroespinal (CSF) de por medio, este último sirve como protección contra trauma e infecciones CITA. Dado nuestro objeto de estudio, el telencéfalo es de particular interés porque la parte externa de este es la corteza cerebral, la cual toma parte en las funciones de percepción, atención, consciencia, pensamiento, lenguaje, y cognición.
