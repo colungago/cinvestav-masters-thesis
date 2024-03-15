@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.28)  28 FEB 2024 19:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.28)  14 MAR 2024 23:28
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1004,6 +1004,11 @@ LaTeX Info: Redefining \cpagerefrange on input line 2370.
 LaTeX Info: Redefining \Cpagerefrange on input line 2370.
 LaTeX Info: Redefining \labelcref on input line 2370.
 LaTeX Info: Redefining \labelcpageref on input line 2370.
+) (c:/texlive/2023/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2022-07-02 v1.5u LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks43
+\verbatim@line=\toks44
+\verbatim@in@stream=\read5
 ) (c:/texlive/2023/texmf-dist/tex/latex/koma-script/scrlayer-scrpage.sty
 Package: scrlayer-scrpage 2022/10/12 v3.38 KOMA-Script package (end user interface for scrlayer)
  (c:/texlive/2023/texmf-dist/tex/latex/koma-script/scrlayer.sty
@@ -1017,7 +1022,7 @@ Package scrlayer-scrpage Info: Makeing stand-alone element `pagehead' from
 1: chapter
 1: chapter
 1: section
-LaTeX Font Info:    Trying to load font information for T1+bch on input line 291.
+LaTeX Font Info:    Trying to load font information for T1+bch on input line 293.
 (c:/texlive/2023/texmf-dist/tex/latex/psnfss/t1bch.fd
 File: t1bch.fd 2004/10/18 font definitions for T1/bch.
 )
@@ -1037,7 +1042,7 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 11.0pt
 (typearea)              \footskip       = 59.1601pt
 (typearea)              \baselineskip   = 13.6pt
-(typearea)              on input line 291.
+(typearea)              on input line 293.
 Package typearea Info: These are the values describing the layout:
 (typearea)             DIV  = 12
 (typearea)             BCOR = 71.13188pt
@@ -1054,7 +1059,7 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 11.0pt
 (typearea)              \footskip       = 59.1601pt
 (typearea)              \baselineskip   = 13.6pt
-(typearea)              on input line 292.
+(typearea)              on input line 294.
  (c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
 \csq@reset=\count467
@@ -1063,7 +1068,7 @@ Package: csquotes 2022-09-14 v5.2n context-sensitive quotations (JAW)
 \csq@qlevel=\count470
 \csq@maxlvl=\count471
 \csq@tshold=\count472
-\csq@ltx@everypar=\toks43
+\csq@ltx@everypar=\toks45
  (c:/texlive/2023/texmf-dist/tex/latex/csquotes/csquotes.def
 File: csquotes.def 2022-09-14 v5.2n csquotes generic definitions (JAW)
 )
@@ -1078,7 +1083,7 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
 ) (c:/texlive/2023/texmf-dist/tex/latex/listings/listings.sty
 \lst@mode=\count473
 \lst@gtempboxa=\box91
-\lst@token=\toks44
+\lst@token=\toks46
 \lst@length=\count474
 \lst@currlwidth=\dimen286
 \lst@column=\count475
@@ -1122,7 +1127,7 @@ Class scrreprt Warning: Usage of package `tocloft' together
 (scrreprt)              `part', `section', `subsection',
 (scrreprt)              `subsubsection', `paragraph' and `subparagraph'.
 (scrreprt)              Nevertheless, using requested
-(scrreprt)              package `tocloft' on input line 700.
+(scrreprt)              package `tocloft' on input line 702.
 
 (c:/texlive/2023/texmf-dist/tex/latex/tocloft/tocloft.sty
 Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
@@ -1233,12 +1238,12 @@ Package biblatex Info: Reference segment=0 on input line 52.
 \scratchbox=\box93
 \nofMPsegments=\count484
 \nofMParguments=\count485
-\everyMPshowfont=\toks45
+\everyMPshowfont=\toks47
 \MPscratchCnt=\count486
 \MPscratchDim=\dimen291
 \MPnumerator=\count487
 \makeMPintoPDFobject=\count488
-\everyMPtoPDFconversion=\toks46
+\everyMPtoPDFconversion=\toks48
 ) (c:/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -1453,7 +1458,7 @@ Overfull \hbox (10.94998pt too wide) in paragraph at lines 3--3
  []
 
 [11]
-<./gfx//pipeline.png, id=229, 1399.47844pt x 729.47531pt>
+<./gfx//pipeline.png, id=230, 1399.47844pt x 729.47531pt>
 File: ./gfx//pipeline.png Graphic file (type png)
 <use ./gfx//pipeline.png>
 Package pdftex.def Info: ./gfx//pipeline.png  used on input line 23.
@@ -1461,19 +1466,19 @@ Package pdftex.def Info: ./gfx//pipeline.png  used on input line 23.
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10> not available
 (Font)              Font shape `T1/lmss/bx/n' tried instead on input line 24.
  [12 <./gfx//pipeline.png>]
-<./gfx//mri_coronal.png, id=239, 454.69875pt x 363.3575pt>
+<./gfx//mri_coronal.png, id=240, 454.69875pt x 363.3575pt>
 File: ./gfx//mri_coronal.png Graphic file (type png)
 <use ./gfx//mri_coronal.png>
 Package pdftex.def Info: ./gfx//mri_coronal.png  used on input line 39.
 (pdftex.def)             Requested size: 193.44536pt x 154.58844pt.
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <9> not available
 (Font)              Font shape `T1/lmss/bx/n' tried instead on input line 40.
-<./gfx//mri_sagital.png, id=240, 545.03625pt x 363.3575pt>
+<./gfx//mri_sagital.png, id=241, 545.03625pt x 363.3575pt>
 File: ./gfx//mri_sagital.png Graphic file (type png)
 <use ./gfx//mri_sagital.png>
 Package pdftex.def Info: ./gfx//mri_sagital.png  used on input line 46.
 (pdftex.def)             Requested size: 193.44536pt x 128.96231pt.
-<./gfx//mri_axial.png, id=241, 454.69875pt x 435.6275pt>
+<./gfx//mri_axial.png, id=242, 454.69875pt x 435.6275pt>
 File: ./gfx//mri_axial.png Graphic file (type png)
 <use ./gfx//mri_axial.png>
 Package pdftex.def Info: ./gfx//mri_axial.png  used on input line 53.
@@ -1482,43 +1487,43 @@ Package pdftex.def Info: ./gfx//mri_axial.png  used on input line 53.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14 <./gfx//mri_coronal.png (PNG copy)> <./gfx//mri_sagital.png (PNG copy)> <./gfx//mri_axial.png (PNG copy)>]
-<./gfx//cortex.jpg, id=266, 689.57625pt x 543.53062pt>
+<./gfx//cortex.jpg, id=267, 689.57625pt x 543.53062pt>
 File: ./gfx//cortex.jpg Graphic file (type jpg)
 <use ./gfx//cortex.jpg>
 Package pdftex.def Info: ./gfx//cortex.jpg  used on input line 68.
 (pdftex.def)             Requested size: 177.65071pt x 140.02081pt.
-<./gfx//inner.jpg, id=267, 906.38625pt x 659.46375pt>
+<./gfx//inner.jpg, id=268, 906.38625pt x 659.46375pt>
 File: ./gfx//inner.jpg Graphic file (type jpg)
 <use ./gfx//inner.jpg>
 Package pdftex.def Info: ./gfx//inner.jpg  used on input line 74.
 (pdftex.def)             Requested size: 177.65071pt x 129.25401pt.
-<./gfx//outer.jpg, id=268, 829.59938pt x 649.67719pt>
+<./gfx//outer.jpg, id=269, 829.59938pt x 649.67719pt>
 File: ./gfx//outer.jpg Graphic file (type jpg)
 <use ./gfx//outer.jpg>
 Package pdftex.def Info: ./gfx//outer.jpg  used on input line 80.
 (pdftex.def)             Requested size: 177.65071pt x 139.11281pt.
-<./gfx//head.jpg, id=269, 927.465pt x 699.36281pt>
+<./gfx//head.jpg, id=270, 927.465pt x 699.36281pt>
 File: ./gfx//head.jpg Graphic file (type jpg)
 <use ./gfx//head.jpg>
 Package pdftex.def Info: ./gfx//head.jpg  used on input line 85.
 (pdftex.def)             Requested size: 177.65071pt x 133.95811pt.
-<./gfx//modelo.jpg, id=270, 1071.25218pt x 746.03719pt>
+<./gfx//modelo.jpg, id=271, 1071.25218pt x 746.03719pt>
 File: ./gfx//modelo.jpg Graphic file (type jpg)
 <use ./gfx//modelo.jpg>
 Package pdftex.def Info: ./gfx//modelo.jpg  used on input line 96.
 (pdftex.def)             Requested size: 394.78204pt x 274.9366pt.
  [15 <./gfx//cortex.jpg> <./gfx//inner.jpg> <./gfx//outer.jpg> <./gfx//head.jpg>] [16 <./gfx//modelo.jpg>]
-<./gfx//dipole-function.png, id=289, 502.87875pt x 280.04625pt>
+<./gfx//dipole-function.png, id=290, 502.87875pt x 280.04625pt>
 File: ./gfx//dipole-function.png Graphic file (type png)
 <use ./gfx//dipole-function.png>
 Package pdftex.def Info: ./gfx//dipole-function.png  used on input line 117.
 (pdftex.def)             Requested size: 394.78204pt x 219.8496pt.
- [17 <./gfx//dipole-function.png>] [18] [19]) [20]
-chapter without number
-[21
+ [17 <./gfx//dipole-function.png>] [18] [19] [20]) [21] [22
 
 
 ]
+chapter without number
+[23]
 
 Package biblatex Warning: Option 'labelprefix' requires global
 (biblatex)                'defernumbers=true' on input line 119.
@@ -1533,21 +1538,21 @@ Package biblatex Warning: Type 'online' not found on input line 119.
 
 LaTeX Warning: Empty bibliography on input line 119.
 
-[22] (./my-thesis.lof)
+[24] (./my-thesis.lof)
 \tf@lof=\write7
 \openout7 = `my-thesis.lof'.
 
- [23
+ [25
 
 
-] [24
+] [26
 
 
 ] (./my-thesis.lot)
 \tf@lot=\write8
 \openout8 = `my-thesis.lot'.
 
- [25] [26
+ [27] [28
 
 
 ] (./my-thesis.aux)
@@ -1558,18 +1563,18 @@ Package logreq Info: Writing requests to 'my-thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 44859 strings out of 476025
- 909985 string characters out of 5794015
- 1869222 words of memory out of 5000000
- 64128 multiletter control sequences out of 15000+600000
- 669060 words of font info for 330 fonts, out of 8000000 for 9000
+ 44903 strings out of 476025
+ 910934 string characters out of 5794015
+ 1870923 words of memory out of 5000000
+ 64165 multiletter control sequences out of 15000+600000
+ 669458 words of font info for 333 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 130i,21n,148p,10660b,2568s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 130i,21n,148p,10660b,2566s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/tex-gyre/qhvb.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/tex-gyre/qhvr.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/tex-gyre/qhvri.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/bookman/ubkli8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on my-thesis.pdf (36 pages, 3391607 bytes).
+Output written on my-thesis.pdf (38 pages, 3396290 bytes).
 PDF statistics:
- 590 PDF objects out of 1000 (max. 8388607)
- 493 compressed objects within 5 object streams
- 102 named destinations out of 1000 (max. 500000)
+ 604 PDF objects out of 1000 (max. 8388607)
+ 504 compressed objects within 6 object streams
+ 104 named destinations out of 1000 (max. 500000)
  78620 words of extra memory for PDF output out of 89155 (max. 10000000)
 

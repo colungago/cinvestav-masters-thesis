@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber my-thesis"] 0 "my-thesis.bcf" "my-thesis.bbl" "my-thesis" 1709171283 -1
-  "/Users/kui07/OneDrive/Documentos/Cinvestav/Citations/Tesis.bib" 1709004033 71669 e75f54328b0724edbd6e519bcc0314f4 ""
-  "my-thesis.bcf" 1709171280 110736 d91e6dc138641a74a2efe9aaa3986a5f "pdflatex"
+["biber my-thesis"] 0 "my-thesis.bcf" "my-thesis.bbl" "my-thesis" 1710480515 -1
+  "/Users/kui07/OneDrive/Documentos/Cinvestav/Citations/Tesis.bib" 1710306353 71669 62ddf48ae8629a9bea96ca4eb5971514 ""
+  "my-thesis.bcf" 1710480513 110736 d91e6dc138641a74a2efe9aaa3986a5f "pdflatex"
   (generated)
   "my-thesis.bbl"
   "my-thesis.blg"
   (rewritten before read)
-["pdflatex"] 1709171272 "c:/Users/kui07/OneDrive - CINVESTAV/Tesis/Tesis_Final/my-thesis.tex" "my-thesis.pdf" "my-thesis" 1709171283 0
-  "/Users/kui07/OneDrive/Documentos/Cinvestav/Citations/Tesis.bib" 1709004033 71669 e75f54328b0724edbd6e519bcc0314f4 ""
+["pdflatex"] 1710480504 "c:/Users/kui07/OneDrive - CINVESTAV/Tesis/Tesis_Final/my-thesis.tex" "my-thesis.pdf" "my-thesis" 1710480515 0
+  "/Users/kui07/OneDrive/Documentos/Cinvestav/Citations/Tesis.bib" 1710306353 71669 62ddf48ae8629a9bea96ca4eb5971514 ""
   "c:/Users/kui07/OneDrive - CINVESTAV/Tesis/Tesis_Final/my-thesis.tex" 1709160785 4745 28870b9e2a9835dea60cfebcc4136775 ""
   "c:/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1709139814 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "c:/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1709140780 2375 baa924870cfb487815765f9094cf3728 ""
@@ -285,6 +285,7 @@
   "c:/texlive/2023/texmf-dist/tex/latex/tocloft/tocloft.sty" 1709142395 36103 3e78d14f0f4b1a30560fea5e04de805d ""
   "c:/texlive/2023/texmf-dist/tex/latex/tools/array.sty" 1709142402 12691 5b542990fe866f3d772f71346cf85b95 ""
   "c:/texlive/2023/texmf-dist/tex/latex/tools/tabularx.sty" 1709142402 7147 be6981d9f5d866a5634048c4a11814a9 ""
+  "c:/texlive/2023/texmf-dist/tex/latex/tools/verbatim.sty" 1709142402 7392 f19cdc68ae9f1190dbd54eee6d29fb7c ""
   "c:/texlive/2023/texmf-dist/tex/latex/tools/xspace.sty" 1709142402 4545 4c279ac9292a1be8afa9ab2f1d3299c2 ""
   "c:/texlive/2023/texmf-dist/tex/latex/url/url.sty" 1709142562 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "c:/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty" 1709142671 56148 51a9a8571c07b9921892ae11063ae853 ""
@@ -293,11 +294,11 @@
   "c:/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1709142848 4662804 27f73c2f767ae4579fe38abe9088e726 ""
   "c:/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1709143008 7883451 5d906aa501de3d02c33b4bd35e3a5fc3 ""
   "c:/texlive/2023/texmf.cnf" 1709142800 713 e69b156964470283e0530f5060668171 ""
-  "cleanthesis.sty" 1709158689 24834 38c7fff5b7cd64d1c29d876314cd18b2 ""
+  "cleanthesis.sty" 1710479485 24963 62021264fedc1ae98db9243037e062a8 ""
   "content/abstract.tex" 1561103600 230 ff6bdbcc3b5a24f10a4be8bde47a90e0 ""
   "content/acknowledgement.tex" 1561103600 156 14652ed5bf100f98818ffad8d9b73ea3 ""
-  "content/chapter-introduction.tex" 1709171080 15348 56e0c4b8934644120bf984e6e0b6e4c6 ""
-  "content/chapter-methodology.tex" 1709171256 22999 fdb4d156e683b34118a15fdf58f3dcd6 ""
+  "content/chapter-introduction.tex" 1710311186 15365 1a5bf8d46985e734b382a4982fdb9677 ""
+  "content/chapter-methodology.tex" 1710480497 25293 ad3ecc85440b6802c8fcfeb323a364d9 ""
   "content/chapter-objectives.tex" 1709010128 1274 e88e7002ff32d0aeef03f32a94a32d08 ""
   "content/chapter-related-work.tex" 1689054201 516 7d4394f4e36c4de3a4362f33417b87fd ""
   "content/titlepages.tex" 1694463351 2176 a23097463b4381016cda7799a4e86c3e ""
@@ -313,14 +314,14 @@
   "gfx//pipeline.png" 1651496473 912836 83580ffb463bd0faadc008a89bfb4c0e ""
   "gfx/Clean-Thesis-Logo.pdf" 1561103600 706770 890af84312a66219c9ecd7992bd715d1 ""
   "my-thesis-setup.tex" 1709160906 3042 b5535d3cceaf1c7d6d8390480cae0f48 ""
-  "my-thesis.aux" 1709171280 33356 56d98b6340af607844ddc52ffa94b0a2 "pdflatex"
-  "my-thesis.bbl" 1709160613 148984 481451fcfbac3bcff00cc06c67161e46 "biber my-thesis"
-  "my-thesis.lof" 1709171280 1300 41e5b040987a23e8bb7b5cc9c6e0ee2f "pdflatex"
-  "my-thesis.lot" 1709171280 130 f826c84079cca262924fc91efb7dde9a "pdflatex"
-  "my-thesis.out" 1709171277 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "my-thesis.run.xml" 1709171280 2519 81341a6b60ca50e7b7800f707c235757 "pdflatex"
+  "my-thesis.aux" 1710480513 34077 c4e799dbc09fb0adec3623bd205ac757 "pdflatex"
+  "my-thesis.bbl" 1710479306 148984 481451fcfbac3bcff00cc06c67161e46 "biber my-thesis"
+  "my-thesis.lof" 1710480513 1367 235e01dbc798a35e24c99f3001a7bc52 "pdflatex"
+  "my-thesis.lot" 1710480513 130 f826c84079cca262924fc91efb7dde9a "pdflatex"
+  "my-thesis.out" 1710480510 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "my-thesis.run.xml" 1710480513 2519 81341a6b60ca50e7b7800f707c235757 "pdflatex"
   "my-thesis.tex" 1709160785 4745 28870b9e2a9835dea60cfebcc4136775 ""
-  "my-thesis.toc" 1709171280 2162 f74338892f67d89ced45344b0a15d617 "pdflatex"
+  "my-thesis.toc" 1710480513 2212 e404aefee3185b5ab68cc571f30463f1 "pdflatex"
   "version" 1561103642 5 9eac01120a372609e0afa3b236d9ed2d ""
   (generated)
   "my-thesis.aux"
