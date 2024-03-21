@@ -465,79 +465,6 @@
       \endverb
       \keyw{Beamformers,EEG,LCMV,MEG,Open-source analysis toolboxes,Source modeling}
     \endentry
-    \entry{Grech2008}{article}{}
-      \name{author}{9}{}{%
-        {{hash=b961ac557f52b1abb1b7b2b36d75c4d4}{%
-           family={Grech},
-           familyi={G\bibinitperiod},
-           given={Roberta},
-           giveni={R\bibinitperiod}}}%
-        {{hash=bc823bb3416e1200ae73678e34b611df}{%
-           family={Cassar},
-           familyi={C\bibinitperiod},
-           given={Tracey},
-           giveni={T\bibinitperiod}}}%
-        {{hash=67ed132b9254649e0ff1f6ee4f0b2596}{%
-           family={Muscat},
-           familyi={M\bibinitperiod},
-           given={Joseph},
-           giveni={J\bibinitperiod}}}%
-        {{hash=802bc4193a2160a6637b9d5e5bbdf4eb}{%
-           family={Camilleri},
-           familyi={C\bibinitperiod},
-           given={Kenneth\bibnamedelima P.},
-           giveni={K\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
-        {{hash=b3ae68cc34c93c849e1ff8d255a0d913}{%
-           family={Fabri},
-           familyi={F\bibinitperiod},
-           given={Simon\bibnamedelima G.},
-           giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
-        {{hash=fce6a5b2c34b7a5ffdaf910222f06072}{%
-           family={Zervakis},
-           familyi={Z\bibinitperiod},
-           given={Michalis},
-           giveni={M\bibinitperiod}}}%
-        {{hash=fa7389d34093f5c5f411f922cef9b220}{%
-           family={Xanthopoulos},
-           familyi={X\bibinitperiod},
-           given={Petros},
-           giveni={P\bibinitperiod}}}%
-        {{hash=cce3c83216f52508325e6273adcdd536}{%
-           family={Sakkalis},
-           familyi={S\bibinitperiod},
-           given={Vangelis},
-           giveni={V\bibinitperiod}}}%
-        {{hash=f4574e9a92228534955b8078eca33937}{%
-           family={Vanrumste},
-           familyi={V\bibinitperiod},
-           given={Bart},
-           giveni={B\bibinitperiod}}}%
-      }
-      \strng{namehash}{10c8ec6207afaff1f066bf5a11aa8e6f}
-      \strng{fullhash}{3c8d587b2fe2298c75d6c05685aa2911}
-      \strng{bibnamehash}{67e73218aace8d8869420c39b8b9ae8b}
-      \strng{authorbibnamehash}{67e73218aace8d8869420c39b8b9ae8b}
-      \strng{authornamehash}{10c8ec6207afaff1f066bf5a11aa8e6f}
-      \strng{authorfullhash}{3c8d587b2fe2298c75d6c05685aa2911}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{In this primer, we give a review of the inverse problem for EEG source localization. This is intended for the researchers new in the field to get insight in the state-of-the-art techniques used to find approximate solutions of the brain sources giving rise to a scalp potential recording. Furthermore, a review of the performance results of the different techniques is provided to compare these different inverse solutions. The authors also include the results of a Monte-Carlo analysis which they performed to compare four non parametric algorithms and hence contribute to what is presently recorded in the literature. An extensive list of references to the work of other researchers is also provided. This paper starts off with a mathematical description of the inverse problem and proceeds to discuss the two main categories of methods which were developed to solve the EEG inverse problem, mainly the non parametric and parametric methods. The main difference between the two is to whether a fixed number of dipoles is assumed a priori or not. Various techniques falling within these categories are described including minimum norm estimates and their generalizations, LORETA, sLORETA, VARETA, S-MAP, ST-MAP, Backus-Gilbert, LAURA, Shrinking LORETA FOCUSS (SLF), SSLOFO and ALF for non parametric methods and beamforming techniques, BESA, subspace techniques such as MUSIC and methods derived from it, FINES, simulated annealing and computational intelligence algorithms for parametric methods. From a review of the performance of these techniques as documented in the literature, one could conclude that in most cases the LORETA solution gives satisfactory results. In situations involving clusters of dipoles, higher resolution algorithms such as MUSIC or FINES are however preferred. Imposing reliable biophysical and psychological constraints, as done by LAURA has given superior results. The Monte-Carlo analysis performed, comparing WMN, LORETA, sLORETA and SLF, for different noise levels and different simulated source depths has shown that for single source localization, regularized sLORETA gives the best solution in terms of both localization error and ghost sources. Furthermore the computationally intensive solution given by SLF was not found to give any additional benefits under such simulated conditions. {©} 2008 Grech et al; licensee BioMed Central Ltd.}
-      \field{issn}{17430003}
-      \field{journaltitle}{Journal of NeuroEngineering and Rehabilitation}
-      \field{title}{{Review on solving the inverse problem in EEG source analysis}}
-      \field{volume}{5}
-      \field{year}{2008}
-      \field{pages}{1\bibrangedash 33}
-      \range{pages}{33}
-      \verb{doi}
-      \verb 10.1186/1743-0003-5-25
-      \endverb
-      \verb{file}
-      \verb :C$\backslash$:/Users/kui07/OneDrive - CINVESTAV/Tesis/Papers/1743-0003-5-25.pdf:pdf
-      \endverb
-    \endentry
     \entry{Rush1968}{article}{}
       \name{author}{2}{}{%
         {{hash=b5b3f1c619f7031b0ffc9dd5032e6591}{%
@@ -1167,6 +1094,98 @@
       \verb :C$\backslash$:/Users/kui07/OneDrive/Documentos/Cinvestav/Tesis/Papers/kybic2005.pdf:pdf
       \endverb
       \keyw{Boundary element method,EEG,Integral method,Poisson equation}
+    \endentry
+    \entry{Muravchik1999}{article}{}
+      \name{author}{2}{}{%
+        {{hash=783a0bb705b5535e3a2639c7dc450506}{%
+           family={Muravchik},
+           familyi={M\bibinitperiod},
+           given={Carlos\bibnamedelima H.},
+           giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=626bcd16f0f7e6a0d0eee823f81e4c01}{%
+           family={Nehorai},
+           familyi={N\bibinitperiod},
+           given={Arye},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{9f165cf7c33c5fbfbfd0825be3108a7d}
+      \strng{fullhash}{9f165cf7c33c5fbfbfd0825be3108a7d}
+      \strng{bibnamehash}{9f165cf7c33c5fbfbfd0825be3108a7d}
+      \strng{authorbibnamehash}{9f165cf7c33c5fbfbfd0825be3108a7d}
+      \strng{authornamehash}{9f165cf7c33c5fbfbfd0825be3108a7d}
+      \strng{authorfullhash}{9f165cf7c33c5fbfbfd0825be3108a7d}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We derive Cramér-Rao bounds (CRB's) on the errors of estimating the parameters (location and moment) of a current dipole source using data from electroencephalography (EEG), magnetoencephalography (MEG), or the combined EEG/MEG modality. We use a realistic head model based on knowledge of surfaces separating tissues of different conductivities obtained from magnetic resonance (MR) or computer tomography (CT) imaging systems. The electric potentials and magnetic field components at the respective sensors are functions of the source parameters through integral equations. These potentials and field are formulated for solving them by the boundary element method (BEM) or the finite element method (FEM) with a weighted residuals technique. We present a unified framework for the measurements computed by these methods that enables the derivation of the bounds. The resulting bounds may be used, for instance, to choose the best configuration of the sensors for a given patient and region of expected source location. Numerical results are used to demonstrate an application for showing expected accuracies in estimating the source parameters as a function of its position in the brain based on real EEG/MEG systems and MR or CT images. {©}1999 IEEE.}
+      \field{issn}{1053587X}
+      \field{journaltitle}{IEEE Transactions on Signal Processing}
+      \field{number}{10}
+      \field{title}{{EEG/MEG error bounds for a dipole source with a realistic head model}}
+      \field{volume}{47}
+      \field{year}{1999}
+      \field{pages}{2901}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1109/acssc.1996.599179
+      \endverb
+      \verb{file}
+      \verb :C$\backslash$:/Users/kui07/OneDrive - CINVESTAV/Tesis/Papers/muravchik2001 (1).pdf:pdf
+      \endverb
+    \endentry
+    \entry{Escalona-Vargas2013}{article}{}
+      \name{author}{3}{}{%
+        {{hash=785525fb62711f030c0e1c6809c5eae0}{%
+           family={Escalona-Vargas},
+           familyi={E\bibinithyphendelim V\bibinitperiod},
+           given={Diana\bibnamedelima I.},
+           giveni={D\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=a05fa51ee8670a274ecb70700e07db5f}{%
+           family={Gutiérrez},
+           familyi={G\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=110714be0904e1642baa603f4022c106}{%
+           family={Lopez-Arevalo},
+           familyi={L\bibinithyphendelim A\bibinitperiod},
+           given={Ivan},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{4023d6b3a5a5efb25b2a00daf2aedfc7}
+      \strng{fullhash}{611eec6a01b5ca11a73af6b0ea2cf067}
+      \strng{bibnamehash}{611eec6a01b5ca11a73af6b0ea2cf067}
+      \strng{authorbibnamehash}{611eec6a01b5ca11a73af6b0ea2cf067}
+      \strng{authornamehash}{4023d6b3a5a5efb25b2a00daf2aedfc7}
+      \strng{authorfullhash}{611eec6a01b5ca11a73af6b0ea2cf067}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The problem of electroencephalographic (EEG) source localization involves an optimization process that can be solved through metaheuristics. In this paper, we evaluate the performance in localizing EEG dipole sources using simulated annealing (SA), genetic algorithm (GA), particle swarm optimization (PSO), and differential evolution (DE). The evaluation is performed in terms of the metaheuristics' operational parameters and the signal-to-noise ratio (SNR). Here, the objective function in the optimization problem is the concentrated likelihood function (CLF), while the Cramér-Rao bound is proposed as benchmark. Under these conditions, the metaheuristics' best performances are achieved when the variance of their corresponding dipole source estimates is close to the CRB. Therefore, we exhaustively evaluate the variances of the source estimates obtained through each metaheuristic for the case of realistically simulated EEG data. Our results showed that no significant variations on the performance were introduced by changes in the metaheuristics' operational parameters, specially in one-dipole estimation. For two-dipole estimation, the performance of GA and DE was better than in other metaheuristics, but DE required a fine adjustment of its parameters in order to work. In all cases, the performance decayed as the SNR decreased, while SA and PSO seemed to be very sensitive to the correlation between the sources. Overall, GA was the most attractive technique in terms of performance and computational cost. {©} 2013 Elsevier B.V.}
+      \field{issn}{09252312}
+      \field{journaltitle}{Neurocomputing}
+      \field{title}{{Performance of different metaheuristics in EEG source localization compared to the Cramér-Rao bound}}
+      \field{volume}{120}
+      \field{year}{2013}
+      \field{pages}{597\bibrangedash 609}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1016/j.neucom.2013.04.010
+      \endverb
+      \verb{file}
+      \verb :C$\backslash$:/Users/kui07/OneDrive - CINVESTAV/Tesis/Papers/escalona-vargas2013.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1016/j.neucom.2013.04.010
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1016/j.neucom.2013.04.010
+      \endverb
+      \keyw{Cramér-Rao bound,Dipole source localization,Electroencephalography,Maximum likelihood,Metaheuristics}
     \endentry
   \enddatalist
   \datalist[entry]{none/global/518ED29525738CEBDAC49C49E60EA9D3/global/global}
@@ -1624,80 +1643,6 @@
       \endverb
       \keyw{Beamformers,EEG,LCMV,MEG,Open-source analysis toolboxes,Source modeling}
     \endentry
-    \entry{Grech2008}{article}{}
-      \name{author}{9}{}{%
-        {{hash=b961ac557f52b1abb1b7b2b36d75c4d4}{%
-           family={Grech},
-           familyi={G\bibinitperiod},
-           given={Roberta},
-           giveni={R\bibinitperiod}}}%
-        {{hash=bc823bb3416e1200ae73678e34b611df}{%
-           family={Cassar},
-           familyi={C\bibinitperiod},
-           given={Tracey},
-           giveni={T\bibinitperiod}}}%
-        {{hash=67ed132b9254649e0ff1f6ee4f0b2596}{%
-           family={Muscat},
-           familyi={M\bibinitperiod},
-           given={Joseph},
-           giveni={J\bibinitperiod}}}%
-        {{hash=802bc4193a2160a6637b9d5e5bbdf4eb}{%
-           family={Camilleri},
-           familyi={C\bibinitperiod},
-           given={Kenneth\bibnamedelima P.},
-           giveni={K\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
-        {{hash=b3ae68cc34c93c849e1ff8d255a0d913}{%
-           family={Fabri},
-           familyi={F\bibinitperiod},
-           given={Simon\bibnamedelima G.},
-           giveni={S\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
-        {{hash=fce6a5b2c34b7a5ffdaf910222f06072}{%
-           family={Zervakis},
-           familyi={Z\bibinitperiod},
-           given={Michalis},
-           giveni={M\bibinitperiod}}}%
-        {{hash=fa7389d34093f5c5f411f922cef9b220}{%
-           family={Xanthopoulos},
-           familyi={X\bibinitperiod},
-           given={Petros},
-           giveni={P\bibinitperiod}}}%
-        {{hash=cce3c83216f52508325e6273adcdd536}{%
-           family={Sakkalis},
-           familyi={S\bibinitperiod},
-           given={Vangelis},
-           giveni={V\bibinitperiod}}}%
-        {{hash=f4574e9a92228534955b8078eca33937}{%
-           family={Vanrumste},
-           familyi={V\bibinitperiod},
-           given={Bart},
-           giveni={B\bibinitperiod}}}%
-      }
-      \strng{namehash}{10c8ec6207afaff1f066bf5a11aa8e6f}
-      \strng{fullhash}{3c8d587b2fe2298c75d6c05685aa2911}
-      \strng{bibnamehash}{67e73218aace8d8869420c39b8b9ae8b}
-      \strng{authorbibnamehash}{67e73218aace8d8869420c39b8b9ae8b}
-      \strng{authornamehash}{10c8ec6207afaff1f066bf5a11aa8e6f}
-      \strng{authorfullhash}{3c8d587b2fe2298c75d6c05685aa2911}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelprefix}{@}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{In this primer, we give a review of the inverse problem for EEG source localization. This is intended for the researchers new in the field to get insight in the state-of-the-art techniques used to find approximate solutions of the brain sources giving rise to a scalp potential recording. Furthermore, a review of the performance results of the different techniques is provided to compare these different inverse solutions. The authors also include the results of a Monte-Carlo analysis which they performed to compare four non parametric algorithms and hence contribute to what is presently recorded in the literature. An extensive list of references to the work of other researchers is also provided. This paper starts off with a mathematical description of the inverse problem and proceeds to discuss the two main categories of methods which were developed to solve the EEG inverse problem, mainly the non parametric and parametric methods. The main difference between the two is to whether a fixed number of dipoles is assumed a priori or not. Various techniques falling within these categories are described including minimum norm estimates and their generalizations, LORETA, sLORETA, VARETA, S-MAP, ST-MAP, Backus-Gilbert, LAURA, Shrinking LORETA FOCUSS (SLF), SSLOFO and ALF for non parametric methods and beamforming techniques, BESA, subspace techniques such as MUSIC and methods derived from it, FINES, simulated annealing and computational intelligence algorithms for parametric methods. From a review of the performance of these techniques as documented in the literature, one could conclude that in most cases the LORETA solution gives satisfactory results. In situations involving clusters of dipoles, higher resolution algorithms such as MUSIC or FINES are however preferred. Imposing reliable biophysical and psychological constraints, as done by LAURA has given superior results. The Monte-Carlo analysis performed, comparing WMN, LORETA, sLORETA and SLF, for different noise levels and different simulated source depths has shown that for single source localization, regularized sLORETA gives the best solution in terms of both localization error and ghost sources. Furthermore the computationally intensive solution given by SLF was not found to give any additional benefits under such simulated conditions. {©} 2008 Grech et al; licensee BioMed Central Ltd.}
-      \field{issn}{17430003}
-      \field{journaltitle}{Journal of NeuroEngineering and Rehabilitation}
-      \field{title}{{Review on solving the inverse problem in EEG source analysis}}
-      \field{volume}{5}
-      \field{year}{2008}
-      \field{pages}{1\bibrangedash 33}
-      \range{pages}{33}
-      \verb{doi}
-      \verb 10.1186/1743-0003-5-25
-      \endverb
-      \verb{file}
-      \verb :C$\backslash$:/Users/kui07/OneDrive - CINVESTAV/Tesis/Papers/1743-0003-5-25.pdf:pdf
-      \endverb
-    \endentry
     \entry{Rush1968}{article}{}
       \name{author}{2}{}{%
         {{hash=b5b3f1c619f7031b0ffc9dd5032e6591}{%
@@ -2339,6 +2284,100 @@
       \verb :C$\backslash$:/Users/kui07/OneDrive/Documentos/Cinvestav/Tesis/Papers/kybic2005.pdf:pdf
       \endverb
       \keyw{Boundary element method,EEG,Integral method,Poisson equation}
+    \endentry
+    \entry{Muravchik1999}{article}{}
+      \name{author}{2}{}{%
+        {{hash=783a0bb705b5535e3a2639c7dc450506}{%
+           family={Muravchik},
+           familyi={M\bibinitperiod},
+           given={Carlos\bibnamedelima H.},
+           giveni={C\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+        {{hash=626bcd16f0f7e6a0d0eee823f81e4c01}{%
+           family={Nehorai},
+           familyi={N\bibinitperiod},
+           given={Arye},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{9f165cf7c33c5fbfbfd0825be3108a7d}
+      \strng{fullhash}{9f165cf7c33c5fbfbfd0825be3108a7d}
+      \strng{bibnamehash}{9f165cf7c33c5fbfbfd0825be3108a7d}
+      \strng{authorbibnamehash}{9f165cf7c33c5fbfbfd0825be3108a7d}
+      \strng{authornamehash}{9f165cf7c33c5fbfbfd0825be3108a7d}
+      \strng{authorfullhash}{9f165cf7c33c5fbfbfd0825be3108a7d}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{We derive Cramér-Rao bounds (CRB's) on the errors of estimating the parameters (location and moment) of a current dipole source using data from electroencephalography (EEG), magnetoencephalography (MEG), or the combined EEG/MEG modality. We use a realistic head model based on knowledge of surfaces separating tissues of different conductivities obtained from magnetic resonance (MR) or computer tomography (CT) imaging systems. The electric potentials and magnetic field components at the respective sensors are functions of the source parameters through integral equations. These potentials and field are formulated for solving them by the boundary element method (BEM) or the finite element method (FEM) with a weighted residuals technique. We present a unified framework for the measurements computed by these methods that enables the derivation of the bounds. The resulting bounds may be used, for instance, to choose the best configuration of the sensors for a given patient and region of expected source location. Numerical results are used to demonstrate an application for showing expected accuracies in estimating the source parameters as a function of its position in the brain based on real EEG/MEG systems and MR or CT images. {©}1999 IEEE.}
+      \field{issn}{1053587X}
+      \field{journaltitle}{IEEE Transactions on Signal Processing}
+      \field{number}{10}
+      \field{title}{{EEG/MEG error bounds for a dipole source with a realistic head model}}
+      \field{volume}{47}
+      \field{year}{1999}
+      \field{pages}{2901}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.1109/acssc.1996.599179
+      \endverb
+      \verb{file}
+      \verb :C$\backslash$:/Users/kui07/OneDrive - CINVESTAV/Tesis/Papers/muravchik2001 (1).pdf:pdf
+      \endverb
+    \endentry
+    \entry{Escalona-Vargas2013}{article}{}
+      \name{author}{3}{}{%
+        {{hash=785525fb62711f030c0e1c6809c5eae0}{%
+           family={Escalona-Vargas},
+           familyi={E\bibinithyphendelim V\bibinitperiod},
+           given={Diana\bibnamedelima I.},
+           giveni={D\bibinitperiod\bibinitdelim I\bibinitperiod}}}%
+        {{hash=a05fa51ee8670a274ecb70700e07db5f}{%
+           family={Gutiérrez},
+           familyi={G\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+        {{hash=110714be0904e1642baa603f4022c106}{%
+           family={Lopez-Arevalo},
+           familyi={L\bibinithyphendelim A\bibinitperiod},
+           given={Ivan},
+           giveni={I\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Elsevier}%
+      }
+      \strng{namehash}{4023d6b3a5a5efb25b2a00daf2aedfc7}
+      \strng{fullhash}{611eec6a01b5ca11a73af6b0ea2cf067}
+      \strng{bibnamehash}{611eec6a01b5ca11a73af6b0ea2cf067}
+      \strng{authorbibnamehash}{611eec6a01b5ca11a73af6b0ea2cf067}
+      \strng{authornamehash}{4023d6b3a5a5efb25b2a00daf2aedfc7}
+      \strng{authorfullhash}{611eec6a01b5ca11a73af6b0ea2cf067}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The problem of electroencephalographic (EEG) source localization involves an optimization process that can be solved through metaheuristics. In this paper, we evaluate the performance in localizing EEG dipole sources using simulated annealing (SA), genetic algorithm (GA), particle swarm optimization (PSO), and differential evolution (DE). The evaluation is performed in terms of the metaheuristics' operational parameters and the signal-to-noise ratio (SNR). Here, the objective function in the optimization problem is the concentrated likelihood function (CLF), while the Cramér-Rao bound is proposed as benchmark. Under these conditions, the metaheuristics' best performances are achieved when the variance of their corresponding dipole source estimates is close to the CRB. Therefore, we exhaustively evaluate the variances of the source estimates obtained through each metaheuristic for the case of realistically simulated EEG data. Our results showed that no significant variations on the performance were introduced by changes in the metaheuristics' operational parameters, specially in one-dipole estimation. For two-dipole estimation, the performance of GA and DE was better than in other metaheuristics, but DE required a fine adjustment of its parameters in order to work. In all cases, the performance decayed as the SNR decreased, while SA and PSO seemed to be very sensitive to the correlation between the sources. Overall, GA was the most attractive technique in terms of performance and computational cost. {©} 2013 Elsevier B.V.}
+      \field{issn}{09252312}
+      \field{journaltitle}{Neurocomputing}
+      \field{title}{{Performance of different metaheuristics in EEG source localization compared to the Cramér-Rao bound}}
+      \field{volume}{120}
+      \field{year}{2013}
+      \field{pages}{597\bibrangedash 609}
+      \range{pages}{13}
+      \verb{doi}
+      \verb 10.1016/j.neucom.2013.04.010
+      \endverb
+      \verb{file}
+      \verb :C$\backslash$:/Users/kui07/OneDrive - CINVESTAV/Tesis/Papers/escalona-vargas2013.pdf:pdf
+      \endverb
+      \verb{urlraw}
+      \verb http://dx.doi.org/10.1016/j.neucom.2013.04.010
+      \endverb
+      \verb{url}
+      \verb http://dx.doi.org/10.1016/j.neucom.2013.04.010
+      \endverb
+      \keyw{Cramér-Rao bound,Dipole source localization,Electroencephalography,Maximum likelihood,Metaheuristics}
     \endentry
   \enddatalist
 \endrefsection

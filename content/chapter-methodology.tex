@@ -14,7 +14,7 @@ En esta sección revisamos el método propuesto para probar nuestra hipótesis j
 \section{Método Propuesto}
 \label{sec:methodology:method}
 
-Con el objetivo de abordar el problema inverso y examinar el error asociado con el uso de distintos valores reportados de la razón de la conductividad cerebro-cráneo (BSCR, del inglés \emph{Brain-scalp-conductivity-ratio}) \cite{McCann2019} en diferentes áreas de actividad neuronal relacionadas con estímulos sensoriales; diseñamos un experimento que nos permitiría construir un estimador al implementar una solución del problema inverso con datos completamente simulados, y por ende con total control sobre las variables definidas como: la conductividad, la posición, orientación y magnitud de las fuentes de actividad neuronal, y el ruido añadido a las mediciones. El proceso del experimento es una implementación completa del problema directo e inverso del EEG con un posterior análisis estadístico, el problema directo nos permite obtener un modelo detallado de la actividad neuronal en la cabeza y simular mediciones de EEG con diferentes valores del BSCR, a su vez, el problema inverso resolverá las posiciones de las fuentes simuladas utilizando las mediciones generadas por el modelo del problema directo, y el análisis estadístico nos permitirá obtener la estimación de los valores de conductividad con base en el error incurrido en la localización de las fuentes de actividad neuronal respecto a su posición real agrupando por los distintos valores de conductividad utilizados. Basándonos en trabajo previo, decidimos implementar el filtrado espacial, en particular el \emph{Beamformer} de Van Veen \cite{VanVeen1988} como método de la solución del problema inverso, el cual es catalogado como un método paramétrico, también conocido como ``método de dipolo de corriente equivalente'' \cite{Grech2008}. Como su nombre lo indica, estos métodos consisten en buscar en una serie predefinida de dipolos de corriente el que mejor se ajuste en su posición y orientación a las fuentes que generaron las mediciones de EEG. 
+Con el objetivo de abordar el problema inverso y examinar el error asociado con el uso de distintos valores reportados de la razón de la conductividad cerebro-cráneo (BSCR, del inglés \emph{Brain-scalp-conductivity-ratio}) \cite{McCann2019} en diferentes áreas de actividad neuronal relacionadas con estímulos sensoriales; diseñamos un experimento que nos permitiría construir un estimador al implementar una solución del problema inverso con datos completamente simulados, y por ende con total control sobre las variables definidas como: la conductividad, la posición, orientación y magnitud de las fuentes de actividad neuronal, y el ruido añadido a las mediciones. El proceso del experimento es una implementación completa del problema directo e inverso del EEG con un posterior análisis estadístico, el problema directo nos permite obtener un modelo detallado de la actividad neuronal en la cabeza y simular mediciones de EEG con diferentes valores del BSCR, a su vez, el problema inverso resolverá las posiciones de las fuentes simuladas utilizando las mediciones generadas por el modelo del problema directo, y el análisis estadístico nos permitirá obtener la estimación de los valores de conductividad con base en el error incurrido en la localización de las fuentes de actividad neuronal respecto a su posición real agrupando por los distintos valores de conductividad utilizados. Basándonos en trabajo previo, decidimos implementar el filtrado espacial, en particular el \emph{Beamformer} de Van Veen \cite{VanVeen1988} como método de la solución del problema inverso, el cual es catalogado como un método paramétrico, también conocido como ``método de dipolo de corriente equivalente'' \cite{Hallez2007}. Como su nombre lo indica, estos métodos consisten en buscar en una serie predefinida de dipolos de corriente el que mejor se ajuste en su posición y orientación a las fuentes que generaron las mediciones de EEG. 
 
 Con el fin de realizar esta prueba de ajuste de los dipolos de corriente equivalente (solución del problema inverso) es necesario obtener la solución del problema directo. Existen varios métodos para obtener dicha solución \cite{Mosher1999}, de los cuales elegimos el método de elementos de frontera (BEM) para modelos geométricamente realistas \cite{Ermer2001}. La razón de elegir este método radica en el precedente del uso de modelos con geometrías más sencillas en estudios similares \cite{Gutierrez2004}, esto debido a que el BEM resultaba ser no viable por su elevado gasto computacional al calcular de las matrices de ganancia. En la actualidad se cuenta con mayor facilidad de acceso a equipos de cómputo con el suficiente desempeño para obtener resultados en un tiempo razonable, esto aunado al desarrollo de métodos y software mucho más eficientes \cite{open,Clerc2010} nos presenta la posibilidad de implementar el BEM para geometrías realistas como una evolución natural de los métodos utilizados anteriormente.
 
@@ -182,23 +182,66 @@ La opción elegida de ejecución de este método de filtrado espacial sobre una 
 
 Tomando en cuenta que tenemos 90,000 combinaciones de mediciones de EEG y matrices de ganancia, debería de obtenerse un kernel de proyección para cada una de estas combinaciones; pero, dado que el filtro espacial tiene como datos de entrada: las mediciones de EEG, la matriz de ganancia, y la matriz de covarianza, esta última puede ser calculada a partir de las 100 mediciones de EEG de cada BSCR, obteniendo un kernel de mayor precisión que puede ser calculado para cada una de esas 100 mediciones de EEG en cualquier momento, reduciendo así el número de archivos necesarios y el espacio ocupado en el disco del equipo de cómputo. Esta fue una de las razones de realizar 100 simulaciones de EEG para cada combinación de dipolos y BSCR durante el proceso del problema directo, para mejorar la robustez del estimador y evitar sesgos durante el análisis del problema inverso. En total se obtuvieron 900 kernels de proyección, 100 por cada BSCR, para cada uno de los 3 dipolos y 3 niveles de SNR.
 
-\section{Análisis Estadístico del Error de Localización de las Fuentes de Actividad Neuronal}
+\section{Desarrollo del Estimador del Error de Localización de las Fuentes de Actividad Neuronal}
+\label{sec:methodology:estimator}
+
+Para la cuantización del error de localización se procedió obtener la posición de magnitud máxima de los mapas de PNAI generados por el kernel de proyección para cada uno de los 90,000 conjuntos de datos. Estos fueron separados y analizados por cada BSCR, dipolo, y nivel de SNR. La posición de magnitud máxima fue comparada con la posición real de los dipolos de corriente, y se estandarizó con la distancia media y la desviación estándar entre los vértices de los triángulos de la malla de la corteza cerebral. \TODO{Esta parte la escribí pensando en un overview del proceso, pero habiendo terminado la sección me parece redundante, me gustaría su opinión si es útil o como debería de ser redactada}
+
+Entrando en detalle, la posición de magnitud máxima fue obtenida al implementar el kernel de proyección correspondiente a las mediciones de EEG en el instante de 397.2 ms, el cual es el mismo punto en el que se encuentra la magnitud máxima en la componente $Y$ \TODO{confirmar componente con la Dra} de la función del dipolo con respecto al tiempo, la cual corresponde al eje de la propagación del flujo eléctrico en un dipolo de corriente \TODO{abordar este punto en la introducción}. Con el fin de mejorar la precisión de la localización de la magnitud máxima, se limitó el área sobre la cual se buscó el punto máximo en el mapa de PNAI, siendo tres diferentes áreas de búsqueda, una para cada uno de los distintos dipolos: siendo estas de 29.17 cm$^2$ para el dipolo 1 correspondiendo al área de la zona somatosensorial, 51.75 cm$^2$ para el dipolo 2 correspondiente al área visual primaria, y 76.92 cm$^2$ para el dipolo 3 correspondiente al área auditiva primaria \TODO{cotejar con áreas de Brodmann, incluir imágenes y referenciarlas}. Cabe mencionar que las áreas de búsqueda se apegan a los pliegues y concavidades de la malla de la corteza cerebral, elevando el tamaño de las áreas de búsqueda y permitiendo la localización de la magnitud máxima dentro de estos pliegues.
+
+Las posiciones de magnitud máxima de cada medición de EEG, correspondientes a sus respectivas áreas de búsqueda, fueron obtenidas en coordenadas SCS y agrupadas en sus respectivos dipolos, valor de BSCR, y niveles de SNR. Obteniendo como resultado, 900 conjuntos de 100 posiciones de magnitud máxima. Al explorar la distribución de las posiciones de magnitud máxima se observó que estas no se distribuían normalmente; como era de esperarse, la distribución de los resultados en general tenía una tendencia natural a 0, lo que generaba una distribución sesgada a la derecha, además por lo que se decidió utilizar la media del percentil P$_{95}$ como el estimador de la posición de magnitud máxima, y la distancia euclidiana entre la posición real y la posición de magnitud máxima como el estimador del error de localización \TODO{Hablar con la Dra acerca del uso de la media vs la mediana}. Una vez obtenidos los estimadores de la posición de magnitud máxima y el error de localización, se procedió a estandarizar el error de localización con respecto a la resolución de la malla de la corteza cerebral. Utilizando la distancia media y la desviación estándar entre los vértices de los triángulos de la malla de la corteza cerebral.
+
+\section{Análisis Estadístico del Estimador}
 \label{sec:methodology:statistical}
 
-Para la cuantización del error de localización se procedió obtener la posición de magnitud máxima de los mapas de PNAI generados por el kernel de proyección para cada uno de los 90,000 conjuntos de datos. Estos fueron separados y analizados por cada BSCR, dipolo, y nivel de SNR. La posición de magnitud máxima fue comparada con la posición real de los dipolos de corriente, y se estandarizó con la distancia media y la desviación estándar entre las caras de los triángulos de la malla de la corteza cerebral. 
+\begin{figure}[t]
+	\centering
+	\begin{tikzpicture}[node distance = 3.5cm, auto]
+		% Define block styles
+		\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+			text width=7em, text centered, rounded corners, minimum height=4em]
+		\tikzstyle{line} = [draw, -{Latex}] % Use -{Latex} instead of -latex
 
-Entrando en detalle, la posición de magnitud máxima fue obtenida al implementar el kernel de proyección correspondiente a las mediciones de EEG en el instante de 397 ms \TODO{CONFIRM WITH LAB DATA}, el cual es el mismo punto en el que se encuentra la magnitud máxima en la componente $Y$ \TODO{confirmar componente} de la función del dipolo con respecto al tiempo. La posición de magnitud máxima para cada medición de EEG fue obtenida en coordenadas SCS y agrupadas en sus respectivos dipolos, BSCR, y niveles de SNR teniendo como resultado 900 conjuntos de 100 posiciones de magnitud máxima; para poder ser comparados con las posiciones reales de los dipolos de corriente, se calculó el percentil
+		% Place nodes
+		\node [block] (1) {Ejecución del kernel de proyección para cada medición de EEG en el instante de 397.2 ms};
+		\node [block, right of=1] (2) {Obtención de la posición de magnitud máxima local};
+		\node [block, right of=1] (2) {Estimador de la posición de magnitud máxima y el error de localización};
+		\node [block, right of=2] (3) {Estandarización del error de localización con respecto a la resolución de la malla de la corteza cerebral};
+		\node [block, right of=3] (4) {Análisis estadístico del estimador con la frontera de Cramér-Rao};
+		% Draw edges
+		\path [line] (1) -- (2);
+		\path [line] (2) -- (3);
+		\path [line] (3) -- (4);
+	\end{tikzpicture}
+	\caption{Proceso del análisis estadístico del estimador}
+	\label{fig:methodology:statistical_pipeline}
+\end{figure}
 
+Para determinar el desempeño del estimador se utilizó la frontera de Cramér-Rao (CRB, del inglés \emph{Cramér-Rao bound}), la cual proporciona un límite inferior en la varianza de los errores en la estimación de parámetros no sesgados. La CRB tiene la característica de ser universal, es decir, independiente del algoritmo utilizado para la estimación entre los no sesgados, y asintóticamente ajustado, lo que significa que para ciertas distribuciones, existen algoritmos que alcanzan el límite a medida que el número de muestras aumenta \cite{Muravchik1999,Escalona-Vargas2013}. Siendo esta última característica la de particular interés para nuestro proyecto, y una razón más para realizar las 100 simulaciones de EEG para cada combinación de dipolos, valor de BSCR, y nivel de SNR durante el proceso del problema directo.
 
+La CRB se define como la inversa de la matriz de información de Fisher \cref{eq:crb}, la cual es el valor esperado de la segunda derivada del logaritmo de la función de verosimilitud con respecto al parámetro de interés \cref{eq:fisher}. 
 
+\begin{equation}
+	\label{eq:crb}
+	\text{CRB}(\theta) = [J^{\text{EEG}}(\theta)]^{-1}
+\end{equation}
 
-y fue comparada con la posición real de los dipolos de corriente, siendo el error la distancia euclidiana entre la posición real y la posición de magnitud máxima de la simulación. La distancia media y la desviación estándar entre las caras de los triángulos de la malla de la corteza cerebral fueron obtenidas con el fin de estandarizar el error de localización con respecto a la resolución de la malla. 
+\begin{equation}
+    \label{eq:fisher}
+    J_{ij}^{\text{EEG}}(\theta) = q^{\text{T}}\left(\pdv{k_{\infty}}{\theta_{i}}\right)^{\text{T}}\frac{\text{B}^{\text{T}}\text{B}}{\sigma^2_{\text{E}}}\left(\pdv{k_{\infty}}{\theta_{i}}\right)q
+\end{equation}
 
-El análisis estadístico del error de localización de las fuentes de actividad neuronal se realizó con el fin de obtener un estimador no sesgado de la razón de conductividad cerebro-cráneo. Para ello, se utilizó la frontera de Cramér-Rao (CRB, del inglés \emph{Cramér-Rao bound}) que es una cota inferior para la varianza de un estimador no sesgado. La CRB se calcula a partir de la matriz de ganancia y la matriz de covarianza de las mediciones de EEG, y nos permite obtener la varianza de un estimador no sesgado de la posición de las fuentes de actividad neuronal.
+\TODO{Dejar la ecuación de la matriz de información de Fisher simplificada con B como la matriz de ganancia o expandir el término?}\\
+\TODO{Preguntar por formato preferido de ecuaciones, ie, coma después de la ecuación, punto y coma, punto, etc.}
 
+Siendo la CRB el límite teórico inferior de la varianza del error del estimador no sesgado, esta se representa como una desigualdad con el valor esperado del estimador \cref{eq:crb2}.
 
-Posicion de magnitud máxima con posicion realista
+\begin{equation}
+	\label{eq:crb2}
+	\text{E}\left\{(\hat{\theta} - \theta)(\hat{\theta} - \theta)^{\text{T}}\right\} \geq \text{CRB}(\theta)
+\end{equation}
 
-calculo de distancia media y desviación estandar entre caras de los triangulos de la malla de la corteza cerebral
+\TODO{Definir todas las variables de las ecuaciones}
 
+El cálculo de la CRB se realizó con el uso de la matriz de ganancia de cada BSCR (B), el valor de la magnitud del dipolo $q$ en el instante de 397.2 ms, la derivada parcial de las posiciones de los dipolos con respecto a la posición de los sensores de EEG, y la varianza del ruido de las mediciones de EEG. Obteniendo una CRB para cada combinación de dipolos, valor de BSCR, y nivel de SNR; resultando en 90 valores de CRB.  
 
