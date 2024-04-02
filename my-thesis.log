@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.28)  21 MAR 2024 03:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.28)  1 APR 2024 22:16
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1464,7 +1464,7 @@ Overfull \hbox (10.94998pt too wide) in paragraph at lines 3--3
  []
 
 [11]
-<./gfx//pipeline.png, id=233, 1399.47844pt x 729.47531pt>
+<./gfx//pipeline.png, id=232, 1399.47844pt x 729.47531pt>
 File: ./gfx//pipeline.png Graphic file (type png)
 <use ./gfx//pipeline.png>
 Package pdftex.def Info: ./gfx//pipeline.png  used on input line 23.
@@ -1472,19 +1472,19 @@ Package pdftex.def Info: ./gfx//pipeline.png  used on input line 23.
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <10> not available
 (Font)              Font shape `T1/lmss/bx/n' tried instead on input line 24.
  [12 <./gfx//pipeline.png>]
-<./gfx//mri_coronal.png, id=243, 454.69875pt x 363.3575pt>
+<./gfx//mri_coronal.png, id=242, 454.69875pt x 363.3575pt>
 File: ./gfx//mri_coronal.png Graphic file (type png)
 <use ./gfx//mri_coronal.png>
 Package pdftex.def Info: ./gfx//mri_coronal.png  used on input line 39.
 (pdftex.def)             Requested size: 193.44536pt x 154.58844pt.
 LaTeX Font Info:    Font shape `T1/lmss/b/n' in size <9> not available
 (Font)              Font shape `T1/lmss/bx/n' tried instead on input line 40.
-<./gfx//mri_sagital.png, id=244, 545.03625pt x 363.3575pt>
+<./gfx//mri_sagital.png, id=243, 545.03625pt x 363.3575pt>
 File: ./gfx//mri_sagital.png Graphic file (type png)
 <use ./gfx//mri_sagital.png>
 Package pdftex.def Info: ./gfx//mri_sagital.png  used on input line 46.
 (pdftex.def)             Requested size: 193.44536pt x 128.96231pt.
-<./gfx//mri_axial.png, id=245, 454.69875pt x 435.6275pt>
+<./gfx//mri_axial.png, id=244, 454.69875pt x 435.6275pt>
 File: ./gfx//mri_axial.png Graphic file (type png)
 <use ./gfx//mri_axial.png>
 Package pdftex.def Info: ./gfx//mri_axial.png  used on input line 53.
@@ -1493,33 +1493,33 @@ Package pdftex.def Info: ./gfx//mri_axial.png  used on input line 53.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [14 <./gfx//mri_coronal.png (PNG copy)> <./gfx//mri_sagital.png (PNG copy)> <./gfx//mri_axial.png (PNG copy)>]
-<./gfx//cortex.jpg, id=270, 689.57625pt x 543.53062pt>
+<./gfx//cortex.jpg, id=269, 689.57625pt x 543.53062pt>
 File: ./gfx//cortex.jpg Graphic file (type jpg)
 <use ./gfx//cortex.jpg>
 Package pdftex.def Info: ./gfx//cortex.jpg  used on input line 68.
 (pdftex.def)             Requested size: 177.65071pt x 140.02081pt.
-<./gfx//inner.jpg, id=271, 906.38625pt x 659.46375pt>
+<./gfx//inner.jpg, id=270, 906.38625pt x 659.46375pt>
 File: ./gfx//inner.jpg Graphic file (type jpg)
 <use ./gfx//inner.jpg>
 Package pdftex.def Info: ./gfx//inner.jpg  used on input line 74.
 (pdftex.def)             Requested size: 177.65071pt x 129.25401pt.
-<./gfx//outer.jpg, id=272, 829.59938pt x 649.67719pt>
+<./gfx//outer.jpg, id=271, 829.59938pt x 649.67719pt>
 File: ./gfx//outer.jpg Graphic file (type jpg)
 <use ./gfx//outer.jpg>
 Package pdftex.def Info: ./gfx//outer.jpg  used on input line 80.
 (pdftex.def)             Requested size: 177.65071pt x 139.11281pt.
-<./gfx//head.jpg, id=273, 927.465pt x 699.36281pt>
+<./gfx//head.jpg, id=272, 927.465pt x 699.36281pt>
 File: ./gfx//head.jpg Graphic file (type jpg)
 <use ./gfx//head.jpg>
 Package pdftex.def Info: ./gfx//head.jpg  used on input line 85.
 (pdftex.def)             Requested size: 177.65071pt x 133.95811pt.
-<./gfx//modelo.jpg, id=274, 1071.25218pt x 746.03719pt>
+<./gfx//modelo.jpg, id=273, 1071.25218pt x 746.03719pt>
 File: ./gfx//modelo.jpg Graphic file (type jpg)
 <use ./gfx//modelo.jpg>
 Package pdftex.def Info: ./gfx//modelo.jpg  used on input line 96.
 (pdftex.def)             Requested size: 394.78204pt x 274.9366pt.
  [15 <./gfx//cortex.jpg> <./gfx//inner.jpg> <./gfx//outer.jpg> <./gfx//head.jpg>] [16 <./gfx//modelo.jpg>]
-<./gfx//dipole-function.png, id=293, 502.87875pt x 280.04625pt>
+<./gfx//dipole-function.png, id=292, 502.87875pt x 280.04625pt>
 File: ./gfx//dipole-function.png Graphic file (type png)
 <use ./gfx//dipole-function.png>
 Package pdftex.def Info: ./gfx//dipole-function.png  used on input line 117.
@@ -1572,18 +1572,18 @@ Package logreq Info: Writing requests to 'my-thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 46806 strings out of 476025
- 975493 string characters out of 5794015
- 1929075 words of memory out of 5000000
- 66042 multiletter control sequences out of 15000+600000
- 671379 words of font info for 340 fonts, out of 8000000 for 9000
+ 46791 strings out of 476025
+ 975316 string characters out of 5794015
+ 1929037 words of memory out of 5000000
+ 66038 multiletter control sequences out of 15000+600000
+ 666825 words of font info for 332 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  130i,21n,148p,10660b,2564s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/tex-gyre/qhvb.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/tex-gyre/qhvr.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/tex-gyre/qhvri.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/bookman/ubkli8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on my-thesis.pdf (40 pages, 3406381 bytes).
+<c:/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchr8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/bitstrea/charter/bchri8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmex10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmr8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmss10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmssbx10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy10.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy6.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/lm/lmsy8.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/tex-gyre/qhvb.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/tex-gyre/qhvr.pfb><c:/texlive/2023/texmf-dist/fonts/type1/public/tex-gyre/qhvri.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/bookman/ubkli8a.pfb><c:/texlive/2023/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
+Output written on my-thesis.pdf (40 pages, 3386838 bytes).
 PDF statistics:
- 638 PDF objects out of 1000 (max. 8388607)
- 536 compressed objects within 6 object streams
+ 633 PDF objects out of 1000 (max. 8388607)
+ 533 compressed objects within 6 object streams
  113 named destinations out of 1000 (max. 500000)
- 80684 words of extra memory for PDF output out of 89155 (max. 10000000)
+ 76588 words of extra memory for PDF output out of 89155 (max. 10000000)
 

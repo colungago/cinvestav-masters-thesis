@@ -27,20 +27,20 @@
 \section{Problema Directo del EEG}
 \label{sec:methodology:direct}
 
-Las señales electroenecefalográficas se ajustan al modelo electromagnético de las ecuaciones de Maxwell, aunque en su versión cuasi-estática
-(debido a que son señales de muy baja frecuencia). Entonces, la generación de la señal de EEG puede ser replicada matemáticamente mediante la
-solución del problema directo; el cual consiste en calcular el potencial eléctrico presente en el cuero cabelludo mediante el modelado de la transducción de la corriente eléctrica generada por una fuente posicionada en la corteza cerebral, en este caso siendo modelada como un dipolo eléctrico que representa la actividad neuronal en eventos de respuesta evocada (ER) \cite{Mosher1999, Hallez2007}. 
+Las señales electroencefalográficas se ajustan al modelo electromagnético de las ecuaciones de Maxwell en su versión cuasi-estática (debido a que son señales de muy baja frecuencia). Por lo tanto, las señales de EEG pueden ser simuladas mediante la solución del problema directo; el cual consiste en calcular el potencial eléctrico presente en el cuero cabelludo mediante el modelado de la transducción de la corriente eléctrica generada por una fuente posicionada en la corteza cerebral, en este caso siendo modelada como un dipolo eléctrico que representa la actividad neuronal en eventos de respuesta evocada (ER) \cite{Mosher1999, Hallez2007}. 
 
-Dadas las condiciones cuasi-estáticas del EEG \cite{Plonsey1967} el cálculo del potencial generado por el dipolo de corriente con momento dipolar $ \mathbf{d} = \partial\emph{e}_{\mathbf{d}}$ con posición $\mathbf{r}_{q}$ en un medio conductor infinito con conductividad $\sigma$ se describe por:
+Dadas las condiciones cuasi-estáticas del EEG \cite{Plonsey1967} el cálculo del potencial generado por el dipolo de corriente $\mathbf{q}$ con momento dipolar  $\mathbf{\tilde{q}} = [\tilde{q}_x,\,\tilde{q}_y,\,\tilde{q}_z]^T$ y posición $\mathbf{r}_{q} = [r_{qx},\,r_{qy},\,r_{qz}]^T$ en un medio conductor infinito con conductividad $\sigma$ se describe por:
 
 \begin{equation}
 	\label{fdip}
-	V(\mathbf{r},\mathbf{r}_{dip},\mathbf{d})=\frac{\mathbf{d}\cdot(\mathbf{r}-\mathbf{r}_{q})}{4\pi \sigma {||\mathbf{r}-\mathbf{r}_{q}||}^{3}}\text{,}
+	V(\mathbf{r},\mathbf{r}_{dip},\mathbf{q})=\frac{\mathbf{q}\cdot(\mathbf{r}-\mathbf{r}_{q})}{4\pi \sigma {||\mathbf{r}-\mathbf{r}_{q}||}^{3}}\text{,}
 \end{equation}
 
 con $\mathbf{r}$ siendo la posición donde el potencial es calculado \cite{Hallez2007}.
 
-El método de elementos de frontera (BEM por sus siglas en inglés \emph{Boundary-element-method}) puede ser utilizado para la solución del problema directo sobre un modelo geométricamente realista \cite{Ermer2001}. Este método es capaz de obtener el campo eléctrico sobre un volumen problema calculando el potencial inducido por una fuente de corriente en las interfaces y frontera del volumen \cite{Hallez2007}. Nuestro modelo geométricamente realista es el volumen problema y las mallas que lo componen son las interfaces que tienen diferentes valores de conductividad dependiendo del tejido representado, las pequeñas áreas triangulares de las mallas son los elementos de frontera en los que se calculará el potencial inducido por el dipolo eléctrico.
+El método de elementos de frontera (BEM, del inglés \emph{Boundary Element Method}) es un método numérico empleado para calcular el potencial eléctrico en la superficie de un volumen conductor. Este potencial es originado por fuentes de corriente dentro del volumen, el cual se divide en interfaces representadas mediante mallas teseladas. Este método obtiene la proyección del campo eléctrico sobre la superficie del volumen conductor al resolver el potencial inducido por las fuentes de corriente entre las interfaces de las mallas que dividen el volumen \cite{Hallez2007}. El BEM puede emplearse para resolver el problema directo en un modelo geométricamente realista que representa la cabeza humana como un volumen conductor \cite{Ermer2001}. 
+
+En nuestro caso específico, este modelo geométricamente realista sirve como el volumen conductor, mientras que las mallas representan las interfaces con distintos valores de conductividad según el tejido. Dentro de estas mallas, las pequeñas áreas triangulares funcionan como los elementos de frontera donde se calculará el potencial inducido por el dipolo eléctrico que se encuentra en la parte más interna del modelo sobre la malla que representa la corteza cerebral, efectivamente modelando la actividad neuronal correspondiente a un ER.
 
 El modelo matemático que describe el potencial $V(\mathbf{r})$ de cualquier punto $\mathbf{r}$ en un volumen conductor dividido por elementos de frontera es:
 

@@ -213,8 +213,8 @@
       \strng{authorbibnamehash}{d3a7995ecf6506e5f46a9faf350f72d6}
       \strng{authornamehash}{3863ce6108d163e1f94355b9d38bb8b8}
       \strng{authorfullhash}{d3a7995ecf6506e5f46a9faf350f72d6}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{With the increasing availability of surface extraction techniques for magnetic resonance and x-ray computed tomography images, realistic head models can be readily generated as forward models in the analysis of electroencephalography (EEG) and magnetoencephalography (MEG) data. Inverse analysis of this data, however, requires that the forward model be computationally efficient. We propose two methods for approximating the EEG forward model using realistic head shapes. The 'sensor-fitted sphere' approach fits a multilayer sphere individually to each sensor, and the 'three-dimensional interpolation' scheme interpolates using a grid on which a numerical boundary element method (BEM) solution has been precomputed. We have characterized the performance of each method in terms of magnitude and subspace error metrics, as well as computational and memory requirements. We have also made direct performance comparisons with traditional spherical models. The approximation provided by the interpolative scheme had an accuracy nearly identical to full BEM, even within 3 mm of the inner skull surface. Forward model computation during inverse procedures was approximately 30 times faster than for a traditional three-shell spherical model. Cast in this framework, high-fidelity numerical solutions currently viewed as computationally prohibitive for solving the inverse problem (e.g. linear Galerkin BEM) can be rapidly recomputed in a highly efficient manner. The sensor-fitting method has a similar one-time cost to the BEM method, and while it produces some improvement over a standard three-shell sphere, its performance does not approach that of the interpolation method. In both methods, there is a one-time cost associated with precomputing the forward solution over a set of grid points.}
@@ -1386,8 +1386,8 @@
       \strng{authorbibnamehash}{d3a7995ecf6506e5f46a9faf350f72d6}
       \strng{authornamehash}{3863ce6108d163e1f94355b9d38bb8b8}
       \strng{authorfullhash}{d3a7995ecf6506e5f46a9faf350f72d6}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelprefix}{@}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
