@@ -1,14 +1,14 @@
 # Fdb version 4
-["biber my-thesis"] 1712031369 "my-thesis.bcf" "my-thesis.bbl" "my-thesis" 1712031391 0
+["biber my-thesis"] 1712031369 "my-thesis.bcf" "my-thesis.bbl" "my-thesis" 1712035682 0
   "/Users/kui07/OneDrive/Documentos/Cinvestav/Citations/Tesis.bib" 1711820633 68225 2592bcf1df002c216f950d6771951c9c ""
-  "my-thesis.bcf" 1712031390 110882 4d3ff5c2b3b6791093ddd0311c11df89 "pdflatex"
+  "my-thesis.bcf" 1712035679 110882 4d3ff5c2b3b6791093ddd0311c11df89 "pdflatex"
   (generated)
   "my-thesis.bbl"
   "my-thesis.blg"
   (rewritten before read)
-["pdflatex"] 1712031382 "c:/Users/kui07/OneDrive - CINVESTAV/Tesis/Tesis_Final/my-thesis.tex" "my-thesis.pdf" "my-thesis" 1712031391 0
+["pdflatex"] 1712035669 "c:/Users/kui07/OneDrive - CINVESTAV/Tesis/Tesis_Final/my-thesis.tex" "my-thesis.pdf" "my-thesis" 1712035682 0
   "/Users/kui07/OneDrive/Documentos/Cinvestav/Citations/Tesis.bib" 1711820633 68225 2592bcf1df002c216f950d6771951c9c ""
-  "c:/Users/kui07/OneDrive - CINVESTAV/Tesis/Tesis_Final/my-thesis.tex" 1709160785 4745 28870b9e2a9835dea60cfebcc4136775 ""
+  "c:/Users/kui07/OneDrive - CINVESTAV/Tesis/Tesis_Final/my-thesis.tex" 1712035334 4837 f11f35f0fc63956fa06ec9e51445d67c ""
   "c:/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1709139814 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "c:/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1709140780 2375 baa924870cfb487815765f9094cf3728 ""
   "c:/texlive/2023/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1709140780 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
@@ -297,11 +297,12 @@
   "cleanthesis.sty" 1711010856 24938 f06b5b123f3f2b017cf29e3a2d9a3266 ""
   "content/abstract.tex" 1561103600 230 ff6bdbcc3b5a24f10a4be8bde47a90e0 ""
   "content/acknowledgement.tex" 1561103600 156 14652ed5bf100f98818ffad8d9b73ea3 ""
-  "content/chapter-introduction.tex" 1712031292 16241 cc9db27fc48426d572808613afb8ffe4 ""
+  "content/chapter-introduction.tex" 1712035018 15941 cf669b1b53b19ff9a47470d1e92ab5d6 ""
   "content/chapter-methodology.tex" 1711139028 30088 89032e66cb2c1acf2c05c5f36199325a ""
   "content/chapter-objectives.tex" 1709010128 1274 e88e7002ff32d0aeef03f32a94a32d08 ""
   "content/chapter-related-work.tex" 1689054201 516 7d4394f4e36c4de3a4362f33417b87fd ""
   "content/titlepages.tex" 1694463351 2176 a23097463b4381016cda7799a4e86c3e ""
+  "content/todo_list.tex" 1712035668 736 8e0f0363e83db9b52e132bf4c422630a ""
   "gfx//cortex.jpg" 1651555140 146429 6f8eed61e9525e7ab19baa301eafb8eb ""
   "gfx//dipole-function.png" 1709148945 19131 91f63d71dd6252c7137d3e398a6a6677 ""
   "gfx//head.jpg" 1651555270 261003 b5682e1b4b263221d7946a0ef0b58b5c ""
@@ -314,14 +315,14 @@
   "gfx//pipeline.png" 1651496473 912836 83580ffb463bd0faadc008a89bfb4c0e ""
   "gfx/Clean-Thesis-Logo.pdf" 1561103600 706770 890af84312a66219c9ecd7992bd715d1 ""
   "my-thesis-setup.tex" 1711819247 3039 7211d48b4d5d36e560e4d975b8336895 ""
-  "my-thesis.aux" 1712031390 36462 2e6f2ce5b8fc0135430d6e9b2ec04961 "pdflatex"
+  "my-thesis.aux" 1712035679 36313 87b25c09781b92b6e252eccdd438090f "pdflatex"
   "my-thesis.bbl" 1712031374 151614 8aa0da2f7de3e2c2f9f54f2daa930883 "biber my-thesis"
-  "my-thesis.lof" 1712031390 1504 7b6c86bcb1f446edd66aefd83e0eba4a "pdflatex"
-  "my-thesis.lot" 1712031390 130 f826c84079cca262924fc91efb7dde9a "pdflatex"
-  "my-thesis.out" 1712031387 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "my-thesis.run.xml" 1712031390 2519 81341a6b60ca50e7b7800f707c235757 "pdflatex"
-  "my-thesis.tex" 1709160785 4745 28870b9e2a9835dea60cfebcc4136775 ""
-  "my-thesis.toc" 1712031390 2381 ce483a75b740a72b148ea718bc71407d "pdflatex"
+  "my-thesis.lof" 1712035679 1505 2d01834d4a3db823a37b469c3702c103 "pdflatex"
+  "my-thesis.lot" 1712035679 130 f826c84079cca262924fc91efb7dde9a "pdflatex"
+  "my-thesis.out" 1712035675 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "my-thesis.run.xml" 1712035679 2519 81341a6b60ca50e7b7800f707c235757 "pdflatex"
+  "my-thesis.tex" 1712035334 4837 f11f35f0fc63956fa06ec9e51445d67c ""
+  "my-thesis.toc" 1712035679 2311 75fe79d4f4637ebffaa8cb3cff370102 "pdflatex"
   "version" 1561103642 5 9eac01120a372609e0afa3b236d9ed2d ""
   (generated)
   "my-thesis.aux"
