@@ -19,6 +19,6 @@
 \contentsline {section}{\numberline {4.3}Variación de la conductividad y cálculo de la matriz de ganancia por el método de elementos de frontera}{15}{section.4.3}%
 \contentsline {section}{\numberline {4.4}Dipolos de corriente e implementación de la solución del problema directo}{17}{section.4.4}%
 \contentsline {section}{\numberline {4.5}Implementación del Problema Inverso del EEG}{19}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Desarrollo del Estimador del Error de Localización de las Fuentes de Actividad Neuronal}{20}{section.4.6}%
+\contentsline {section}{\numberline {4.6}Desarrollo del Estimador del Error de Localización de las Fuentes de Actividad Neuronal}{21}{section.4.6}%
 \contentsline {section}{\numberline {4.7}Análisis Estadístico del Estimador}{22}{section.4.7}%
 \contentsline {chapter}{\nonumberline Bibliography}{25}{chapter*.12}%

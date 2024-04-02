@@ -843,6 +843,71 @@
       \verb :C$\backslash$:/Users/kui07/OneDrive - CINVESTAV/Tesis/Papers/j.neuroimage.2006.03.052.pdf:pdf
       \endverb
     \endentry
+    \entry{Collins1998}{article}{}
+      \name{author}{7}{}{%
+        {{hash=573808ce6907798ead179cd4dfd02630}{%
+           family={Collins},
+           familyi={C\bibinitperiod},
+           given={D.\bibnamedelimi L.},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=5c8bbd184a6044c937a2c078518da100}{%
+           family={Zijdenbos},
+           familyi={Z\bibinitperiod},
+           given={A.\bibnamedelimi P.},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=4a7efc862a35e72822eceb101aadb83a}{%
+           family={Kollokian},
+           familyi={K\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=66f467965ee646706c557cd1a5c9fc33}{%
+           family={Sled},
+           familyi={S\bibinitperiod},
+           given={J.\bibnamedelimi G.},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=3d48024169f4b24bfe5e7af8932cfeea}{%
+           family={Kabani},
+           familyi={K\bibinitperiod},
+           given={N.\bibnamedelimi J.},
+           giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=06aed7f41a7621792e5a43966c755a2f}{%
+           family={Holmes},
+           familyi={H\bibinitperiod},
+           given={C.\bibnamedelimi J.},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=9afb5514deeaace8449fb1950632b8fc}{%
+           family={Evans},
+           familyi={E\bibinitperiod},
+           given={A.\bibnamedelimi C.},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{776e660f143301a84cddbaf1416fd17c}
+      \strng{fullhash}{f415bd3185350980192fd50799dc35f5}
+      \strng{bibnamehash}{94b21cab2445071aaf69bfe131f026f7}
+      \strng{authorbibnamehash}{94b21cab2445071aaf69bfe131f026f7}
+      \strng{authornamehash}{776e660f143301a84cddbaf1416fd17c}
+      \strng{authorfullhash}{f415bd3185350980192fd50799dc35f5}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{After conception and implementation of any new medical image processing algorithm, validation is an important step to ensure that the procedure fulfills all requirements set forth at the initial design stage. Although the algorithm must be evaluated on real data, a comprehensive validation requires the additional use of simulated data since it is impossible to establish ground truth with in vivo data. Experiments with simulated data permit controlled evaluation over a wide range of conditions (e.g., different levels of noise, contrast, intensity artefacts, or geometric distortion). Such considerations have become increasingly important with the rapid growth of neuroimaging, i.e., computational analysis of brain structure and function using brain scanning methods such as positron emission tomography and magnetic resonance imaging. Since simple objects such as ellipsoids or parallélépipèdes do not reflect the complexity of natural brain anatomy, we present the design and creation of a realistic, high-resolution, digital, volumetric phantom of the human brain. This three-dimensional digital brain phantom is made up of ten volumetric data sets that define the spatial distribution for different tissues (e.g., grey matter, white matter, muscle, skin, etc.), where voxel intensity is proportional to the fraction of tissue within the voxel. The digital brain phantom can be used to simulate tomographic images of the head. Since the contribution of each tissue type to each voxel in the brain phantom is known, it can be used as the gold standard to test analysis algorithms such as classification procedures which seek to identify the tissue "type" of each image voxel. Furthermore, since the same anatomical phantom may be used to drive simulators for different modalities, it is the ideal tool to test intermodality registration algorithms. The brain phantom and simulated MR images have been made publicly available on the Internet (http://www.bic.mni.mcgill.ca/brainweb). {©} 1998 IEEE.}
+      \field{issn}{02780062}
+      \field{journaltitle}{IEEE Transactions on Medical Imaging}
+      \field{number}{3}
+      \field{title}{{Design and construction of a realistic digital brain phantom}}
+      \field{volume}{17}
+      \field{year}{1998}
+      \field{pages}{463\bibrangedash 468}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/42.712135
+      \endverb
+      \verb{file}
+      \verb :C$\backslash$:/Users/kui07/OneDrive - CINVESTAV/Tesis/Papers/colin1998.pdf:pdf
+      \endverb
+      \keyw{Brain phantom,Magnetic resonance imaging,Positron emission tomography,Simulation,testing,Validation}
+    \endentry
     \entry{Holmes1998}{article}{}
       \name{author}{6}{}{%
         {{hash=c46c4a6fa47a11c17e586cbb7b6161f7}{%
@@ -2028,6 +2093,72 @@
       \verb{file}
       \verb :C$\backslash$:/Users/kui07/OneDrive - CINVESTAV/Tesis/Papers/j.neuroimage.2006.03.052.pdf:pdf
       \endverb
+    \endentry
+    \entry{Collins1998}{article}{}
+      \name{author}{7}{}{%
+        {{hash=573808ce6907798ead179cd4dfd02630}{%
+           family={Collins},
+           familyi={C\bibinitperiod},
+           given={D.\bibnamedelimi L.},
+           giveni={D\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=5c8bbd184a6044c937a2c078518da100}{%
+           family={Zijdenbos},
+           familyi={Z\bibinitperiod},
+           given={A.\bibnamedelimi P.},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=4a7efc862a35e72822eceb101aadb83a}{%
+           family={Kollokian},
+           familyi={K\bibinitperiod},
+           given={V.},
+           giveni={V\bibinitperiod}}}%
+        {{hash=66f467965ee646706c557cd1a5c9fc33}{%
+           family={Sled},
+           familyi={S\bibinitperiod},
+           given={J.\bibnamedelimi G.},
+           giveni={J\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+        {{hash=3d48024169f4b24bfe5e7af8932cfeea}{%
+           family={Kabani},
+           familyi={K\bibinitperiod},
+           given={N.\bibnamedelimi J.},
+           giveni={N\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=06aed7f41a7621792e5a43966c755a2f}{%
+           family={Holmes},
+           familyi={H\bibinitperiod},
+           given={C.\bibnamedelimi J.},
+           giveni={C\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=9afb5514deeaace8449fb1950632b8fc}{%
+           family={Evans},
+           familyi={E\bibinitperiod},
+           given={A.\bibnamedelimi C.},
+           giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{776e660f143301a84cddbaf1416fd17c}
+      \strng{fullhash}{f415bd3185350980192fd50799dc35f5}
+      \strng{bibnamehash}{94b21cab2445071aaf69bfe131f026f7}
+      \strng{authorbibnamehash}{94b21cab2445071aaf69bfe131f026f7}
+      \strng{authornamehash}{776e660f143301a84cddbaf1416fd17c}
+      \strng{authorfullhash}{f415bd3185350980192fd50799dc35f5}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelprefix}{@}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{After conception and implementation of any new medical image processing algorithm, validation is an important step to ensure that the procedure fulfills all requirements set forth at the initial design stage. Although the algorithm must be evaluated on real data, a comprehensive validation requires the additional use of simulated data since it is impossible to establish ground truth with in vivo data. Experiments with simulated data permit controlled evaluation over a wide range of conditions (e.g., different levels of noise, contrast, intensity artefacts, or geometric distortion). Such considerations have become increasingly important with the rapid growth of neuroimaging, i.e., computational analysis of brain structure and function using brain scanning methods such as positron emission tomography and magnetic resonance imaging. Since simple objects such as ellipsoids or parallélépipèdes do not reflect the complexity of natural brain anatomy, we present the design and creation of a realistic, high-resolution, digital, volumetric phantom of the human brain. This three-dimensional digital brain phantom is made up of ten volumetric data sets that define the spatial distribution for different tissues (e.g., grey matter, white matter, muscle, skin, etc.), where voxel intensity is proportional to the fraction of tissue within the voxel. The digital brain phantom can be used to simulate tomographic images of the head. Since the contribution of each tissue type to each voxel in the brain phantom is known, it can be used as the gold standard to test analysis algorithms such as classification procedures which seek to identify the tissue "type" of each image voxel. Furthermore, since the same anatomical phantom may be used to drive simulators for different modalities, it is the ideal tool to test intermodality registration algorithms. The brain phantom and simulated MR images have been made publicly available on the Internet (http://www.bic.mni.mcgill.ca/brainweb). {©} 1998 IEEE.}
+      \field{issn}{02780062}
+      \field{journaltitle}{IEEE Transactions on Medical Imaging}
+      \field{number}{3}
+      \field{title}{{Design and construction of a realistic digital brain phantom}}
+      \field{volume}{17}
+      \field{year}{1998}
+      \field{pages}{463\bibrangedash 468}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/42.712135
+      \endverb
+      \verb{file}
+      \verb :C$\backslash$:/Users/kui07/OneDrive - CINVESTAV/Tesis/Papers/colin1998.pdf:pdf
+      \endverb
+      \keyw{Brain phantom,Magnetic resonance imaging,Positron emission tomography,Simulation,testing,Validation}
     \endentry
     \entry{Holmes1998}{article}{}
       \name{author}{6}{}{%
