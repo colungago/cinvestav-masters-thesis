@@ -1,12 +1,12 @@
 # Fdb version 4
-["biber my-thesis"] 1712038673 "my-thesis.bcf" "my-thesis.bbl" "my-thesis" 1712040527 0
+["biber my-thesis"] 1712038673 "my-thesis.bcf" "my-thesis.bbl" "my-thesis" 1712040681 0
   "/Users/kui07/OneDrive/Documentos/Cinvestav/Citations/Tesis.bib" 1712038424 70890 f330a3e7abe3a82e3ff0efce067f96da ""
-  "my-thesis.bcf" 1712040525 110949 f9ed8c625bf58128cdbe949444aee7bd "pdflatex"
+  "my-thesis.bcf" 1712040679 110949 f9ed8c625bf58128cdbe949444aee7bd "pdflatex"
   (generated)
   "my-thesis.bbl"
   "my-thesis.blg"
   (rewritten before read)
-["pdflatex"] 1712040518 "c:/Users/kui07/OneDrive - CINVESTAV/Tesis/Tesis_Final/my-thesis.tex" "my-thesis.pdf" "my-thesis" 1712040527 0
+["pdflatex"] 1712040672 "c:/Users/kui07/OneDrive - CINVESTAV/Tesis/Tesis_Final/my-thesis.tex" "my-thesis.pdf" "my-thesis" 1712040681 0
   "/Users/kui07/OneDrive/Documentos/Cinvestav/Citations/Tesis.bib" 1712038424 70890 f330a3e7abe3a82e3ff0efce067f96da ""
   "c:/Users/kui07/OneDrive - CINVESTAV/Tesis/Tesis_Final/my-thesis.tex" 1712035334 4837 f11f35f0fc63956fa06ec9e51445d67c ""
   "c:/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1709139814 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
@@ -298,7 +298,7 @@
   "content/abstract.tex" 1561103600 230 ff6bdbcc3b5a24f10a4be8bde47a90e0 ""
   "content/acknowledgement.tex" 1561103600 156 14652ed5bf100f98818ffad8d9b73ea3 ""
   "content/chapter-introduction.tex" 1712035018 15941 cf669b1b53b19ff9a47470d1e92ab5d6 ""
-  "content/chapter-methodology.tex" 1712040497 31518 c2f4b97ea861a5d5ae74a7ecdeb0636b ""
+  "content/chapter-methodology.tex" 1712040574 30198 13a0c3a21057db9e150bf949ed754a38 ""
   "content/chapter-objectives.tex" 1709010128 1274 e88e7002ff32d0aeef03f32a94a32d08 ""
   "content/chapter-related-work.tex" 1689054201 516 7d4394f4e36c4de3a4362f33417b87fd ""
   "content/titlepages.tex" 1694463351 2176 a23097463b4381016cda7799a4e86c3e ""
@@ -315,14 +315,14 @@
   "gfx//pipeline.png" 1651496473 912836 83580ffb463bd0faadc008a89bfb4c0e ""
   "gfx/Clean-Thesis-Logo.pdf" 1561103600 706770 890af84312a66219c9ecd7992bd715d1 ""
   "my-thesis-setup.tex" 1711819247 3039 7211d48b4d5d36e560e4d975b8336895 ""
-  "my-thesis.aux" 1712040525 36574 e4cf326911f9e0132262b7f783b38c19 "pdflatex"
+  "my-thesis.aux" 1712040679 36574 15a266c03c17d74f03154770cd097ef9 "pdflatex"
   "my-thesis.bbl" 1712038678 161366 7d5dbba61fa2f66d07da3dcf5e77ad8a "biber my-thesis"
-  "my-thesis.lof" 1712040525 1560 daf15b9e022d6e102b55c03d089a1555 "pdflatex"
-  "my-thesis.lot" 1712040525 130 f826c84079cca262924fc91efb7dde9a "pdflatex"
-  "my-thesis.out" 1712040523 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "my-thesis.run.xml" 1712040525 2519 81341a6b60ca50e7b7800f707c235757 "pdflatex"
+  "my-thesis.lof" 1712040679 1560 b49fa64b1581329cf0be5f47fe12642c "pdflatex"
+  "my-thesis.lot" 1712040679 130 f826c84079cca262924fc91efb7dde9a "pdflatex"
+  "my-thesis.out" 1712040677 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "my-thesis.run.xml" 1712040679 2519 81341a6b60ca50e7b7800f707c235757 "pdflatex"
   "my-thesis.tex" 1712035334 4837 f11f35f0fc63956fa06ec9e51445d67c ""
-  "my-thesis.toc" 1712040525 2311 24580063491e998a7cf7f17119ca2a84 "pdflatex"
+  "my-thesis.toc" 1712040679 2311 75fe79d4f4637ebffaa8cb3cff370102 "pdflatex"
   "version" 1561103642 5 9eac01120a372609e0afa3b236d9ed2d ""
   (generated)
   "my-thesis.aux"
