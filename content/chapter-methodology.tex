@@ -3,18 +3,14 @@
 \chapter{Metodología}
 
 \label{sec:methodology}
-%\begin{figure}[htb]
-%	\includegraphics[width=\textwidth]{gfx/Clean-Thesis-Figure}
-%	\caption{Figure example: \textit{(a)} example part one, \textit{(c)} example part two; \textit{(c)} example part three}
-%	\label{fig:system:example1}
-%\end{figure}
+
 
 En esta sección revisamos el método propuesto para probar nuestra hipótesis junto a las consideraciones tomadas para su uso. Las divisiones principales se enfocan en: la preparación del modelo geométrico utilizado para la aproximación estructural y las propiedades bioelectromagnéticas de los tejidos incluidas las variaciones de conductividad, la solución del problema directo utilizando dipolos eléctricos que modelan puntos fijos de actividad neuronal equivalentes a respuestas evocadas (ER, del inglés \emph{Evoked response}) y un vector tridimensional de magnitud variable que representa el comportamiento de dicho dipolo, la solución del problema inverso de las señales simuladas para identificar la posición de las fuentes de actividad neuronal, y por último un análisis estadístico del estimador utilizando la frontera de Cramer-Rao para verificar su desempeño como estimador no sesgado.
 
 \section{Método Propuesto}
 \label{sec:methodology:method}
 
-Con el objetivo de abordar el problema inverso y examinar el error asociado con el uso de distintos valores reportados de la razón de la conductividad cerebro-cráneo (BSCR, del inglés \emph{Brain-scalp-conductivity-ratio}) \cite{McCann2019} en diferentes áreas de actividad neuronal relacionadas con estímulos sensoriales; diseñamos un experimento que nos permitiría construir un estimador al implementar una solución del problema inverso con datos completamente simulados, y por ende con total control sobre las variables definidas como: la conductividad, la posición, orientación y magnitud de las fuentes de actividad neuronal, y el ruido añadido a las mediciones. El proceso del experimento es una implementación completa del problema directo e inverso del EEG con un posterior análisis estadístico, el problema directo nos permite obtener un modelo detallado de la actividad neuronal en la cabeza y simular mediciones de EEG con diferentes valores del BSCR, a su vez, el problema inverso resolverá las posiciones de las fuentes simuladas utilizando las mediciones generadas por el modelo del problema directo, y el análisis estadístico nos permitirá obtener la estimación de los valores de conductividad con base en el error incurrido en la localización de las fuentes de actividad neuronal respecto a su posición real agrupando por los distintos valores de conductividad utilizados. Basándonos en trabajo previo, decidimos implementar el filtrado espacial, en particular el propuesto en \cite{VanVeen1988} como método de la solución del problema inverso, el cual es catalogado como un método paramétrico, también conocido como ``método de dipolo de corriente equivalente'' \cite{Hallez2007}. Como su nombre lo indica, estos métodos consisten en buscar en una serie predefinida de dipolos de corriente el que mejor se ajuste en su posición y orientación a las fuentes que generaron las mediciones de EEG. 
+Con el objetivo de abordar el problema inverso y examinar el error asociado con el uso de distintos valores reportados de la razón de la conductividad cerebro-cráneo (BSCR, del inglés \emph{Brain-scalp-conductivity-ratio}) \cite{McCann2019} en diferentes áreas de actividad neuronal relacionadas con estímulos sensoriales; diseñamos un experimento que nos permitiría construir un estimador al implementar una solución del problema inverso con datos completamente simulados, y por ende con total control sobre las variables definidas como: la conductividad, la posición, orientación y magnitud de las fuentes de actividad neuronal, y el ruido añadido a las mediciones. El proceso del experimento es una implementación completa del problema directo e inverso del EEG con un posterior análisis estadístico, el problema directo nos permite obtener un modelo detallado de la actividad neuronal en la cabeza y simular mediciones de EEG con diferentes valores del BSCR, a su vez, el problema inverso resolverá las posiciones de las fuentes simuladas utilizando las mediciones generadas por el modelo del problema directo, y el análisis estadístico nos permitirá obtener la estimación de los valores de conductividad con base en el error incurrido en la localización de las fuentes de actividad neuronal respecto a su posición real agrupando por los distintos valores de conductividad utilizados. Basándonos en trabajo previo, decidimos implementar el filtrado espacial, en particular el propuesto en \cite{VanVeen1988} como método de la solución del problema inverso, el cual es catalogado como un método paramétrico, también conocido como ``método de dipolo de corriente equivalente'' \cite{Hallez2007}. Como su nombre lo indica, estos métodos consisten en buscar en una serie predefinida de dipolos de corriente el que mejor se ajuste en su posición y orientación a las fuentes que generaron las mediciones de EEG.
 
 Con el fin de realizar esta prueba de ajuste de los dipolos de corriente equivalente (solución del problema inverso) es necesario obtener la solución del problema directo. Existen varios métodos para obtener dicha solución \cite{Mosher1999}, de los cuales elegimos el método de elementos de frontera (BEM) para modelos geométricamente realistas \cite{Ermer2001}. La razón de elegir este método radica en el precedente del uso de modelos con geometrías más sencillas en estudios similares \cite{Gutierrez2004}, esto debido a que el BEM resultaba ser no viable por su elevado gasto computacional al calcular de las matrices de ganancia. En la actualidad se cuenta con mayor facilidad de acceso a equipos de cómputo con el suficiente desempeño para obtener resultados en un tiempo razonable, esto aunado al desarrollo de métodos y software mucho más eficientes \cite{open,Clerc2010} nos presenta la posibilidad de implementar el BEM para geometrías realistas como una evolución natural de los métodos utilizados anteriormente.
 
@@ -26,39 +22,39 @@ Con el fin de realizar esta prueba de ajuste de los dipolos de corriente equival
 \end{figure}
 
 
-Una vez establecidos los métodos a utilizar en el método directo e inverso, se procedió a recopilar y formular la información necesaria para realizar los cálculos. En el caso del problema directo los datos de entrada requeridos son: el modelo geométricamente realista que representará a los tejidos de la cabeza como un volumen conductor, una serie de dipolos que modelan el fenómeno de respuesta evocada, los valores a probar de la conductividad entre los tejidos, en específico la razón cerebro/cráneo, y por último el arreglo de sensores de EEG que medirán el campo eléctrico simulado. Como resultado, se obtiene una matriz de ganancia dependiente de los valores de conductividad utilizados que dictamina como el arreglo de sensores de EEG captaría el campo eléctrico generado por las fuentes de actividad neuronal (dipolos) sobre la parte más superficial del modelo geométrico. Mientras que para el problema inverso, los datos de entrada consisten en: las mediciones de EEG simuladas a partir de la solución del problema directo, el mismo modelo geométrico con su arreglo de EEG correspondiente, las matrices de ganancia generadas en el problema directo, y las propiedades pertinentes al método de beamforming, como la matriz de covarianza de las mediciones y una matriz de covarianza del ruido. Como resultado final de este método, obtenemos un kernel de proyección de las fuentes de actividad neuronal que el beamformer pudo localizar. Lo que nos permite comparar la posición de los dipolos que fueron fijados en un principio en el problema directo contra la posición localizada por el beamformer con respecto a los diferentes valores de conductividad, y así obtener un estimador basado en los errores incurridos en la localización de estas fuentes. 
+Una vez establecidos los métodos a utilizar en el método directo e inverso, se procedió a recopilar y formular la información necesaria para realizar los cálculos. En el caso del problema directo los datos de entrada requeridos son: el modelo geométricamente realista que representará a los tejidos de la cabeza como un volumen conductor, una serie de dipolos que modelan el fenómeno de respuesta evocada, los valores a probar de la conductividad entre los tejidos, en específico la razón cerebro/cráneo, y por último el arreglo de sensores de EEG que medirán el campo eléctrico simulado. Como resultado, se obtiene una matriz de ganancia dependiente de los valores de conductividad utilizados que dictamina como el arreglo de sensores de EEG captaría el campo eléctrico generado por las fuentes de actividad neuronal (dipolos) sobre la parte más superficial del modelo geométrico. Mientras que para el problema inverso, los datos de entrada consisten en: las mediciones de EEG simuladas a partir de la solución del problema directo, el mismo modelo geométrico con su arreglo de EEG correspondiente, las matrices de ganancia generadas en el problema directo, y las propiedades pertinentes al método de beamforming, como la matriz de covarianza de las mediciones y una matriz de covarianza del ruido. Como resultado final de este método, obtenemos un kernel de proyección de las fuentes de actividad neuronal que el beamformer pudo localizar. Lo que nos permite comparar la posición de los dipolos que fueron fijados en un principio en el problema directo contra la posición localizada por el beamformer con respecto a los diferentes valores de conductividad, y así obtener un estimador basado en los errores incurridos en la localización de estas fuentes.
 
 
 \section{Construcción del Modelo Geométricamente Realista}
 \label{sec:methodology:model}
 
 \begin{figure}[tb]
-    \centering
-    \begin{subfigure}{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{mri_coronal}
-        \caption{Corte coronal}
-        \label{fig:methodology:coronal}
-        \vspace{0.1cm} % Add vertical space here
-    \end{subfigure}
-    \begin{subfigure}{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{mri_sagital}
-        \caption{Corte sagital}
-        \label{fig:methodology:sagital}
-        \vspace{0.1cm} % Add vertical space here
-    \end{subfigure}
-    \begin{subfigure}{0.49\textwidth}
-        \centering
-        \includegraphics[width=\textwidth]{mri_axial}
-        \caption{Corte axial}
-        \label{fig:methodology:axial}
-    \end{subfigure}
-    \caption{Resonancia magnética de Colin27 \cite{Aubert-Broche2006}}
-    \label{fig:methodology:mri}
+	\centering
+	\begin{subfigure}{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{mri_coronal}
+		\caption{Corte coronal}
+		\label{fig:methodology:coronal}
+		\vspace{0.1cm} % Add vertical space here
+	\end{subfigure}
+	\begin{subfigure}{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{mri_sagital}
+		\caption{Corte sagital}
+		\label{fig:methodology:sagital}
+		\vspace{0.1cm} % Add vertical space here
+	\end{subfigure}
+	\begin{subfigure}{0.49\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{mri_axial}
+		\caption{Corte axial}
+		\label{fig:methodology:axial}
+	\end{subfigure}
+	\caption{Resonancia magnética de Colin27 \cite{Aubert-Broche2006}}
+	\label{fig:methodology:mri}
 \end{figure}
 
-Entrando en detalles, la construcción del modelo geométricamente realista de los tejidos se basó en la plantilla ``Colin27 Average Brain 2008'' catalogada en \cite{Aubert-Broche2006}. Esta consiste en una versión mejorada del modelo de original de Colin que resulta del promedio de 27 imágenes de resonancia magnética ponderadas en T1, T2, y densidad protónica, provenientes de diferentes mediciones del mismo sujeto \cite{Collins1998, Holmes1998}. 
+Entrando en detalles, la construcción del modelo geométricamente realista de los tejidos se basó en la plantilla ``Colin27 Average Brain 2008'' catalogada en \cite{Aubert-Broche2006}. Esta consiste en una versión mejorada del modelo de original de Colin que resulta del promedio de 27 imágenes de resonancia magnética ponderadas en T1, T2, y densidad protónica, provenientes de diferentes mediciones del mismo sujeto \cite{Collins1998, Holmes1998}.
 
 Con la información recopilada de la anatomía del sujeto se generó mediante el software libre Brainstorm\cite{brain2011} un conjunto de mallas teseladas y anidadas que representan las fases entre los diferentes tejidos de interés \emph{i.e.} cerebro, cráneo, y cuero cabelludo. Dado el alto costo computacional la resolución de las mallas es diferente dependiendo de la profundidad de las fases, siendo cerebro/cráneo y cráneo/cuero cabelludo (\cref{fig:methodology:inner,fig:methodology:outer}) las que mayor resolución tienen; 8640 triángulos y 4322 vértices, debido a que estas tienen una mayor sensibilidad al ser las más cercanas a la fuente de actividad neuronal y que representan por completo la capa de tejido óseo que servirá como volumen conductor, por estas razones es importante que ambas mallas tengan la misma resolución y no comprometan la precisión de los resultados. La fase del cuero cabelludo/aire (\cref{fig:methodology:head}) tiene una resolución menor con 6480 triángulos y 3242 vértices, esta fue definida así porque fue el límite de resolución computable con la RAM de la workstation, aún así, esta es una resolución alta comparada con el uso recomendado del software \cite{Tadel2019}. Por último se tiene una malla que representa la corteza cerebral (\cref{fig:methodology:cortex}), esta tiene una resolución de 29988 triángulos compuestos de 15002 vértices, los cuales son importantes mencionar porque la finalidad de esta malla es tener un arreglo de ``dipolos elementales'' sobre los que se proyectarán los resultados, por esta razón aunque la malla es importante para el cálculo del campo eléctrico generado por actividad neuronal no influye drásticamente en el costo computacional y puede utilizarse una resolución mayor para representar con detalle los pliegues y concavidades de la corteza cerebral. Todas las mallas en conjunto representan nuestro volumen conductor (\cref{fig:methodology:model}) sobre el que se implementarán los cálculos de BEM y la proyección del resultado del filtro espacial.
 
@@ -102,7 +98,7 @@ Con la información recopilada de la anatomía del sujeto se generó mediante el
 \section{Variación de la conductividad y cálculo de la matriz de ganancia por el método de elementos de frontera}
 \label{sec:methodology:openmeeg}
 
-Recapitulando, lo necesario para la solución del problema directo es: una fuente de corriente eléctrica y un modelo de un volumen conductor con la conductividad de los tejidos que representan. Usualmente, la finalidad de la implementación del problema directo es ubicar la posición de la fuente de corriente que representa la actividad neuronal por lo que esta ubicación es la variable independiente al momento de hacer el cálculo, mientras que la conductividad se mantiene como un valor fijo. 
+Recapitulando, lo necesario para la solución del problema directo es: una fuente de corriente eléctrica y un modelo de un volumen conductor con la conductividad de los tejidos que representan. Usualmente, la finalidad de la implementación del problema directo es ubicar la posición de la fuente de corriente que representa la actividad neuronal por lo que esta ubicación es la variable independiente al momento de hacer el cálculo, mientras que la conductividad se mantiene como un valor fijo.
 
 En el área de neurociencias se suele mantener un valor nominal para la razón de conductividad cerebro-cráneo de 1:80 (\emph{i.e.} $0.33\text{ S/m}$ para el cerebro y $0.0042 \text{ S/m}$ para el cráneo) \cite{Rush1968,Rush1969,Cohen1983}. Sin embargo, múltiples estudios con diferentes acercamientos han publicado valores de la razón de conductividiad cerebro-cráneo que se desvían significativamente del estandár de 1:80 \cite{McCann2019}. Razón por la cual el objetivo de nuestro experimento es estimar el valor del BSCR al utilizarlo como la variable independiente mientras se toma por conocida la posición del dipolo de corriente además de mantenerse fija para todos los experimentos.
 
@@ -124,19 +120,21 @@ La matriz de ganancia de cada BSCR con el modelo geométrico completan el volume
 Teniendo satisfechos los requisitos para la solución del problema directo este se calculó de la siguiente forma:
 
 \begin{enumerate}
-    \item Dentro del software Brainstorm, se crearon \emph{scouts} en la malla de la corteza cerebral. Estos consisten en las coordenadas SCS de las regiones de interés (ROI, del inglés \emph{region-of-interest}). Estos fueron llamados \emph{dip1} (somatosensorial), \emph{dip2} (visual), y \emph{dip3} (auditiva).
-    \item Los scouts fueron utilizados como dato de entrada junto con la función del dipolo con respecto al tiempo, el volumen conductor compuesto por el modelo geométricamente realista y la matriz de ganancia de cada BSCR importadas a Brainstorm, y por último el arreglo de sensores de EEG.
-    \item Como resultado, obtuvimos 100 mediciones de EEG simuladas correspondientes a cada BSCR para cada uno de los tres scouts, siendo en total 300 mediciones de EEG.
-    \item Tomando en cuenta de que estamos simulando nuestros datos y estamos en control de todas las variables, se procedió a añadir ruido en la implementación del problema directo para considerar otras condiciones de experimentos con pacientes. El ruido se añadió con una relación señal/ruido (SNR, del inglés \emph{signal-to-noise-ratio}) de 0.01, 0.05, y 0.1.
-    \item De esta manera, obtuvimos 3 sets de 10,000 mediciones para cada uno de los 3 dipolos, sumando a 90,000 mediciones simuladas de EEG diferentes.
+	\item Dentro del software Brainstorm, se crearon \emph{scouts} en la malla de la corteza cerebral. Estos consisten en las coordenadas SCS de las regiones de interés (ROI, del inglés \emph{region-of-interest}). Estos fueron llamados \emph{dip1} (somatosensorial), \emph{dip2} (visual), y \emph{dip3} (auditiva).
+	\item Los scouts fueron utilizados como dato de entrada junto con la función del dipolo con respecto al tiempo, el volumen conductor compuesto por el modelo geométricamente realista y la matriz de ganancia de cada BSCR importadas a Brainstorm, y por último el arreglo de sensores de EEG.
+	\item Como resultado, obtuvimos 100 mediciones de EEG simuladas correspondientes a cada BSCR para cada uno de los tres scouts, siendo en total 300 mediciones de EEG.
+	\item Tomando en cuenta de que estamos simulando nuestros datos y estamos en control de todas las variables, se procedió a añadir ruido en la implementación del problema directo para considerar otras condiciones de experimentos con pacientes. El ruido se añadió con una relación señal/ruido (SNR, del inglés \emph{signal-to-noise-ratio}) de 0.01, 0.05, y 0.1.
+	\item De esta manera, obtuvimos 3 sets de 10,000 mediciones para cada uno de los 3 dipolos, sumando a 90,000 mediciones simuladas de EEG diferentes.
 \end{enumerate}
+
+Dado que estábamos simulando nuestros datos y teníamos control sobre todas las variables, agregamos ruido en la implementación del problema directo para simular otras condiciones de experimentación con pacientes. Este ruido se añadió con una relación señal/ruido (\emph{SNR}, del inglés \emph{signal-to-noise ratio}) de 0.01, 0.05 y 0.1. Como resultado, obtuvimos 3 conjuntos de 1,000 mediciones para cada uno de los 3 dipolos, lo que suma un total de 9,000 mediciones simuladas de EEG distintas.
 
 \begin{figure}[tb]
 	\centering
 	\begin{tikzpicture}[node distance = 3.5cm, auto]
 		% Define block styles
-		\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
-			text width=7em, text centered, rounded corners, minimum height=4em]
+		\tikzstyle{block} = [rectangle, draw, fill=blue!20,
+		text width=7em, text centered, rounded corners, minimum height=4em]
 		\tikzstyle{line} = [draw, -{Latex}] % Use -{Latex} instead of -latex
 
 		% Place nodes
@@ -153,19 +151,18 @@ Teniendo satisfechos los requisitos para la solución del problema directo este 
 	\label{fig:methodology:direct_pipeline}
 \end{figure}
 
-Dado que estábamos simulando nuestros datos y teníamos control sobre todas las variables, agregamos ruido en la implementación del problema directo para simular otras condiciones de experimentación con pacientes. Este ruido se añadió con una relación señal/ruido (\emph{SNR}, del inglés \emph{signal-to-noise ratio}) de 0.01, 0.05 y 0.1. Como resultado, obtuvimos 3 conjuntos de 1,000 mediciones para cada uno de los 3 dipolos, lo que suma un total de 9,000 mediciones simuladas de EEG distintas.
 
 \section{Implementación del Problema Inverso del EEG}
 \label{sec:methodology:inverse_solved}
 
-Dado que nuestra meta es estimar el error asociado con la resolución del problema inverso utilizando diferentes valores del BSCR en varias áreas de la corteza cerebral, implementamos la solución de la siguiente manera: Emparejamos las 100 mediciones de EEG resultantes de cada BSCR (1,000 en total) contra cada una de las 10 matrices de ganancia de los diferentes BSCR a probar, lo que resulta en 10,000 combinaciones distintas para un solo dipolo y nivel de ruido. Teniendo 3 niveles de ruido y 3 dipolos diferentes, se obtiene un total de 90,000 combinaciones distintas, y por ende; 90,000 implementaciones del problema inverso a resolver. 
+Dado que nuestra meta es estimar el error asociado con la resolución del problema inverso utilizando diferentes valores del BSCR en varias áreas de la corteza cerebral, implementamos la solución de la siguiente manera: Emparejamos las 100 mediciones de EEG resultantes de cada BSCR (1,000 en total) contra cada una de las 10 matrices de ganancia de los diferentes BSCR a probar, lo que resulta en 10,000 combinaciones distintas para un solo dipolo y nivel de ruido. Teniendo 3 niveles de ruido y 3 dipolos diferentes, se obtiene un total de 90,000 combinaciones distintas, y por ende; 90,000 implementaciones del problema inverso a resolver.
 
 \begin{figure}[tb]
 	\centering
 	\begin{tikzpicture}[node distance = 3.5cm, auto]
 		% Define block styles
-		\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
-			text width=7em, text centered, rounded corners, minimum height=4em]
+		\tikzstyle{block} = [rectangle, draw, fill=blue!20,
+		text width=7em, text centered, rounded corners, minimum height=4em]
 		\tikzstyle{line} = [draw, -{Latex}] % Use -{Latex} instead of -latex
 
 		% Place nodes
@@ -184,11 +181,12 @@ Dado que nuestra meta es estimar el error asociado con la resolución del proble
 
 Al igual que en el cálculo del problema directo, se utilizó la suite Brainstorm en Matlab para el cómputo de los 90,000 conjuntos de datos; específicamente, las librerías pertinentes para el procesado de las mediciones de EEG. Estas fueron extraídas y modificadas para manejar de forma óptima el procesamiento de nuestro gran volumen de información mediante automatización y combinación de procesamientos posteriores. La razón de utilizar Brainstorm para resolver el problema inverso es que dentro de las opciones de métodos de solución incluidas se encuentra una variación del método de filtrado espacial LCMV \cite{Jaiswal2020}, este método de filtrado espacial es de interés para el laboratorio por su versatilidad y ha sido utilizado anteriormente \TODO{CITAR A EDUARDO Y DEMÁS RELACIONADO DEL LAB}.
 
-La implementación del filtro espacial LCMV en Brainstorm obtiene mapas del pseudo-índice de actividad neuronal (PNAI, del inglés \emph{pseudo neuronal activity index}), denominado así por las modificaciones realizadas por Mosher \emph{et al.} \cite{Jaiswal2020} a la definición del índice de actividad neuronal del conformador de haces LCMV de Van Veen. En detalle, estas modificaciones consisten en el uso exclusivo de la matriz de covarianza de las mediciones de EEG para la normalización de los mapas de actividad neuronal, dejando de lado la matriz de covarianza del ruido de las mediciones de la definición original de Van Veen. 
+La implementación del filtro espacial LCMV en Brainstorm obtiene mapas del pseudo-índice de actividad neuronal (PNAI, del inglés \emph{pseudo neuronal activity index}), denominado así por las modificaciones realizadas por Mosher \emph{et al.} \cite{Jaiswal2020} a la definición del índice de actividad neuronal del conformador de haces LCMV de Van Veen. En detalle, estas modificaciones consisten en el uso exclusivo de la matriz de covarianza de las mediciones de EEG para la normalización de los mapas de actividad neuronal, dejando de lado la matriz de covarianza del ruido de las mediciones de la definición original de Van Veen.
 
-La opción elegida de ejecución de este método de filtrado espacial sobre una medición de EEG resulta en el cálculo de un kernel de proyección del campo eléctrico detectado. Este kernel reconstruye, localiza y visualiza las fuentes de actividad neuronal en forma de mapas del PNAI sobre la serie de dipolos que componen la malla de la corteza cerebral, así como su propagación a través de las otras mallas que constituyen el modelo geométrico. Este kernel corresponde al definido por \cref{beamformer4} con la diferencia de que la matriz de covarianza del ruido no es utilizada en el cálculo y se define como una matriz identidad. 
+La opción elegida de ejecución de este método de filtrado espacial sobre una medición de EEG resulta en el cálculo de un kernel de proyección del campo eléctrico detectado. Este kernel reconstruye, localiza y visualiza las fuentes de actividad neuronal en forma de mapas del PNAI sobre la serie de dipolos que componen la malla de la corteza cerebral, así como su propagación a través de las otras mallas que constituyen el modelo geométrico. Este kernel corresponde al definido por \cref{beamformer4} con la diferencia de que la matriz de covarianza del ruido no es utilizada en el cálculo y se define como una matriz identidad.
 
 Tomando en cuenta que tenemos 90,000 combinaciones de mediciones de EEG y matrices de ganancia, debería de obtenerse un kernel de proyección para cada una de estas combinaciones; pero, dado que el filtro espacial tiene como datos de entrada: las mediciones de EEG, la matriz de ganancia, y la matriz de covarianza, esta última puede ser calculada a partir de las 100 mediciones de EEG de cada BSCR, obteniendo un kernel de mayor precisión que puede ser calculado para cada una de esas 100 mediciones de EEG en cualquier momento, reduciendo así el número de archivos necesarios y el espacio ocupado en el disco del equipo de cómputo. Esta fue una de las razones de realizar 100 simulaciones de EEG para cada combinación de dipolos y BSCR durante el proceso del problema directo, para mejorar la robustez del estimador y evitar sesgos durante el análisis del problema inverso. En total se obtuvieron 900 kernels de proyección, 100 por cada BSCR, para cada uno de los 3 dipolos y 3 niveles de SNR.
+
 
 \section{Desarrollo del Estimador del Error de Localización de las Fuentes de Actividad Neuronal}
 \label{sec:methodology:estimator}
@@ -202,12 +200,12 @@ Las posiciones de magnitud máxima de cada medición de EEG, correspondientes a 
 \section{Análisis Estadístico del Estimador}
 \label{sec:methodology:statistical}
 
-\begin{figure}[t]
+\begin{figure}[tb]
 	\centering
 	\begin{tikzpicture}[node distance = 3.5cm, auto]
 		% Define block styles
-		\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
-			text width=7em, text centered, rounded corners, minimum height=4em]
+		\tikzstyle{block} = [rectangle, draw, fill=blue!20,
+		text width=7em, text centered, rounded corners, minimum height=4em]
 		\tikzstyle{line} = [draw, -{Latex}] % Use -{Latex} instead of -latex
 
 		% Place nodes
@@ -227,7 +225,7 @@ Las posiciones de magnitud máxima de cada medición de EEG, correspondientes a 
 
 Para determinar el desempeño del estimador se utilizó la frontera de Cramér-Rao (CRB, del inglés \emph{Cramér-Rao bound}), la cual proporciona un límite inferior en la varianza de los errores en la estimación de parámetros no sesgados. La CRB tiene la característica de ser universal, es decir, independiente del algoritmo utilizado para la estimación entre los no sesgados, y asintóticamente ajustado, lo que significa que para ciertas distribuciones, existen algoritmos que alcanzan el límite a medida que el número de muestras aumenta \cite{Muravchik1999,Escalona-Vargas2013}. Siendo esta última característica la de particular interés para nuestro proyecto, y una razón más para realizar las 100 simulaciones de EEG para cada combinación de dipolos, valor de BSCR, y nivel de SNR durante el proceso del problema directo.
 
-La CRB se define como la inversa de la matriz de información de Fisher \cref{eq:crb}, la cual es el valor esperado de la segunda derivada del logaritmo de la función de verosimilitud con respecto al parámetro de interés \cref{eq:fisher}. 
+La CRB se define como la inversa de la matriz de información de Fisher \cref{eq:crb}, la cual es el valor esperado de la segunda derivada del logaritmo de la función de verosimilitud con respecto al parámetro de interés \cref{eq:fisher}.
 
 \begin{equation}
 	\label{eq:crb}
@@ -235,8 +233,8 @@ La CRB se define como la inversa de la matriz de información de Fisher \cref{eq
 \end{equation}
 
 \begin{equation}
-    \label{eq:fisher}
-    J_{ij}^{\text{EEG}}(\theta) = q^{\text{T}}\left(\pdv{k_{\infty}}{\theta_{i}}\right)^{\text{T}}\frac{\text{B}^{\text{T}}\text{B}}{\sigma^2_{\text{E}}}\left(\pdv{k_{\infty}}{\theta_{i}}\right)q
+	\label{eq:fisher}
+	J_{ij}^{\text{EEG}}(\theta) = q^{\text{T}}\left(\pdv{k_{\infty}}{\theta_{i}}\right)^{\text{T}}\frac{\text{B}^{\text{T}}\text{B}}{\sigma^2_{\text{E}}}\left(\pdv{k_{\infty}}{\theta_{i}}\right)q
 \end{equation}
 
 \TODO{Dejar la ecuación de la matriz de información de Fisher simplificada con B como la matriz de ganancia o expandir el término?}\\
@@ -251,7 +249,7 @@ Siendo la CRB el límite teórico inferior de la varianza del error del estimado
 
 \TODO{Definir todas las variables de las ecuaciones}
 
-El cálculo de la CRB se realizó con el uso de la matriz de ganancia de cada BSCR (B), el valor de la magnitud del dipolo $q$ en el instante de 397.2 ms, la derivada parcial de las posiciones de los dipolos con respecto a la posición de los sensores de EEG, y la varianza del ruido de las mediciones de EEG. Obteniendo una CRB para cada combinación de dipolos, valor de BSCR, y nivel de SNR; resultando en 90 valores de CRB.  
+El cálculo de la CRB se realizó con el uso de la matriz de ganancia de cada BSCR (B), el valor de la magnitud del dipolo $q$ en el instante de 397.2 ms, la derivada parcial de las posiciones de los dipolos con respecto a la posición de los sensores de EEG, y la varianza del ruido de las mediciones de EEG. Obteniendo una CRB para cada combinación de dipolos, valor de BSCR, y nivel de SNR; resultando en 90 valores de CRB.
 
 
 
