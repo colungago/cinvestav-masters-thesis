@@ -84,7 +84,7 @@
 
 % OPTION colortheme
 % --> values = bluemagenta|bluegreen
-\define@choicekey*[ct]{cthesis}{colortheme}[\val\themenr]{bluemagenta,bluegreen}[bluemagenta]{\def\cthesis@colortheme{\themenr}}
+\define@choicekey*[ct]{cthesis}{colortheme}[\val\themenr]{bluemagenta,bluegreen,cinvestavgreen}[bluemagenta]{\def\cthesis@colortheme{\themenr}}
 \setkeys[ct]{cthesis}{colortheme=bluemagenta}
 
 % OPTION bibsys
@@ -203,6 +203,11 @@
 	\cthesissetcolor{cmyk}{.61, .47, .03, 0}{.48, .05, .91, 0}%
 }
 
+% sets the blue-green color theme (blue/green)
+\def\cthesissetcolorcinvestavgreen{%
+	\cthesissetcolor{cmyk}{1, .15, .59, 0.2}{.18, .98, .18, 0}%
+}
+
 % defines general colors
 \definecolor{ctcolorblack}{gray}{0}
 \definecolor{ctcolorgray}{gray}{.5}
@@ -216,6 +221,9 @@
 \or
 	% case 1 (colortheme == bluegreen)
 	\cthesissetcolorbluegreen
+\or
+	% case 2 (colortheme == cinvestavgreen)
+	\cthesissetcolorcinvestavgreen
 \else
 	% all other cases
 	\cthesissetcolorbluemagenta
@@ -513,6 +521,7 @@
 
 \crefformat{equation}{(#2#1#3)} % for lowercase "equation"
 \Crefformat{equation}{(#2#1#3)} % for uppercase "Equation"
+\crefrangeformat{equation}{~(#3#1#4) a~(#5#2#6)}
 
 % **************************************************
 % New Commands
@@ -522,49 +531,49 @@
 \newcommand{\TODO}[1]{{\color{color_todo}\textbf{[TODO #1]}}}
 %
 %
-% ref commands, e.g. for images, tables and text labels
-% --------------------------------------------------
-% RESULT = (siehe Tab. 12.4)
-\newcommand{\tabref}[1]{(siehe Tab.~\ref{#1})}
-%
-% RESULT = (siehe Tab. 12.4)
-\newcommand{\tableref}[1]{(siehe Tab.~\ref{#1} Seite~\pageref{#1})}
-%
-% --------------------------------------------------
-% RESULT = (siehe 3.4)
-\newcommand{\tref}[1]{(siehe \ref{#1})}
-%
-% RESULT = Abschnitt 3.4
-\newcommand{\treft}[1]{Abschnitt~\ref{#1}}
-%
-% RESULT = (siehe 3.4, Seite 12)
-\newcommand{\textref}[1]{(siehe \ref{#1}, Seite~\pageref{#1})}
-%
-% RESULT = Abschnitt 3.4 (siehe Seite 12)
-\newcommand{\textreft}[1]{Abschnitt~\ref{#1} (siehe Seite~\pageref{#1})}
-%
-% --------------------------------------------------
-% RESULT = (siehe Abb. 10.4)
-\newcommand{\fref}[1]{(siehe Abb.~\ref{#1})}
-%
-% RESULT = (siehe Abb. 10.4 b)
-\newcommand{\frefadd}[2]{(siehe Abb.~\ref{#1}~#2)}
-%
-% RESULT = (siehe Abb. 10.4, Seite 12)
-\newcommand{\figref}[1]{(siehe Abb.~\ref{#1}, Seite~\pageref{#1})}
-%
-% RESULT = (siehe Abb. 10.4 b, Seite 12)
-\newcommand{\figrefadd}[2]{(siehe Abb.~\ref{#1}~#2, Seite~\pageref{#1})}
-%
-% RESULT = Abbildung 10.4
-\newcommand{\figreft}[1]{Abbildung~\ref{#1}}
-%
-% RESULT = Abbildung 10.4 b
-\newcommand{\figrefaddt}[2]{Abbildung~\ref{#1}~#2}
-%
-% --------------------------------------------------
-% RESULT = (siehe Seite 12)
-\newcommand{\seepage}[1]{(siehe Seite~\pageref{#1})}
+% % ref commands, e.g. for images, tables and text labels
+% % --------------------------------------------------
+% % RESULT = (siehe Tab. 12.4)
+% \newcommand{\tabref}[1]{(siehe Tab.~\ref{#1})}
+% %
+% % RESULT = (siehe Tab. 12.4)
+% \newcommand{\tableref}[1]{(siehe Tab.~\ref{#1} Seite~\pageref{#1})}
+% %
+% % --------------------------------------------------
+% % RESULT = (siehe 3.4)
+% \newcommand{\tref}[1]{(siehe \ref{#1})}
+% %
+% % RESULT = Abschnitt 3.4
+% \newcommand{\treft}[1]{Abschnitt~\ref{#1}}
+% %
+% % RESULT = (siehe 3.4, Seite 12)
+% \newcommand{\textref}[1]{(siehe \ref{#1}, Seite~\pageref{#1})}
+% %
+% % RESULT = Abschnitt 3.4 (siehe Seite 12)
+% \newcommand{\textreft}[1]{Abschnitt~\ref{#1} (siehe Seite~\pageref{#1})}
+% %
+% % --------------------------------------------------
+% % RESULT = (siehe Abb. 10.4)
+% \newcommand{\fref}[1]{(siehe Abb.~\ref{#1})}
+% %
+% % RESULT = (siehe Abb. 10.4 b)
+% \newcommand{\frefadd}[2]{(siehe Abb.~\ref{#1}~#2)}
+% %
+% % RESULT = (siehe Abb. 10.4, Seite 12)
+% \newcommand{\figref}[1]{(siehe Abb.~\ref{#1}, Seite~\pageref{#1})}
+% %
+% % RESULT = (siehe Abb. 10.4 b, Seite 12)
+% \newcommand{\figrefadd}[2]{(siehe Abb.~\ref{#1}~#2, Seite~\pageref{#1})}
+% %
+% % RESULT = Abbildung 10.4
+% \newcommand{\figreft}[1]{Abbildung~\ref{#1}}
+% %
+% % RESULT = Abbildung 10.4 b
+% \newcommand{\figrefaddt}[2]{Abbildung~\ref{#1}~#2}
+% %
+% % --------------------------------------------------
+% % RESULT = (siehe Seite 12)
+% \newcommand{\seepage}[1]{(siehe Seite~\pageref{#1})}
 
 
 
