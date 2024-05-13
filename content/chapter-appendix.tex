@@ -1,40 +1,42 @@
 % !TEX root = ../my-thesis.tex
 %
-\chapter{Example Appendix}
+\chapter{Anexo}
 \label{sec:appendix}
 
-\Blindtext[1][1]
+\section{Anexo: comparación	entre los métodos de solución del problema directo en el análisis de fuentes de EEG}
+\label{sec:appendix:forward_problem_comparison}
 
-\section{Appendix Section 1}
-\label{sec:appendix:sec1}
 
-\Blindtext[1][1]
+\begin{table}[htb]
+	\centering
+	\begin{tabular}{@{}lcccc@{}}
+	\toprule
+											 & BEM       & FEM       & iFDM      & aFDM      \\ \midrule
+	Posición de puntos computacionales       & superfice & volumen   & volumen   & volumen   \\
+	Elección libre de puntos computacionales & sí        & sí        & no        & no        \\
+	Sistemas matriciales                     & completos & dispersos & dispersos & dispersos \\
+	Número de compartimentos                 & pequeño   & grande    & grande    & grande    \\
+	Requiere teselación                      & sí        & sí        & no        & no        \\
+	Anisotrópico                             & no        & sí        & no        & sí        \\ \bottomrule
+	\end{tabular}
+	\caption{Comparación entre los métodos de solución del problema directo en el análisis de fuentes de EEG. BEM: Boundary Element Method, FEM: Finite Element Method, iFDM: isotropic Finite Difference Method, aFDM: anisotropic Finite Difference Method.}
+	\label{tab:forward_problem_comparison}
+	\end{table}
 
-\begin{table}[h]
-	\begin{tabularx}{\textwidth}{X | X | X}
-		%\hline
-		Alpha		& Beta			& Gamma			\\ \hline
-		0			& 1				& 2				\\ \hline
-		3			& 4				& 5				\\ %\hline
-	\end{tabularx}
-	\label{tab:table1}
-	\caption{This is a caption text.}
+\section{Anexo: comparación entre los métodos de estimación de la conductividad de los tejidos}
+
+
+\begin{table}[htb]
+	\begin{tabular}{@{}lll@{}}
+		\toprule
+		Método & Fortalezas                                                                                                                                                                       & Limitantes                                                                                                                                                    \\ \midrule
+		DAC    & \begin{tabular}[c]{@{}l@{}}- No se requiere un modelo computacional\\ - Posibilidad de clasificar todo tejido\\ - Portabilidad\\ - Asequible\\ - Rápida adquisición\end{tabular} & \begin{tabular}[c]{@{}l@{}}- Invasivo\\ - Condiciones no naturales ex vivo\\ - Homogéneo\end{tabular}                                                         \\
+		EIT    & \begin{tabular}[c]{@{}l@{}}- No invasivo\\ - In vivo\\ - Portable\\ - Asequible\\ - Rápida adquisición\end{tabular}                                                              & \begin{tabular}[c]{@{}l@{}}- Requiere modelo computacional\\ - Poca resolución espacial\\ - Baja relación señal/ruido\\ - Homogéneo\end{tabular}              \\
+		E/MEG  & \begin{tabular}[c]{@{}l@{}}- No invasivo\\ - In vivo\\ - Portable\\ - Asequible\\ - Rápida adquisición\end{tabular}                                                              & \begin{tabular}[c]{@{}l@{}}- Requiere modelo computacional\\ - Baja resolución espacial\\ - Homogéneo\end{tabular}                                            \\
+		MREIT  & \begin{tabular}[c]{@{}l@{}}- No invasivo\\ - In vivo\\ - Alta resolución espacial\\ - Anisotrópico\end{tabular}                                                                  & \begin{tabular}[c]{@{}l@{}}- Baja relación señal/ruido\\ - Señal débil en cráneo\\ - No portable\\ - Relativamente costoso\\ - Lenta adquisición\end{tabular} \\
+		DTI    & \begin{tabular}[c]{@{}l@{}}- No invasivo\\ - In vivo\\ - Resolución espacial alta\\ - Anisotrópico\\ - Heterogéneo\end{tabular}                                                  & \begin{tabular}[c]{@{}l@{}}- No portable\\ - Relativamente costoso\\ - Señal débil en cráneo\\ - Lenta adquisición\end{tabular}                               \\ \bottomrule
+	\end{tabular}
+	\caption{Comparación entre los métodos de estimación de la conductividad de los tejidos. DAC: Dielectric Absorption Capacity, EIT: Electrical Impedance Tomography, E/MEG: Electro/Magnetoencephalography, MREIT: Magnetic Resonance Electrical Impedance Tomography, DTI: Diffusion Tensor Imaging.}
+	\label{tab:conductivity_comparison}
 \end{table}
 
-\section{Appendix Section 2}
-\label{sec:appendix:sec2}
-
-\Blindtext[1][1]
-
-\begin{table}[h]
-	\begin{tabularx}{\textwidth}{X | X | X}
-		%\hline
-		Alpha		& Beta			& Gamma			\\ \hline
-		0			& 1				& 2				\\ \hline
-		3			& 4				& 5				\\ %\hline
-	\end{tabularx}
-	\label{tab:table2}
-	\caption{This is a caption text.}
-\end{table}
-
-\Blindtext[1][2]

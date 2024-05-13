@@ -67,13 +67,13 @@ Con la información recopilada de la anatomía del sujeto se generó mediante el
 		\vspace{0.1cm}
 	\end{subfigure}\hfill
 	\begin{subfigure}{0.45\textwidth}
-		\includegraphics[width=\textwidth]{inner}
+		\includegraphics[width=\textwidth]{inner_skull}
 		\caption{Capa interna del cráneo}
 		\label{fig:methodology:inner}
 		\vspace{0.1cm}
 	\end{subfigure}\\
 	\begin{subfigure}{0.45\textwidth}
-		\includegraphics[width=\textwidth]{outer}
+		\includegraphics[width=\textwidth]{outer_skull}
 		\caption{Capa externa del cráneo}
 		\label{fig:methodology:outer}
 	\end{subfigure}\hfill
@@ -82,15 +82,15 @@ Con la información recopilada de la anatomía del sujeto se generó mediante el
 		\caption{Cuero cabelludo}
 		\label{fig:methodology:head}
 	\end{subfigure}
-	\caption{Mallas de las diferentes fases de los tejidos de la cabeza \TODO{FIX same size images and change the model}}
+	\caption{Mallas de las diferentes fases de los tejidos de la cabeza}
 	\label{fig:methodology:meshes}
 \end{figure}
 
 
 
 \begin{figure}[htb]
-	\includegraphics[width=\textwidth]{modelo}
-	\caption{Modelo geométricamente realista completamente anidado}
+	\includegraphics[width=\textwidth]{whole_model}
+	\caption{Modelo geométricamente realista completamente anidado con sensores de EEG}
 	\label{fig:methodology:model}
 \end{figure}
 
@@ -109,24 +109,24 @@ En el área de neurociencias se suele mantener un valor nominal para la razón d
 	\label{fig:EEG10-10}
 \end{figure}
 
-\begin{table}[tb]
+\begin{table}[htb]
 	\centering
-	\begin{tabular}{ccc}
-		\hline
-		ID & BSCR   & Referencias                                    \\ \hline
-		1  & 79.36 & \cite{Cohen1983}                               \\
-		2  & 208.33 & \cite{eriksenVivoHumanHead1990}                \\
-		3  & 68.96  & \cite{gonalvesVivoMeasurementBrain2003}        \\
-		4  & 22.17  & \cite{Baysal2004}                              \\
-		5  & 26.24  & \cite{Gutierrez2004}                           \\
-		6  & 41.84  & \cite{Dannhauer2011}                           \\
-		7  & 33.00     & \cite{aydinCombiningEEGMEG2014a}               \\
-		8  & 10.30   & \cite{acarHighresolutionEEGSource2016}         \\
-		9  & 80.00     & \cite{Rush1968}                                \\
-		10 & 20.00     & \cite{hoekemaMeasurementConductivitySkull2003} \\ \hline
-	\end{tabular}
-	\caption{Valores de la razón de conductividad cerebro-cráneo (BSCR) utilizados en el experimento}
-	\label{tab:bscr}
+    \begin{tabular}{@{}rrr@{}}
+        \toprule
+        ID & BSCR & Referencias \\ \midrule
+        1  & 79.36 & \begin{tabular}[c]{@{}l@{}}\cite{Cohen1983}\end{tabular} \\
+        2  & 208.33 & \begin{tabular}[c]{@{}l@{}}\cite{eriksenVivoHumanHead1990}\end{tabular} \\
+        3  & 68.96  & \begin{tabular}[c]{@{}l@{}}\cite{gonalvesVivoMeasurementBrain2003}\end{tabular} \\
+        4  & 22.17  & \begin{tabular}[c]{@{}l@{}}\cite{Baysal2004}\end{tabular} \\
+        5  & 26.24  & \begin{tabular}[c]{@{}l@{}}\cite{Gutierrez2004}\end{tabular} \\
+        6  & 41.84  & \begin{tabular}[c]{@{}l@{}}\cite{Dannhauer2011}\end{tabular} \\
+        7  & 33.00  & \begin{tabular}[c]{@{}l@{}}\cite{aydinCombiningEEGMEG2014a}\end{tabular} \\
+        8  & 10.30  & \begin{tabular}[c]{@{}l@{}}\cite{acarHighresolutionEEGSource2016}\end{tabular} \\
+        9  & 80.00  & \begin{tabular}[c]{@{}l@{}}\cite{Rush1968}\end{tabular} \\
+        10 & 20.00  & \begin{tabular}[c]{@{}l@{}}\cite{hoekemaMeasurementConductivitySkull2003}\end{tabular} \\ \bottomrule
+    \end{tabular}
+    \caption{Valores de la razón de conductividad cerebro-cráneo (BSCR) utilizados en el experimento}
+    \label{tab:bscr}
 \end{table}
 
 Regresando a \cref{lineal} $B$ representa la llamada \emph{matriz de ganancia} que determina la sensibilidad del arreglo de electrodos en un EEG y como estos registrarán el campo eléctrico sobre el cuero cabelludo. Para el cálculo de esta matriz de ganancia por medio de BEM se utilizó el software OpenMEEG \cite{open,open2}, donde se utilizaron como datos de entrada nuestro modelo geométricamente realista, un arreglo de EEG de 10-10 (65) \cref{fig:EEG10-10}, y los valores de conductividad del cerebro, cráneo, y cuero cabelludo. Se completó el cálculo de la matriz de ganancia para 10 valores del BSCR, presentados en \cref{tab:bscr} de los cuales 2 son valores aceptados en la literatura (1:20, 1:80) y los 8 restantes se eligieron de la revisión \cite{McCann2019} \TODO{Cómo citar esta revisión? Eliminé el nombre de la autora y dejé solo el número de cita, pero no sé si sea lo correcto o haga sentido}, el criterio para la elección de estos 8 valores fue el hecho que su estimación se realizó con métodos que involucraban el uso de EEG, EEG/MEG, esto con el fin de mantener relación con nuestra propia estimación y compararlos objetivamente. La matriz resultante de cada una de los valores del BSCR tiene forma de (45006 X 65), que corresponden a los 65 canales del EEG y su respuesta a los 15002 vértices de la malla de la corteza cerebral del modelo geométrico en sus tres componentes vectoriales.

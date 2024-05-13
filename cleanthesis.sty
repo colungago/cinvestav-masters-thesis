@@ -203,7 +203,7 @@
 	\cthesissetcolor{cmyk}{.61, .47, .03, 0}{.48, .05, .91, 0}%
 }
 
-% sets the blue-green color theme (blue/green)
+% sets the cinvestavgreen color theme (green/magenta)
 \def\cthesissetcolorcinvestavgreen{%
 	\cthesissetcolor{cmyk}{1, .15, .59, 0.2}{.18, .98, .18, 0}%
 }
@@ -270,7 +270,7 @@
 \RequirePackage{blindtext}		% package for blind text
 \RequirePackage{textcomp}			% different symbols
 \RequirePackage{hyperref} 			% interactive link inside the document
-\RequirePackage{cleveref}
+\RequirePackage[spanish]{cleveref}
 \RequirePackage{afterpage} 			% for blank pages
 \RequirePackage{booktabs}			% for better looking tables
 
@@ -312,33 +312,28 @@
 % **************************************************
 % Bibliography
 % **************************************************
-%\ifct@cthesis@configurebiblatex
-%	\RequirePackage[					% use biblatex for bibliography
-%		backend=\cthesis@bibsys,		% 	- use biber backend (bibtex replacement) or bibtex
-%		style=\cthesis@bibstyle,		% 	- use alphabetic (or numeric) bib style
-%		natbib=true,					% 	- allow natbib commands
-%		hyperref=true,					% 	- activate hyperref support
-%		backref=true,					% 	- activate backrefs
-%		isbn=false,						% 	- don't show isbn tags
-%		url=false,						% 	- don't show url tags
-%		doi=false,						% 	- don't show doi tags
-%		urldate=long,					% 	- display type for dates
-%		maxnames=3,%
-%		minnames=1,%
-%		maxbibnames=5,%
-%		minbibnames=3,%
-%		maxcitenames=2,%
-%		mincitenames=1,%,
-%		sorting=\cthesis@bibsorting%
-%	]{biblatex}
-%	\addbibresource{\cthesis@bibfile.bib}
-%	\DefineBibliographyStrings{ngerman}{%
-%		andothers = {{et\,al\adddot}}, % 'et al.' instead of 'u.a.'
-%		backrefpage = {{zitiert auf Seite}},%
-%		backrefpages = {{zitiert auf den Seiten}},%
-%	}
-%\fi
-
+\ifct@cthesis@configurebiblatex
+\RequirePackage[					% use biblatex for bibliography
+backend=biber,		% 	- use biber backend (bibtex replacement) or bibtex
+style=ieee,		% 	- use alphabetic (or numeric) bib style
+citestyle=numeric-comp,		% 	- use alphabetic (or numeric) bib style
+natbib=true,					% 	- allow natbib commands
+hyperref=true,					% 	- activate hyperref support
+backref=true,					% 	- activate backrefs
+isbn=false,						% 	- don't show isbn tags
+url=false,						% 	- don't show url tags
+doi=false,						% 	- don't show doi tags
+urldate=long,					% 	- display type for dates
+maxnames=3,%
+minnames=1,%
+maxbibnames=5,%
+minbibnames=3,%
+maxcitenames=2,%
+mincitenames=1,%,
+sorting=none,%
+]{biblatex}
+\addbibresource{bib-refs.bib}
+\fi
 
 
 % **************************************************
