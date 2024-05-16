@@ -98,6 +98,7 @@ Estas ecuaciones pueden ser transformadas en un set de ecuaciones lineares:
 	V = BV + V_{0},
 \end{equation}
 donde $V$ y $V_{0}$ son vectores que denotan el potencial buscado en cada nodo y el potencial en un medio infinito respectivamente. $B$ corresponde a la matriz generada por las integrales, la cual depende de la geometría de las superficies y la conductividad asignada a cada una de estas \cite{Hallez2007}.
+
 \section{Problema Inverso del EEG}
 \label{sec:intro:inverse}
 
@@ -126,6 +127,7 @@ Por lo general, la señal medida está contaminada por ruido no uniformemente di
 \end{equation}
 
 Al escanear y procesar todos los puntos en la región de interés en el espacio de la fuente, las mediciones de EEG/MEG se transforman en un mapa del NAI que puede ser proyectado sobre la misma malla de la corteza cerebral del modelo geométricamente realista, efectivamente resolviendo el problema inverso. Cabe mencionar que esta formulación es solo para un instante en el tiempo, lo que resulta en una captura de la actividad en ese momento en las mediciones de EEG/MEG, si se quiere observar el cambio de la actividad con respecto al tiempo, se tiene que calcular el kernel \cref{beamformer4} \TODO{Está mejor así referenciando la ecuación que corresponde al kernel?} para el intervalo de interés.
+
 \section{La razón de conductividad cerebro/cráneo como objeto de estudio}
 \label{sec:intro:study}
 
