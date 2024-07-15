@@ -14,126 +14,165 @@
 \section{Electroencefalografía: Uso Clínico y Herramienta de Investigación}
 \label{sec:intro:eeg}
 
-El electroencefalograma (EEG) es una técnica no invasiva que registra la actividad eléctrica del cerebro. Funciona mediante electrodos situados sobre el cuero cabelludo, los cuales capturan la actividad eléctrica generada por las neuronas de la corteza cerebral. Como tal, el EEG no mide directamente la actividad neuronal, sino que registra el campo eléctrico propagado sobre el cuero cabelludo. El EEG tiene su origen en el año 1924 cuando el médico alemán Hans Berger registró por primera vez la actividad eléctrica del cerebro humano \cite{bergerUeberElektrenkephalogrammMenschen1929}. Desde entonces, el EEG ha sido utilizado como una herramienta clínica para el diagnóstico y monitoreo de enfermedades neurológicas como: la epilepsia, trastornos del sueño, y lesiones cerebrales. \cite{niedermeyerElectroencephalographyBasicPrinciples2005} Además, el EEG también ha sido utilizado como herramienta de investigación, particularmente en el estudio de la actividad cerebral durante estímulos sensoriales, cognitivos o motrices, que desencadenan potenciales relacionados con eventos (ERPs, del inglés \emph{event-related potentials}) \cite{luckIntroductionEventrelatedPotential2014}.
+El electroencefalograma (EEG) es una técnica no invasiva que registra la actividad eléctrica del cerebro.
+Funciona mediante electrodos situados sobre el cuero cabelludo, los cuales capturan la actividad eléctrica generada por las neuronas de la corteza cerebral.
+Como tal, el EEG no mide directamente la actividad neuronal, sino que registra el campo eléctrico propagado sobre el cuero cabelludo.
+El EEG tiene su origen en el año 1924 cuando el médico alemán Hans Berger registró por primera vez la actividad eléctrica del cerebro humano \cite{bergerUeberElektrenkephalogrammMenschen1929}.
+Desde entonces, el EEG ha sido utilizado como una herramienta clínica para el diagnóstico y monitoreo de enfermedades neurológicas como: la epilepsia, trastornos del sueño, y lesiones cerebrales \cite{niedermeyerElectroencephalographyBasicPrinciples2005}.
+Además, el EEG, a menudo pareado con la magnetoencefalografía (MEG), también ha sido utilizado como herramienta de investigación, particularmente en el estudio de la actividad cerebral durante estímulos sensoriales, cognitivos o motrices, que desencadenan potenciales relacionados con eventos (ERPs, del inglés \emph{event-related potentials}) \cite{luckIntroductionEventrelatedPotential2014}.
 
-El interés de estudiar los ERPs radica en que, un conjunto de estos potenciales, corresponden a la actividad eléctrica generada en la corteza cerebral en respuesta a un estímulo sensorial específico, estos son llamados: potenciales de respuesta evocada sensorial (SEP, del inglés \emph{sensorial-evoked potential}), ejemplos son; un sonido sostenido en cierto tono y frecuencia cambiado súbitamente en el caso de un potencial evocado auditivo (AEP, del inglés \emph{auditory-evoked potential}), un flash del luz en un potencial evocado visual (VEP, del inglés \emph{visual-evoked potential}), un pinchazo o estimulación eléctrica en un potencial evocado somatosensorial (SSEP, del inglés \emph{somatosensory-evoked potential}) \cite{kreutzerEncyclopediaClinicalNeuropsychology2011}. Estos potenciales son utilizados por la particularidad de la actividad eléctrica de la corteza cerebral como respuesta al estímulo, la cual es reproducible y puede ser registrada con el EEG, abriendo paso para la localización de las fuentes de actividad neuronal en la corteza cerebral \cite{luckIntroductionEventrelatedPotential2014}.
+El interés de estudiar los ERPs radica en que, un conjunto de estos potenciales, corresponden a la actividad eléctrica generada en la corteza cerebral en respuesta a un estímulo sensorial específico, estos son llamados: potenciales de respuesta evocada sensorial (SEP, del inglés \emph{sensorial-evoked potential}), algunos ejemplos son: un sonido sostenido en cierto tono y frecuencia cambiado súbitamente en el caso de un potencial evocado auditivo (AEP, del inglés \emph{auditory-evoked potential}), un flash del luz en un potencial evocado visual (VEP, del inglés \emph{visual-evoked potential}), un pinchazo o estimulación eléctrica en un potencial evocado somatosensorial (SSEP, del inglés \emph{somatosensory-evoked potential}) \cite{kreutzerEncyclopediaClinicalNeuropsychology2011}.
+Estos potenciales son utilizados por la particularidad de la actividad eléctrica de la corteza cerebral como respuesta al estímulo, la cual es reproducible y puede ser registrada con el EEG, abriendo paso para la localización de las fuentes de actividad neuronal en la corteza cerebral \cite{luckIntroductionEventrelatedPotential2014}.
 
-\section{Física del EEG: Modelo Cuasiestático de las leyes de Maxwell}
+\section{Generadores del EEG: Corrientes Neuronales en la Corteza Cerebral}
+\label{sec:intro:generators}
+
+Con el fin de dar a entender los conceptos con los que se trabajarán en este proyecto de tesis, ese necesario abordar los principios físico-biológicos de la generación de un EEG.
+
+La razón por la cual existen campos electromagnéticos en la cabeza, se debe a las interacciones sinápticas de las neuronas que componen el tejido cerebral.
+Estas interacciones son producto de potenciales de acción generados por la depolarización de la membrana celular, lo que permite el movimiento de la descarga eléctrica a través de la red neuronal mediante las uniones de las terminales del axón de una neurona con las dendritas de otra, estas estructuras llamadas sinapsis, pueden ser eléctricas (se comunican directamente con el paso de iones de una terminal a otra) o químicas (se comunican mediante la liberación de neurotransmisores de una terminal a otra).
+Esta comunicación entre neuronas permite la transmisión de señales eléctricas del sistema nervioso central (SNC) a todo el cuerpo, o de estímulos provocados por factores externos hacía el SNC \cite{kandelPrinciplesNeuralScience2013}.
+
+La actividad eléctrica de las neuronas puede ser medida mediante el EEG utilizando electrodos posicionados en el cuero cabelludo, pero este no puede detectar todo fenómeno eléctrico en el cerebro debido a sus limitantes.
+Una de estas limitantes se debe a la magnitud de los potenciales eléctricos y el tiempo en el que estos se presentan, por ejemplo, en el caso de los potenciales de acción, estos pueden tener una magnitud mayor (70$-$110 mV) en comparación del potencial de reposo, pero solo se producen por un pequeño lapso de tiempo (0.3 ms), además de que es raro que múltiples neuronas se activen exactamente al mismo instante, lo que imposibilita su detección por el EEG.
+Mientras que los potenciales post-sinápticos aunque son menores en magnitud que los de acción (0.1$-$10 mV), el tiempo en el que estos se mantienen es mayor (10$-$20 ms), lo que permite que varias neuronas vecinas estén produciendo el mismo fenómeno eléctrico, generando así un campo eléctrico sumado que puede ser detectado por el EEG.
+Cabe mencionar que las neuronas vecinas tienen que estar acomodadas en forma paralela, formando una estructura similar a una malla que potencia el fenómeno eléctrico \cite{nichollsNeuronBrain2012, Hallez2007}.
+
+La limitante anterior es en parte producto de que el tejido del cráneo y el cuero cabelludo interfieren con la conducción del campo eléctrico generado por los potenciales de las neuronas.
+Evidentemente, la conductividad eléctrica (medida en Siemens S) de los tejidos (normalmente representada por $\sigma$) que se encuentran entre el cerebro y los electrodos usados para la medición del EEG son diferentes a cero, porque permiten la detección de la actividad eléctrica en cuestión. La incógnita en este caso, es el valor de la conductividad eléctrica de los tejidos.
+Se han realizado numerosos estudios que han dado diferentes valores de dicha conductividad \cite{Gutierrez2004, McCann2019}, por lo que se pretende probar estos con el modelo BEM para comparar con datos obtenidos experimentalmente, y así determinar cuáles producen resultados similares a los datos reales.
+
+\section{Física del EEG: modelo cuasi-estático de las leyes de Maxwell}
 \label{sec:intro:physics}
 
-El rango de frecuencias útiles de las señales electrofisiológicas captadas por el EEG y MEG es típicamente menor a 1 kHz, mientras que los fenómenos de interés se encuentran en el rango de 0.1 y 100 Hz. Por lo tanto, la física detrás de la generación y propagación de estas señales puede ser descrita por la aproximación cuasiestática de las ecuaciones de Maxwell, la cual define una aportación virtualmente nula del campo eléctrico y magnético por cambios insignificantes en el tiempo, en la propagación del campo eléctrico generado por las corrientes neuronales en la corteza cerebral \cite{Hamalainen1993, Plonsey1967}. Bajo estas condiciones, las ecuaciones de Maxwell se simplifican de la siguiente manera:
-
+El rango de frecuencias útiles de las señales electrofisiológicas captadas por el EEG y MEG es típicamente menor a 1 kHz, mientras que los fenómenos de interés se encuentran en el rango de 0.1 y 100 Hz.
+Por lo tanto, la física detrás de la generación y propagación de estas señales puede ser descrita por la aproximación cuasi-estática de las ecuaciones de Maxwell, la cual define una aportación virtualmente nula del campo eléctrico y magnético por cambios insignificantes en el tiempo, en la propagación del campo eléctrico generado por las corrientes neuronales en la corteza cerebral \cite{Hamalainen1993, Plonsey1967}.
+Bajo estas condiciones, las ecuaciones de Maxwell se simplifican de la siguiente manera:
 \begin{align}
-	\nabla \times b(r) & = \mu_{0} J (r) \label{eq:Maxwell} \\
+	\nabla \times B(r) & = \mu_{0} J (r) \label{eq:Maxwell} \\
 	\nabla \times E(r) & = 0 \label{eq:Maxwell2}            \\
-	\nabla \cdot b(r)  & = 0 \label{eq:Maxwell3}            \\
+	\nabla \cdot B(r)  & = 0 \label{eq:Maxwell3}            \\
 	\nabla \cdot E(r)  & = 0 \label{eq:Maxwell4}
 \end{align}
-
-donde $b(r)$ es el campo magnético, $E(r)$ es el campo eléctrico, $J(r)$ es la densidad de corriente, $\mu_{0}$ es la permeabilidad magnética, y $r = [r_x, r_y, r_z]^T$ es el punto de observación \cite{Gutierrez2008}. La \cref{eq:Maxwell} describe la relación entre el campo magnético y la densidad de corriente, mientras que \cref{eq:Maxwell2,eq:Maxwell3,eq:Maxwell4} describen la ausencia de fuentes magnéticas y la ausencia de carga eléctrica inducida por el cambio en el tiempo de $E$ y $b$ \cite{Hamalainen1993}. Debido a que $E$ es irrotacional, este puede ser representado en términos del potencial eléctrico $v$ como
-
+donde $B(r)$ es el campo magnético, $E(r)$ es el campo eléctrico, $J(r)$ es la densidad de corriente, $\mu_{0}$ es la permeabilidad magnética, y $r = [r_x, r_y, r_z]^T$ es el punto de observación \cite{Gutierrez2008}.
+En \cref{eq:Maxwell} se describe la relación entre el campo magnético y la densidad de corriente, mientras que \cref{eq:Maxwell2,eq:Maxwell3,eq:Maxwell4} describen la ausencia de fuentes magnéticas y la ausencia de carga eléctrica inducida por el cambio en el tiempo de $E$ y $B$ \cite{Hamalainen1993}.
+Debido a que $E$ es irrotacional, este puede ser representado en términos del potencial eléctrico $v$ como
 \begin{equation}
-	E(r) = -\nabla v(r)\text{.} \label{eq:potencial}
+	E(r) = -\nabla V(r)\text{.} \label{eq:potencial}
 \end{equation}
+Con esta aproximación cuasi-estática, el flujo de corriente $J(r')$ en un punto $r'$ pueder ser relacionado con el campo magnético $B(r)$ en un punto $r$ mediante la ley de Biot-Savart
+\begin{equation}
+	B(r) = \frac{\mu_{0}}{4\pi} \int J(r') \times \frac{(r - r')}{||r - r'||^3} dV'\text{.} \label{eq:biot-savart}
+\end{equation}
+A su vez, la densidad de corriente total $J(r')$ puede ser dividida en dos componentes: la corriente primaria $J_{p}(r')$ que proviene de la actividad neuronal (intracelular) correspondiente al estímulo, y la corriente de volumen $J_{v}(r')$ que resulta del efecto del campo eléctrico en el tejido conductor (extracelular).
+Siendo este conjunto de corrientes expresadas como
+\begin{align}
+	J(r') & = J^{p}(r') + J^{v}(r') \label{eq:corriente1}               \\
+	J(r') & = J^{p}(r') + \sigma(r') E(r') \label{eq:corriente2}        \\
+	J(r') & = J^{p}(r') - \sigma(r') \nabla V(r') \label{eq:corriente3}
+\end{align}
+donde $\sigma(r')$ es la conductividad del tejido de la cabeza, este es asumido como un medio conductor isotrópico y homogéneo \cite{Baillet2001, Gutierrez2008}.
 
-
-
+Por lo tanto, las dos ecuaciones que describen el perfil del campo eléctrico y magnético para un volumen conductor son
+\begin{align}
+	V_0(r) & = \frac{1}{4\pi\sigma_0} \int J^{P}(r') \cdot \frac{(r - r')}{||r - r'||^3} dr' \text{.} \label{eq:forward1} \\
+	B_0(r) & = \frac{\mu_{0}}{4\pi} \int J^{P}(r') \times \frac{(r - r')}{||r - r'||^3} dr' \text{.} \label{eq:forward2}
+\end{align}
 
 \section{Problema Directo del EEG}
 \label{sec:methodology:direct}
 
-Las señales electroencefalográficas se ajustan al modelo electromagnético de las ecuaciones de Maxwell en su versión cuasi-estática (debido a que son señales de muy baja frecuencia). Por lo tanto, las señales de EEG pueden ser simuladas mediante la solución del problema directo; el cual consiste en calcular el potencial eléctrico presente en el cuero cabelludo mediante el modelado de la transducción de la corriente eléctrica generada por una fuente posicionada en la corteza cerebral, en este caso siendo modelada como un dipolo eléctrico que representa la actividad neuronal en eventos de respuesta evocada \cite{Mosher1999, Hallez2007}.
+Dado el hecho de que Las señales electroencefalográficas se ajustan al modelo electromagnético de las ecuaciones de Maxwell en su versión cuasi-estática.
+Las señales de EEG pueden ser simuladas mediante la solución del problema directo; el cual consiste en calcular el potencial eléctrico presente en el cuero cabelludo mediante el modelado de la transducción de la corriente eléctrica generada por una fuente posicionada en la corteza cerebral, en este caso siendo modelada como un dipolo eléctrico que aproxima la actividad neuronal en eventos de respuesta evocada \cite{Mosher1999, Hallez2007}.
 
-Dadas las condiciones cuasi-estáticas del EEG \cite{Plonsey1967} el cálculo del potencial generado por el dipolo de corriente $\mathbf{q}$ con momento dipolar  $\mathbf{\tilde{q}} = [\tilde{q}_x,\,\tilde{q}_y,\,\tilde{q}_z]^T$ y posición $\mathbf{r}_{q} = [r_{qx},\,r_{qy},\,r_{qz}]^T$ en un medio conductor infinito con conductividad $\sigma$ se describe por:
-
-\begin{equation}
+Dadas las condiciones cuasi-estáticas del EEG \cite{Plonsey1967} el cálculo del potencial generado por el dipolo de corriente $\mathbf{q}$ con momento dipolar  $\mathbf{\tilde{q}} = [\tilde{q}_x,\,\tilde{q}_y,\,\tilde{q}_z]^T$ y posición $\mathbf{r}_{q} = [r_{qx},\,r_{qy},\,r_{qz}]^T$ en un medio conductor infinito con conductividad $\sigma$ se describe por: \begin{equation}
 	\label{fdip}
 	V(\mathbf{r},\mathbf{r}_{dip},\mathbf{q})=\frac{\mathbf{q}\cdot(\mathbf{r}-\mathbf{r}_{q})}{4\pi \sigma {||\mathbf{r}-\mathbf{r}_{q}||}^{3}}\text{,}
 \end{equation}
-
 con $\mathbf{r}$ siendo la posición donde el potencial es calculado \cite{Hallez2007}.
 
-El método de elementos de frontera (BEM, del inglés \emph{Boundary Element Method}) es un método numérico empleado para calcular el potencial eléctrico en la superficie de un volumen conductor. Este potencial es originado por fuentes de corriente dentro del volumen, el cual se divide en interfaces representadas mediante mallas teseladas. Este método obtiene la proyección del campo eléctrico sobre la superficie del volumen conductor al resolver el potencial inducido por las fuentes de corriente entre las interfaces de las mallas que dividen el volumen \cite{Hallez2007}. El BEM puede emplearse para resolver el problema directo en un modelo geométricamente realista que representa la cabeza humana como un volumen conductor \cite{Ermer2001}.
+El método de elementos de frontera (BEM, del inglés \emph{boundary element method}) es un método numérico empleado para calcular el potencial eléctrico en la superficie de un volumen conductor. Este potencial es originado por fuentes de corriente dentro del volumen, el cual se divide en interfaces representadas mediante mallas teseladas.
+Este método obtiene la proyección del campo eléctrico sobre la superficie del volumen conductor al resolver el potencial inducido por las fuentes de corriente entre las interfaces de las mallas que dividen el volumen \cite{Hallez2007}.
+El BEM puede emplearse para resolver el problema directo en un modelo geométricamente realista que representa la cabeza humana como un volumen conductor \cite{Ermer2001}.
 
-En nuestro caso específico, este modelo geométricamente realista sirve como el volumen conductor, mientras que las mallas representan las interfaces con distintos valores de conductividad según el tejido. Dentro de estas mallas, las pequeñas áreas triangulares funcionan como los elementos de frontera donde se calculará el potencial inducido por el dipolo eléctrico que se encuentra en la parte más interna del modelo sobre la malla que representa la corteza cerebral, efectivamente modelando la actividad neuronal correspondiente a un ER.
+En nuestro caso específico, este modelo geométricamente realista sirve como el volumen conductor, mientras que las mallas representan las interfaces con distintos valores de conductividad según el tejido.
+Dentro de estas mallas, las pequeñas áreas triangulares funcionan como los elementos de frontera donde se calculará el potencial inducido por el dipolo eléctrico que se encuentra en la parte más interna del modelo sobre la malla que representa la corteza cerebral, efectivamente modelando la actividad neuronal correspondiente a un ER.
 
-El modelo matemático que describe el potencial $V(\mathbf{r})$ de cualquier punto $\mathbf{r}$ en un volumen conductor dividido por elementos de frontera es
-
+El modelo matemático que describe el potencial $V(\mathbf{r})$ de cualquier punto $\mathbf{r}$ en un volumen conductor dividido por elementos de frontera se describe como una aplicación de \cref{eq:forward1} dada por
 \begin{equation}
 	\label{bem}
 	V(r) = \frac{2\sigma_{0}}{\sigma_{k}^{-} + {\sigma_{k}^{+}}} V_{0}(r) + \frac{1}{2\pi} \sum_{j=1}^{R}\frac{\sigma_{j}^{-}-\sigma_{j}^{+}}{\sigma_{k}^{-}+\sigma_{k}^{+}} \int_{r'\varepsilon S_{j}} V(r') \frac{r'-r}{||r'-r||^3}\partial S_{j}\text{,}
 \end{equation}
+donde $\sigma_{0}$ corresponde al medio en el que el dipolo fuente está localizado (la malla de la corteza cerebral) y $V_{0}(\mathbf{r})$ es el potencial en $\mathbf{r}$ para un medio infinito con conductividad $\sigma_{0}$ como en la \cref{fdip}.
+$\sigma_{j}^{-}$ y $\sigma_{j}^{+}$ son las conductividades de los compartimentos interno y externo divididos por la interfaz $S_{j}$. $\partial S$ es un vector orientado ortogonalmente a un elemento de superficie y $||\partial S||$ el área de ese elemento de superficie \cite{Hallez2007}.
 
-donde $\sigma_{0}$ corresponde al medio en el que el dipolo fuente está localizado (la malla de la corteza cerebral) y $V_{0}(\mathbf{r})$ es el potencial en $\mathbf{r}$ para un medio infinito con conductividad $\sigma_{0}$ como en la \cref{fdip}. $\sigma_{j}^{-}$ y $\sigma_{j}^{+}$ son las conductividades de los compartimentos interno y externo divididos por la interfaz $S_{j}$. $\partial S$ es un vector orientado ortogonalmente a un elemento de superficie y $||\partial S||$ el área de ese elemento de superficie \cite{Hallez2007}. \TODO{Especificar que se trata de una variación de la ecuación de Biot-Savart}
-
-Considerando que la solución se busca en un volumen conductor de múltiples interfaces $S_{j}$ con N número de triángulos, el potencial es calculado en el centro de cada uno de estos con la \cref{bem}. Por esta razón la integral sobre la interfaz $S_{j}$ se reescribe como una sumatoria de integrales sobre esta superficie:
-
+Considerando que la solución se busca en un volumen conductor de múltiples interfaces $S_{j}$ con N número de triángulos, el potencial es calculado en el centro de cada uno de estos con la \cref{bem}.
+Por esta razón la integral sobre la interfaz $S_{j}$ se reescribe como una sumatoria de integrales sobre esta superficie:
 \begin{equation}
 	\label{bem2}
 	V(r) = \frac{2\sigma_{0}}{\sigma_{r}^{-} + {\sigma_{r}^{+}}} V_{0}(r) + \frac{1}{2\pi} \sum_{k=1}^{R}\frac{\sigma_{k}^{-}-\sigma_{k}^{+}}{\sigma_{r}^{-}-\sigma_{r}^{+}} \sum_{j=1}^{N_{S_{k}}} \int_{\Delta_{S_{k,j}}} V(r') \frac{r'-r}{||r'-r||^3}\partial S_{k}\text{,}
 \end{equation}
-
 cuya integral se calcula sobre $\Delta_{S_{j},k}$, el j-ésimo triángulo en la superficie $S_{j}$, y $R$ es el número de interfaces en el volumen \cite{Hallez2007}.
 
 Tanto en \cref{bem} como en \cref{bem2} se observa el rol que la razón entre las conductividades de los compartimentos internos y externos juega en el cálculo del potencial en el volumen conductor, ya que de esta depende el potencial inducido en cada uno de los elementos de frontera y por ende el proyectado sobre la capa más externa del modelo; el cuero cabelludo.
 
 Estas ecuaciones pueden ser transformadas en un set de ecuaciones lineares:
-
 \begin{equation}
 	\label{lineal}
 	V = BV + V_{0},
 \end{equation}
-
-donde $V$ y $V_{0}$ son vectores que denotan el potencial buscado en cada nodo y el potencial en un medio infinito respectivamente. $B$ corresponde a la matriz generada por las integrales, la cual depende de la geometría de las superficies y la conductividad asignada a cada una de estas \cite{Hallez2007}.
+donde $V$ y $V_{0}$ son vectores que denotan el potencial buscado en cada nodo y el potencial en un medio infinito respectivamente.
+$B$ corresponde a la matriz generada por las integrales, la cual depende de la geometría de las superficies y la conductividad asignada a cada una de estas \cite{Hallez2007}.
 
 \section{Problema Inverso del EEG}
 \label{sec:intro:inverse}
 
-Si el problema directo se enfoca en obtener una solución para el campo eléctrico generado sobre un volumen conductor a partir de una fuente de corriente, el problema inverso consiste en identificar la posición de dichas fuentes de actividad eléctrica al modelar la amplitud de los dipolos eléctricos y seleccionando los que tengan una mayor actividad \cite{Baillet2001}. Para su cálculo es necesario: las mediciones de EEG que en nuestro caso son las simuladas mediante el problema directo, el volumen conductor, y la matriz de ganancia con su correspondiente plantilla del sistema de EEG.
+Si el problema directo se enfoca en obtener una solución para el campo eléctrico generado sobre un volumen conductor a partir de una fuente de corriente, el problema inverso consiste en identificar la posición de dichas fuentes de actividad eléctrica al modelar la amplitud de los dipolos eléctricos y seleccionando los que tengan una mayor actividad \cite{Baillet2001}.
+Para su cálculo es necesario: las mediciones de EEG que en nuestro caso son las simuladas mediante el problema directo, el volumen conductor, y la matriz de ganancia con su correspondiente plantilla del sistema de EEG.
 
-Existen muchas maneras de resolver el problema inverso neuroeléctrico. En años recientes, los métodos de filtrado espacial basados en la conformación de haces (\emph{beamforming}) han ganado popularidad. En particular, el conformador de haces de restricciones lineales y mínima varianza (LCMV del inglés \emph{linearly-constrained minimum variance beamfomer}) originalmente diseñado e introducido en las neurociencias por Van Veen y Van Drongeler \cite{VanVeen1988, VanVeen1997}. La aplicación de este filtro espacial en la solución del problema inverso; relaciona el campo electromagnético medido en el exterior y superficie de la cabeza con la actividad neuronal subyacente, utilizando la covarianza de las señales medidas y los modelos de actividad de las fuentes y transferencia de señal entre estas y los sensores, que en nuestro caso, estos modelos corresponden a la matriz de ganancia generada con BEM. Los coeficientes de ponderación o pesos del filtro espacial se calculan para cada ubicación en la región de interés (ROI) y acorde a Van Veen y Jaiswal \cite{VanVeen1997,Jaiswal2020} su formulación es la siguiente:
-
-Sea $x$ una señal vector de forma $M \times 1$ de datos MEG o EEG medidos con $M$ sensores, y $N$ es el número de puntos en la ROI con coordenadas $r_j$, ($j = 1, ..., N$). Entonces la fuente $y(r_j)$ en cualquier punto $r_j$ puede ser estimada como la combinación ponderada de la medición $x$ con una matriz de $M \times 3$ denominada $W(r_j)$, de forma que
-
+Existen muchas maneras de resolver el problema inverso neuroeléctrico. En años recientes, los métodos de filtrado espacial basados en la conformación de haces (\emph{beamforming}) han ganado popularidad.
+En particular, el conformador de haces de restricciones lineales y varianza mínima (LCMV del inglés \emph{linearly-constrained minimum variance beamfomer}) originalmente diseñado e introducido en las neurociencias en \cite{VanVeen1988, VanVeen1997}.
+Este filtro espacial relaciona el campo electromagnético medido en el exterior y superficie de la cabeza con la actividad neuronal subyacente, utilizando la covarianza de las señales medidas y los modelos de actividad de las fuentes y transferencia de señal entre estas y los sensores. En nuestro caso, estos modelos corresponden a la matriz de ganancia generada con BEM.
+Los coeficientes de ponderación o pesos del filtro espacial se calculan para cada ubicación en una región de interés (ROI), y su formulación es la siguiente: Sea $x$ una señal vector de forma $M \times 1$ de datos MEG o EEG medidos con $M$ sensores, y $N$ es el número de puntos en la ROI con coordenadas $r_j$, ($j = 1, ..., N$).
+Entonces la fuente $y(r_j)$ en cualquier punto $r_j$ puede ser estimada como la combinación ponderada de la medición $x$ con una matriz de $M \times 3$ denominada $W(r_j)$, de forma que
 \begin{equation}
 	\label{beamformer}
-	y(r_j) = W^{T}(r_j)x
+	y(r_j) = W^{T}(r_j)x \text{.}
 \end{equation}
+$W(r_j)$ se conoce como el filtro espacial para una fuente en la posición $r_j$ \cite{VanVeen1997,Jaiswal2020}.
+Este tipo de filtro espacial produce un beamformer o formador de haces de tipo vectorial al estimar por separado la actividad para tres orientaciones de fuente ortogonales, correspondientes a las tres columnas de la matriz.
 
-en esta ecuación $W(r_j)$ se conoce como el filtro espacial para una fuente en la posición $r_j$. Este tipo de filtro espacial produce un beamformer o formador de haces de tipo vectorial al estimar por separado la actividad para tres orientaciones de fuente ortogonales, correspondientes a las tres columnas de la matriz. Siguiendo el desarrollo de Van Veen y Jaiswal \cite{VanVeen1997,Jaiswal2020}, el filtro espacial $W(r_j)$ para el beamformer vectorial se define como
-
+Siguiendo el desarrollo mencionado previamente, el filtro espacial $W(r_j)$ para el conformador de haces se define como
 \begin{equation}
 	\label{beamformer2}
-	W^{T}(r_j) = (L^{T}(r_j)C^{-1}L(r_j))^{-1}L^{T}(r_j)C^{-1}
+	W^{T}(r_j) = (L^{T}(r_j)C^{-1}L(r_j))^{-1}L^{T}(r_j)C^{-1} \text{.}
 \end{equation}
-
-Aquí $L(r_j)$ es la matriz de ganancia con forma $M \times 3$ que define la contribución de una fuente dipolar en la posición $r_j$ a la medición $x$, y $C$ es la matriz de covarianza calculada a partir de las mediciones de EEG o MEG. Para realizar la localización de las fuentes utilizando LCMV, se estima la varianza resultante $Var(y(r_j))$ en cada punto del espacio de la fuente \cite{VanVeen1997,Jaiswal2020}, en nuestro caso siendo la malla de la corteza cerebral, lo que resulta en
-
+Aquí $L(r_j)$ es la matriz de ganancia con forma $M \times 3$ que define la contribución de una fuente dipolar en la posición $r_j$ a la medición $x$, y $C$ es la matriz de covarianza calculada a partir de las mediciones de EEG o MEG.
+Para realizar la localización de las fuentes utilizando LCMV, se estima la varianza resultante $Var(y(r_j))$ en cada punto del espacio de la fuente \cite{VanVeen1997,Jaiswal2020}, en nuestro caso siendo la malla de la corteza cerebral, lo que resulta en
 \begin{equation}
 	\label{beamformer3}
 	\widehat{\text{Var}}(y(r_j)) = \text{Traza}[L^{T}(r_j)C^{-1}L(r_j)]^{-1}.
 \end{equation}
 
-Por lo general, la señal medida está contaminada por ruido no uniformemente distribuido y por lo tanto, la varianza de la señal estimada se normaliza con la varianza del ruido proyectado $C_n$ calculada sobre parte de las mediciones en estado basal o en reposo (\emph{baseline noise}). Esta estimación normalizada es denomida índice de actividad neural (NAI, del inglés \emph{neuronal activity index}) \cite{VanVeen1997} y puede expresarse como
-
+Por lo general, la señal medida está contaminada por ruido no uniformemente distribuido y por lo tanto, la varianza de la señal estimada se normaliza con la varianza del ruido proyectado $C_n$ calculada sobre parte de las mediciones en estado basal o en reposo (\emph{baseline noise}).
+Esta estimación normalizada es denomida \emph{índice de actividad neural} (NAI, del inglés \emph{neuronal activity index}) \cite{VanVeen1997} y puede expresarse como
 \begin{equation}
 	\label{beamformer4}
-	\text{NAI}(r_j) = \frac{\text{Traza}\left\{[L^{T}(r_j)C^{-1}L(r_j)]^{-1}\right\}}{\text{Traza}\left\{[L^{T}(r_j)C_n^{-1}L(r_j)]^{-1}\right\}}
+	\text{NAI}(r_j) = \frac{\text{Traza}\left\{[L^{T}(r_j)C^{-1}L(r_j)]^{-1}\right\}}{\text{Traza}\left\{[L^{T}(r_j)C_n^{-1}L(r_j)]^{-1}\right\}} \text{.}
 \end{equation}
 
-Al escanear y procesar todos los puntos en la región de interés en el espacio de la fuente, las mediciones de EEG/MEG se transforman en un mapa del NAI que puede ser proyectado sobre la misma malla de la corteza cerebral del modelo geométricamente realista, efectivamente resolviendo el problema inverso. Cabe mencionar que esta formulación es solo para un instante en el tiempo, lo que resulta en una captura de la actividad en ese momento en las mediciones de EEG/MEG, si se quiere observar el cambio de la actividad con respecto al tiempo, se tiene que calcular el kernel \cref{beamformer4} \TODO{Está mejor así referenciando la ecuación que corresponde al kernel?} para el intervalo de interés.
+Al escanear y procesar todos los puntos en la región de interés en el espacio de la fuente, las mediciones de EEG/MEG se transforman en un mapa del NAI que puede ser proyectado sobre la misma malla de la corteza cerebral del modelo geométricamente realista, efectivamente resolviendo el problema inverso.
+Cabe mencionar que esta formulación es solo para un instante en el tiempo, lo que resulta en una captura de la actividad en ese momento en las mediciones de EEG/MEG, si se quiere observar el cambio de la actividad con respecto al tiempo, se tiene que calcular \cref{beamformer4} en función del tiempo.
 
 \section{La razón de conductividad cerebro/cráneo como objeto de estudio}
 \label{sec:intro:study}
 
-La idea de estimar la razón de la conductividad cerebro/cráneo nace del uso del EEG como herramienta de localización de fuentes de actividad neuronal, las cuales son posibles de estimar con las mediciones del potencial eléctrico sobre el cuero cabelludo obtenidas de EEG en cada uno de sus electrodos, y subsecuentemente aplicando técnicas de procesamiento digital de señales en tales mediciones. La problemática de este acercamiento es que es necesario contar con un modelo \emph{a priori} de las posibles fuentes de actividad neuronal con la finalidad de tener puntos de referencia para la proyección de las mediciones de EEG y su ajuste al modelo. Este acercamiento a la estimación de fuentes de actividad neuronal se define como el problema directo (solución de un modelo de fuentes de actividad neuronal) y el problema inverso (solución para la localización de fuentes de actividad neuronal) del EEG \cite{Hallez2007}. Dado que una parte del problema no puede ser resuelta sin tomar suposiciones de la solución de la otra y de los parámetros bioelectromagnéticos de los tejidos que componen la cabeza como las conductividades, este acercamiento se considera un problema abierto, en particular el problema inverso del EEG por la multitud de posibles voltajes resultantes y su inestabilidad derivada de la sensibilidad a pequeños cambios en los datos como el ruido generado por el equipo de EEG.
+La idea de estimar la razón de la conductividad cerebro/cráneo nace del uso del EEG como herramienta de localización de fuentes de actividad neuronal, las cuales son posibles de estimar con las mediciones del potencial eléctrico sobre el cuero cabelludo obtenidas de EEG en cada uno de sus electrodos, y subsecuentemente aplicando técnicas de procesamiento digital de señales en tales mediciones.
+La problemática de este acercamiento es que es necesario contar con un modelo \emph{a priori} de las posibles fuentes de actividad neuronal con la finalidad de tener puntos de referencia para la proyección de las mediciones de EEG y su ajuste al modelo.
+Este acercamiento a la estimación de fuentes de actividad neuronal se define como el problema directo (solución de un modelo de fuentes de actividad neuronal) y el problema inverso (solución para la localización de fuentes de actividad neuronal) del EEG \cite{Hallez2007}.
+Dado que una parte del problema no puede ser resuelta sin tomar suposiciones de la solución de la otra y de los parámetros bioelectromagnéticos de los tejidos que componen la cabeza como las conductividades, este acercamiento se considera un problema abierto, en particular el problema inverso del EEG por la multitud de posibles voltajes resultantes y su inestabilidad derivada de la sensibilidad a pequeños cambios en los datos como el ruido generado por el equipo de EEG.
 
-Cuando este procedimiento es implementado para la localización de fuentes de actividad neuronal, estas son las que se toman como variable independiente con la intención de encontrar la posición que mejor se ajusta a las mediciones, mientras que como se comentó anteriormente, las propiedades bioelectromagnéticas en particular la conductividad de los tejidos, se asumen como conocidas utilizando valores nominales (\emph{i.e.} $0.33\text{ S/m}$ para el cerebro y $0.0042 \text{ S/m}$ para el cráneo). Estos valores aunque son utilizados ampliamente en el área de las neurociencias \cite{Rush1968,Rush1969,Cohen1983}, han sido debatidos por múltiples estudios con acercamientos novedosos de la estimación de las conductividades obteniendo valores significativamente diferentes a los nominales \cite{McCann2019}, hablando en términos de la razón de la conductividad cerebro/cráneo (BSCR \emph{Brain-scalp-conductivity-ratio}) esta es una diferencia hasta 4 veces mayor (1:80 vs 1:20). Dada la multitud de diferentes soluciones a una misma implementación del problema inverso del EEG, se puede considerar que el uso de diferentes valores de conductividad también pueden afectar al resultado y puede ser utilizado como una variable en el cálculo del problema inverso en donde el caso de estudio es la estimación de la razón de la conductividad misma, claro, teniendo en cuenta que no podemos tener dos variables independientes, tendríamos que mantener en este caso la posición de las fuentes de actividad neuronal como conocidas para la solución del problema inverso.
-
-
-
-
-
-
-
-
+Cuando este procedimiento es implementado para la localización de fuentes de actividad neuronal, estas son las que se toman como variable independiente con la intención de encontrar la posición que mejor se ajusta a las mediciones, mientras que como se comentó anteriormente, las propiedades bioelectromagnéticas en particular la conductividad de los tejidos, se asumen como conocidas utilizando valores nominales (\emph{i.e.} $0.33\text{ S/m}$ para el cerebro y $0.0042 \text{ S/m}$ para el cráneo).
+Estos valores aunque son utilizados ampliamente en el área de las neurociencias \cite{Rush1968,Rush1969,Cohen1983}, aunque han sido debatidos por múltiples estudios con acercamientos novedosos de la estimación de las conductividades obteniendo valores significativamente diferentes a los nominales \cite{McCann2019}.
+Hablando en términos de la razón de la conductividad cerebro/cráneo (BSCR \emph{Brain-scalp-conductivity-ratio}) esta es una diferencia hasta 4 veces mayor (1:80 vs 1:20).
+Dada la multitud de diferentes soluciones a una misma implementación del problema inverso del EEG, se puede considerar que el uso de diferentes valores de conductividad también pueden afectar al resultado y puede ser utilizado como una variable en el cálculo del problema inverso en donde el caso de estudio es la estimación de la razón de la conductividad misma, claro, teniendo en cuenta que no podemos tener dos variables independientes, tendríamos que mantener en este caso la posición de las fuentes de actividad neuronal como conocidas para la solución del problema inverso.

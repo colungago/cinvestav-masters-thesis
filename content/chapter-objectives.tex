@@ -11,13 +11,13 @@ Existen rangos de error tolerables al definir una razón de conductividad eléct
 \section{Objetivo Principal}
 \label{sec:obj:main}
 
-Implementar un método de estimación del valor de la razón entre la conductividad eléctrica cerebro/cráneo basado en el cálculo de modelos de electroencefalograma (EEG) en geometrías realistas obtenidas con el método de elementos de frontera (BEM del inglés \emph{Boundary element method}).
+Implementar un método de estimación del error incurrido en la localización de fuentes de actividad neuronal al resolver el problema inverso con diferentes valores de la razón de conductividad eléctrica cerebro/cráneo, basado en el cálculo de modelos de electroencefalograma en geometrías realistas obtenidas con el método de elementos de frontera.
 
 \section{Objetivos Particulares}
 \label{sec:obj:individual}
 
 \begin{itemize}
-	\item Implementar el método del cálculo de EEG rápidamente recalculable propuesto por \citeauthor{Ermer2001}\cite{Ermer2001} para el caso de una fuente de actividad cerebral conocida y valores típicos del BSCR.
-	\item Calcular el costo computacional de dicha implementación para una serie de valores discretos del BSCR.
-	\item Probar la aplicabilidad del método propuesto en una prueba piloto para el caso de datos reales de EEG de una respuesta sensorial evocada MODIFICAR O REMOVER.
+	\item Implementar la solución del problema directo en EEG en geometrías realistas con diferentes valores de la razón de conductividad eléctrica cerebro/cráneo, utilizando un dipolo de corriente eléctrica como modelo de un evento de respuesta evocada en distintas zonas de la corteza cerebral representando fuentes de actividad neuronal, y con un nivel de ruido variable.
+	\item Calcular el problema inverso en EEG probando los diferentes valores de la razón de conductividad eléctrica cerebro/cráneo en las soluciones del problema directo, y obtener el error incurrido en la localización de fuentes de actividad neuronal entre las utilizadas en la solución del problema directo y las obtenidas en el problema inverso.
+	\item Analizar el desempeño del estimador del error incurrido en la localización de fuentes de actividad neuronal utilizando la frontera de Cramér-Rao.
 \end{itemize}

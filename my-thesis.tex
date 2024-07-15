@@ -16,37 +16,13 @@
     chapterprefix=false,    % do not display a prefix for chapters
     appendixprefix=false,    % but display a prefix for appendix chapter
     draft=false,            % value for draft version
+    language=english,        % language
 ]{scrreprt}%
 
 
 % **************************************************
 % Setup YOUR thesis document in this file !
 % **************************************************
-
-\RequirePackage[					% use biblatex for bibliography
-backend=biber,		% 	- use biber backend (bibtex replacement) or bibtex
-style=ieee,		% 	- use alphabetic (or numeric) bib style
-citestyle=numeric-comp,		% 	- use alphabetic (or numeric) bib style
-natbib=true,					% 	- allow natbib commands
-hyperref=true,					% 	- activate hyperref support
-backref=true,					% 	- activate backrefs
-isbn=false,						% 	- don't show isbn tags
-url=false,						% 	- don't show url tags
-doi=false,						% 	- don't show doi tags
-urldate=long,					% 	- display type for dates
-maxnames=3,%
-minnames=1,%
-maxbibnames=5,%
-minbibnames=3,%
-maxcitenames=2,%
-mincitenames=1,%,
-sorting=none,%
-]{biblatex}
-\addbibresource{bib-refs.bib}
-%\addbibresource{/Users/kui07/OneDrive/Documentos/Cinvestav/Citations/Tesis.bib}
-
-
-
 \input{my-thesis-setup}
 
 % **************************************************
@@ -64,10 +40,9 @@ sorting=none,%
 % --------------------------
 %\renewcaptionname{ngerman}{\figurename}{Abb.}
 %\renewcaptionname{ngerman}{\tablename}{Tab.}
-\renewcaptionname{english}{\figurename}{Fig.}
-\renewcaptionname{english}{\tablename}{Tab.}
-%\renewcaptionname{spanish}{\figurename}{Fig.}
-%\renewcaptionname{spanish}{\tablename}{Tab.}
+%\renewcaptionname{english}{\figurename}{Fig.}
+%\renewcaptionname{english}{\tablename}{Tab.}
+
 
 % --------------------------
 % Front matter
@@ -108,6 +83,7 @@ sorting=none,%
 
 %\part{Additional Example Part}
 \input{content/chapter-methodology}         % INCLUDE: system
+\input{content/chapter-results.tex}         % INCLUDE: results
 %\input{content/chapter-concepts}       % INCLUDE: concepts
 %\input{content/chapter-conclusion}     % INCLUDE: conclusion
 
@@ -132,11 +108,8 @@ sorting=none,%
 \listoftables
 \cleardoublepage
 
-%\lstlistoflistings
-%\cleardoublepage
-
-%\appendix\cleardoublepage
-%\input{content/chapter-appendix}       % INCLUDE: appendix
+\appendix\cleardoublepage
+\input{content/chapter-appendix}       % INCLUDE: appendix
 
 %\cleardoublepage
 %\input{content/colophon}
