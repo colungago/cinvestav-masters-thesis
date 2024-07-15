@@ -1,6 +1,3 @@
-## VS Code
-*.code-workspace
-
 ## Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
