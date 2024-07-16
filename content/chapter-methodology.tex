@@ -102,7 +102,7 @@ Todas las mallas en conjunto representan nuestro volumen conductor (\cref{fig:me
 	\label{fig:methodology:meshes}
 \end{figure}
 
-\begin{figure}[htb]
+\begin{figure}[tb]
 	\includegraphics[width=\textwidth]{whole_model}
 	\caption{Modelo geométricamente realista completamente anidado con sensores de EEG}
 	\label{fig:methodology:model}
@@ -115,10 +115,6 @@ Todas las mallas en conjunto representan nuestro volumen conductor (\cref{fig:me
 Recapitulando, lo necesario para la solución del problema directo es: una fuente de corriente eléctrica y un modelo de un volumen conductor con la conductividad de los tejidos que representan.
 Usualmente, la finalidad de la implementación del problema directo es ubicar la posición de la fuente de corriente que representa la actividad neuronal por lo que esta ubicación es la variable independiente al momento de hacer el cálculo, mientras que la conductividad se mantiene como un valor fijo.
 
-En el área de neurociencias se suele mantener un valor nominal para la razón de conductividad cerebro-cráneo de 1:80 (\emph{i.e.} $0.33\text{ S/m}$ para el cerebro y $0.0042 \text{ S/m}$ para el cráneo) \cite{Rush1968,Rush1969,Cohen1983}.
-Sin embargo, múltiples estudios con diferentes acercamientos han publicado valores de la razón de conductividiad cerebro-cráneo que se desvían significativamente del estandár de 1:80 \cite{McCann2019}.
-Razón por la cual el objetivo de nuestro experimento es estimar el valor del BSCR al utilizarlo como la variable independiente mientras se toma por conocida la posición del dipolo de corriente además de mantenerse fija para todos los experimentos.
-
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=0.75\textwidth]{EEG_10-10}
@@ -126,7 +122,11 @@ Razón por la cual el objetivo de nuestro experimento es estimar el valor del BS
 	\label{fig:EEG10-10}
 \end{figure}
 
-\begin{table}[htb]
+En el área de neurociencias se suele mantener un valor nominal para la razón de conductividad cerebro-cráneo de 1:80 (\emph{i.e.} $0.33\text{ S/m}$ para el cerebro y $0.0042 \text{ S/m}$ para el cráneo) \cite{Rush1968,Rush1969,Cohen1983}.
+Sin embargo, múltiples estudios con diferentes acercamientos han publicado valores de la razón de conductividiad cerebro-cráneo que se desvían significativamente del estandár de 1:80 \cite{McCann2019}.
+Razón por la cual el objetivo de nuestro experimento es estimar el valor del BSCR al utilizarlo como la variable independiente mientras se toma por conocida la posición del dipolo de corriente además de mantenerse fija para todos los experimentos.
+
+\begin{table}[tb]
 	\centering
 	\begin{tabular}{@{}rrr@{}}
 		\toprule
@@ -139,8 +139,8 @@ Razón por la cual el objetivo de nuestro experimento es estimar el valor del BS
 		6  & 41.84  & \begin{tabular}[c]{@{}l@{}}\cite{Dannhauer2011}\end{tabular}                           \\
 		7  & 33.00  & \begin{tabular}[c]{@{}l@{}}\cite{aydinCombiningEEGMEG2014a}\end{tabular}               \\
 		8  & 10.30  & \begin{tabular}[c]{@{}l@{}}\cite{acarHighresolutionEEGSource2016}\end{tabular}         \\
-		9  & 80.00  & \begin{tabular}[c]{@{}l@{}}\cite{Rush1968}\end{tabular}                                \\
-		10 & 20.00  & \begin{tabular}[c]{@{}l@{}}\cite{hoekemaMeasurementConductivitySkull2003}\end{tabular} \\ \bottomrule
+		9 & 20.00  & \begin{tabular}[c]{@{}l@{}}\cite{hoekemaMeasurementConductivitySkull2003}\end{tabular} \\
+		10  & 80.00  & \begin{tabular}[c]{@{}l@{}}\cite{Rush1968}\end{tabular}                                \\ \bottomrule\\
 	\end{tabular}
 	\caption{Valores de la razón de conductividad cerebro-cráneo (BSCR) utilizados en el experimento}
 	\label{tab:bscr}
@@ -249,7 +249,8 @@ En total se obtuvieron 900 kernels de proyección, 100 por cada BSCR, para cada 
 \section{Desarrollo del Estimador del Error de Localización de las Fuentes de Actividad Neuronal}
 \label{sec:methodology:estimator}
 
-Para la cuantización del error de localización se procedió obtener la posición de magnitud máxima de los mapas de PNAI generados por el kernel de proyección para cada uno de los 90,000 conjuntos de datos. Estos fueron separados y analizados por cada BSCR, dipolo, y nivel de SNR.
+Para la cuantización del error de localización se procedió obtener la posición de magnitud máxima de los mapas de PNAI generados por el kernel de proyección para cada uno de los 90,000 conjuntos de datos. 
+Estos fueron separados y analizados por cada BSCR, dipolo, y nivel de SNR.
 La posición de magnitud máxima fue comparada con la posición real de los dipolos de corriente, y se estandarizó con la distancia media y la desviación estándar entre los vértices de los triángulos de la malla de la corteza cerebral. \TODO{Esta parte la escribí pensando en un overview del proceso, pero habiendo terminado la sección me parece redundante, me gustaría su opinión si es útil o como debería de ser redactada}
 
 Entrando en detalle, la posición de magnitud máxima fue obtenida al implementar el kernel de proyección correspondiente a las mediciones de EEG en el instante de 397.2 ms, el cual es el mismo punto en el que se encuentra la magnitud máxima de la función del dipolo con respecto al tiempo \TODO{abordar este punto en la introducción}.
@@ -261,7 +262,7 @@ Obteniendo como resultado, 900 conjuntos de 100 posiciones de magnitud máxima. 
 Una vez obtenidos los estimadores de la posición de magnitud máxima y el error de localización, se procedió a estandarizar el error de localización con respecto a la resolución de la malla de la corteza cerebral. Utilizando la distancia media y la desviación estándar entre los vértices de los triángulos de la malla de la corteza cerebral.
 
 \section{Análisis Estadístico del Estimador}
-\label{sec:methodology:statistical}
+\label{sec:methodology:cbr-analysis}
 
 \begin{figure}[tb]
 	\centering
