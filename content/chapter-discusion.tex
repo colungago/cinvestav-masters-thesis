@@ -1,0 +1,15 @@
+% !TEX root = ../my-thesis.tex
+%
+\chapter{Discusión}
+\label{sec:discusion}
+
+
+
+Analizando los resultados obtenidos, se puede observar que el error en la localización de la fuente de actividad neuronal disminuye a medida que el valor de BSCR disminuye, siendo el BSCR 10 el más preciso en la localización de la fuente de actividad neuronal y más cercano a la CRB, mientras que el BSCR 200 es el menos preciso y más alejado de la CRB.
+Cabe mencionar que el BSCR 10 y el BSCR 200 son valores extremos dentro del rango de valores de BSCR reportados en la literatura y son considerados atípicos. 
+
+Esta diferencia en la proporción de la conductividad de los tejidos del cráneo puede ser explicada por el origen de las mediciones de la conductividad, donde el valor de BSCR 200 fue obtenido por medio del método de suma de cuadrados mínimos con un modelo de esferas concéntricas, pero el mismo autor menciona problemas existentes en la metodología utilizada para obtener el valor de BSCR, los cuales luego fueron corregidos por otros autores que obtuvieron un valor de BSCR más cercano a los reportados en la literatura haciendo este modelo una opción viable \cite{eriksenVivoHumanHead1990, Gutierrez2004}. 
+Por otro lado, el valor de BSCR 10 fue obtenido por medio del método de elementos finitos en conjunto con el método de elementos de frontera en geometrías realistas del cráneo, con la particularidad de que los autores utilizaron como referencia mediciones de MEG y EEG de infantes de un año de edad, lo que podría explicar la diferencia en los valores de BSCR obtenidos \cite{acarHighresolutionEEGSource2016}.
+
+Con esto en mente, evaluando los resultados obtenidos en la \cref{fig:error-results-d1n1}, se puede observar que el BSCR 20 es más exacto en la localización de la fuente de actividad neuronal y no presenta una diferencia significativa en la variabilidad de los resultados obtenidos, salvo en el caso de evaluar con el BSCR 200, donde la diferencia es más notoria. 
+Mientras tanto, el BSCR 80 presenta una mayor variabilidad en los resultados obtenidos, especialmente al comparar con valores de BSCR más bajos.  

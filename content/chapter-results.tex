@@ -3,65 +3,61 @@
 \chapter{Resultados}
 \label{sec:results}
 
-Los resultados obtenidos de la implementación del problema directo y del problema inverso del EEG, así como el análisis estadístico del estimador, se presentan en tres subsecciones: la implementación del problema directo, la implementación del problema inverso, el análisis estadístico del estimador y el desempeño del uso de diferentes valores del BSCR en la simulación y posterior localización de fuentes de actividad neuronal.
-
+Los resultados obtenidos de la implementación del problema directo y del problema inverso del EEG, así como el análisis estadístico del estimador, se presentan en tres subsecciones: (i) la solución del problema directo, (ii) la solución del problema inverso, y (iii) el análisis estadístico del error incurrido en el uso de diferentes valores del BSCR en la simulación y posterior localización de fuentes de actividad neuronal. 
 A su vez, debido a la gran cantidad de datos obtenidos, se presentan los de mayor relevancia en las figuras y tablas correspondientes, haciendo especial énfasis en los resultados provenientes del uso de los valores de BSCR más referidos en la literatura y los que más se alejan de estos valores, con el fin de comparar los resultados obtenidos y analizar el desempeño del estimador en cada caso.
 
-\section{Implementación del Problema Directo}
+\section{Solución del Problema Directo}
 \label{sec:results:direct}
 
-\begin{figure}[hp]
+Las señales de EEG simuladas obtenidas de la implementación del problema directo se muestran en la \cref{fig:eeg-simulated}. 
+Estas señales corresponden a BSCR = de 20, 80, 10 y 200, respectivamente, generadas por el dipolo ubicado en la zona somatosensorial y simuladas con un SNR de 1\% proveniente de la fuente.
+En cada gráfica, se superponen las señales individuales capturadas por cada uno de los 63 electrodos considerados en el análisis, creando un gráfico de mariposa donde el eje horizontal representa el tiempo y el eje vertical representa la amplitud de la señal. 
+Este conjunto de señales son una parte del total de las 9000 señales simuladas por las 100 pruebas de cada permutación de BSCR, SNR y fuente de actividad neuronal.
+
+\begin{figure}[tbp]
     \centering
     \begin{subfigure}{0.9\textwidth}
+        \includegraphics[width=\textwidth]{eeg/eeg-d1n1c8c8.png}
+        \caption{Señales de EEG simuladas con BSCR = 10.}
+        \label{fig:eeg-d1n1c8c8}
+        \vspace{0.5em}
+    \end{subfigure}
+    \vfill
+    \begin{subfigure}{0.9\textwidth}
         \includegraphics[width=\textwidth]{eeg/eeg-d1n1c9c9.png}
-        \caption{Señales de EEG simuladas con BSCR 20.}
+        \caption{Señales de EEG simuladas con BSCR = 20.}
         \label{fig:eeg-d1n1c9c9}
         \vspace{0.5em}
     \end{subfigure}
     \vfill
     \begin{subfigure}{0.9\textwidth}
         \includegraphics[width=\textwidth]{eeg/eeg-d1n1c10c10.png}
-        \caption{Señales de EEG simuladas con BSCR 80.}
+        \caption{Señales de EEG simuladas con BSCR = 80.}
         \label{fig:eeg-d1n1c10c10}
         \vspace{0.5em}
     \end{subfigure}
     \vfill
     \begin{subfigure}{0.9\textwidth}
-        \includegraphics[width=\textwidth]{eeg/eeg-d1n1c8c8.png}
-        \caption{Señales de EEG simuladas con BSCR 10.}
-        \label{fig:eeg-d1n1c8c8}
-        \vspace{0.5em}
-    \end{subfigure}
-    \vfill
-    \begin{subfigure}{0.9\textwidth}
         \includegraphics[width=\textwidth]{eeg/eeg-d1n1c2c2.png}
-        \caption{Señales de EEG simuladas con BSCR 200.}
+        \caption{Señales de EEG simuladas con BSCR = 200.}
         \label{fig:eeg-d1n1c2c2}
     \end{subfigure}
     \caption{Señales de EEG simuladas con diferentes valores de BSCR.}
     \label{fig:eeg-simulated}
 \end{figure}
 
-Las señales de EEG simuladas obtenidas de la implementación del problema directo se muestran en la \cref{fig:eeg-simulated}. 
-Estas señales corresponden a los valores de BSCR de 20, 80, 10 y 200, respectivamente, generadas por el dipolo ubicado en la zona somatosensorial y simuladas con un SNR de 1\% proveniente de la fuente.
-En cada gráfica, se superponen las señales individuales capturadas por cada uno de los 63 electrodos considerados en el análisis, creando un gráfico de mariposa donde el eje x representa el tiempo y el eje y representa la amplitud de la señal. 
-Este conjunto de señales son una parte del total de las 9000 señales simuladas por las 100 pruebas de cada permutación de BSCR, SNR y fuente de actividad neuronal.
-
-Observando las señales simuladas, se puede apreciar que a medida que el valor de BSCR disminuye, la amplitud de las señales aumenta, esto no indica que la actividad neuronal sea mayor, sino que la señal es más fácil de detectar por la menor resistencia que presenta al pasar por los tejidos del cráneo.
+Observando las señales simuladas, se puede apreciar que a medida que el valor de BSCR disminuye, la amplitud de las señales aumenta. 
+Esto no indica que la actividad neuronal sea mayor, sino que la señal es más fácil de detectar por la menor resistencia que presenta al pasar por los tejidos del cráneo.
 Cabe mencionar que esta diferencia de amplitud no representa una métrica aceptable para comparar la actividad neuronal entre diferentes valores de BSCR, ya que también influyen otros factores como el ruido introducido en la simulación, el ruido generado por el equipo de medición y en casos reales, las condiciones del paciente.
 Independientemente del valor de BSCR, se puede observar que las señales presentan un patrón similar, lo que indica que la actividad neuronal simulada es la misma en todos los casos.
 
-\section{Implementación del Problema Inverso}
+\section{Solución del Problema Inverso}
 \label{sec:results:inverse}
 
-En la \cref{fig:inverse-results}, se muestran los resultados de la implementación del problema inverso para el valor de BSCR de 200, 10, 20 y 80, correspondientes al conjunto de señales simuladas con un SNR de 1\% proveniente de la fuente de actividad neuronal ubicada en la zona somatosensorial mencionadas en la \cref{sec:results:direct}.
+En la \cref{fig:inverse-results}, se muestran los resultados de la implementación del problema inverso para el valor de BSCR de 10, 20, 80 y 200 correspondientes al conjunto de señales simuladas con un SNR de 1\% proveniente de la fuente de actividad neuronal ubicada en la zona somatosensorial mencionadas en la \cref{sec:results:direct}.
 Dado que las señales de EEG simuladas tienen una componente en el tiempo, el problema inverso se calcula para cada instante de tiempo correspondiente a la frecuencia de muestreo de 1000 Hz, por lo que los resultados mostrados en la \cref{fig:inverse-results} corresponden al instante de tiempo en el que la función del dipolo utilizando como fuente de actividad neuronal se encuentra en su cenit.
 
-Los resultados mostrados en la figura en cuestión, corresponden a la localización de la fuente de actividad neuronal utilizando el mismo valor de BSCR como parámetro del filtro espacial en la solución del problema inverso y en la simulación de las señales de EEG en el problema directo.
-Por lo tanto, se espera que el punto de máxima actividad neuronal proyectado sobre la malla representativa de la corteza cerebral se localice en la misma región y vértice que el dipolo utilizado como fuente de actividad neuronal en la simulación de las señales de EEG.
-Justo como en los resultados de la \cref{sec:results:direct}, en la \cref{fig:inverse-results} se aprecia una diferencia en la magnitud del PNAI obtenido, donde a medida que el valor de BSCR disminuye, no solo la magnitud del PNAI aumenta, sino que también el área sobre la que se propaga la actividad neuronal simulada se expande.
-
-\begin{figure}[tb]
+\begin{figure}[tbp]
     \centering
     \begin{subfigure}{0.45\textwidth}
         \includegraphics[width=\textwidth]{inverse/inverse-d1n1c2c2.png}
@@ -90,12 +86,16 @@ Justo como en los resultados de la \cref{sec:results:direct}, en la \cref{fig:in
     \label{fig:inverse-results}
 \end{figure}
 
+
+Los resultados mostrados en la figura en cuestión, corresponden a la localización de la fuente de actividad neuronal utilizando el mismo valor de BSCR como parámetro del filtro espacial en la solución del problema inverso y en la simulación de las señales de EEG en el problema directo.
+Por lo tanto, se espera que el punto de máxima actividad neuronal proyectado sobre la malla representativa de la corteza cerebral se localice en la misma región y vértice que el dipolo utilizado como fuente de actividad neuronal en la simulación de las señales de EEG.
+Justo como en los resultados de la \cref{sec:results:direct}, en la \cref{fig:inverse-results} se aprecia una diferencia en la magnitud del PNAI obtenido, donde a medida que el valor de BSCR disminuye, no solo la magnitud del PNAI aumenta, sino que también el área sobre la que se propaga la actividad neuronal simulada se expande.
+
 \section{Estimación del Error en la Localización de la Fuente de Actividad Neuronal}
 \label{sec:results:error}
 
 La estimación del error en la localización se obtuvo con el método descrito en la \cref{sec:methodology:estimator}, mientras que el análisis estadístico del desempeño del estimador se realizó con el método descrito en la \cref{sec:methodology:cbr-analysis}.
 Por lo tanto, los resultados presentados corresponden a la diferencia entre la localización de la fuente de actividad neuronal obtenida en el problema inverso y la localización de la fuente de actividad neuronal utilizada en la simulación de las señales de EEG en el problema directo dividida por la distancia media entre los vértices de la malla representativa de la corteza cerebral. 
-Mientras que el coeficiente de la CRB representa la precisión máxima con la que se puede localizar la fuente de actividad neuronal en el problema inverso.
 Para que los resultados obtenidos pudieran ser comparados y representados de manera gráfica, se agruparon los valores del error en la localización de la fuente de actividad neuronal obtenidos en las 100 pruebas de cada permutación de BSCR, SNR y fuente de actividad neuronal.
 Se calculó el promedio y la desviación estándar de los valores obtenidos en cada permutación y se presentaron en gráficas de barras de error con la CRB como referencia en el eje horizontal.
 
@@ -103,15 +103,8 @@ Se calculó el promedio y la desviación estándar de los valores obtenidos en c
 \label{sec:results:error:d1n1}
 
 En la \cref{fig:error-results-d1n1}, se presentan los resultados obtenidos en la estimación del error en la localización de la fuente de actividad neuronal con el dipolo ubicado en la zona somatosensorial (dipolo 1 de acuerdo a nuestro sistema de identificación) y un SNR de 1\%.
-Analizando los resultados obtenidos, se puede observar que el error en la localización de la fuente de actividad neuronal disminuye a medida que el valor de BSCR disminuye, siendo el BSCR 10 el más preciso en la localización de la fuente de actividad neuronal y más cercano a la CRB, mientras que el BSCR 200 es el menos preciso y más alejado de la CRB.
-Cabe mencionar que el BSCR 10 y el BSCR 200 son valores extremos dentro del rango de valores de BSCR reportados en la literatura y son considerados atípicos. 
-
-Esta diferencia en la proporción de la conductividad de los tejidos del cráneo puede ser explicada por el origen de las mediciones de la conductividad, donde el valor de BSCR 200 fue obtenido por medio del método de suma de cuadrados mínimos con un modelo de esferas concéntricas, pero el mismo autor menciona problemas existentes en la metodología utilizada para obtener el valor de BSCR, los cuales luego fueron corregidos por otros autores que obtuvieron un valor de BSCR más cercano a los reportados en la literatura haciendo este modelo una opción viable \cite{eriksenVivoHumanHead1990, Gutierrez2004}. 
-Por otro lado, el valor de BSCR 10 fue obtenido por medio del método de elementos finitos en conjunto con el método de elementos de frontera en geometrías realistas del cráneo, con la particularidad de que los autores utilizaron como referencia mediciones de MEG y EEG de infantes de un año de edad, lo que podría explicar la diferencia en los valores de BSCR obtenidos \cite{acarHighresolutionEEGSource2016}.
 
 Tomando en cuenta los resultados obtenidos y la atipicidad de los valores de BSCR 10 y 200, nos enfocamos en los valores de BSCR 20 y 80, los cuales son los más cercanos a los valores reportados en la literatura y siguen siendo distantes entre sí. 
-Con esto en mente, evaluando los resultados obtenidos en la \cref{fig:error-results-d1n1}, se puede observar que el BSCR 20 es más exacto en la localización de la fuente de actividad neuronal y no presenta una diferencia significativa en la variabilidad de los resultados obtenidos, salvo en el caso de evaluar con el BSCR 200, donde la diferencia es más notoria. 
-Mientras tanto, el BSCR 80 presenta una mayor variabilidad en los resultados obtenidos, especialmente al comparar con valores de BSCR más bajos.  
 
 \begin{figure}[htb]
     \centering
@@ -142,7 +135,7 @@ Mientras tanto, el BSCR 80 presenta una mayor variabilidad en los resultados obt
     \label{fig:error-results-d1n1}
 \end{figure}
 
-\subsection{Error en el grupo de señales de EEG simuladas en diferentes zonas de la corteza cerebral y niveles de SNR para BSCR 20 y 80}
+\subsection{Error en el grupo de señales de EEG simuladas en diferentes zonas de la corteza cerebral y niveles de SNR para BSCR = 20 y 80}
 \label{sec:results:error:dn-rest}
 
 Con el fin de ampliar el panorama de los datos obtenidos, se presentan los resultados de la estimación del error en la localización de la fuente de actividad neuronal para los valores de BSCR 20 y BSCR 80.
