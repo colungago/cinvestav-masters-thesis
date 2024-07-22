@@ -518,10 +518,23 @@ sorting=none,%
 \Crefformat{equation}{(#2#1#3)} % for uppercase "Equation"
 \crefrangeformat{equation}{~(#3#1#4) a~(#5#2#6)}
 
+\crefname{figure}{Fig.}{Fig.}
+\captionsetup[figure]{labelformat=simple, labelsep=colon, name={Fig.}}
+
 \crefname{section}{sección}{secciones}
 \crefname{subsection}{sección}{secciones}
 \Crefname{section}{Sección}{Secciones}
 \Crefname{subsection}{Sección}{Secciones}
+
+% **************************************************
+% Table referencing
+% **************************************************
+
+\renewcommand{\thetable}{\thechapter-\@Roman\c@table}
+% Making cleveref aware of the new table numbering
+\crefname{table}{Tabla}{Tablas}
+\captionsetup[table]{labelformat=simple, labelsep=colon, name={Tabla}}
+
 
 % **************************************************
 % New Commands

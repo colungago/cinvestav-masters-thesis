@@ -60,6 +60,7 @@ Debido a que $E$ es irrotacional, este puede ser representado en términos del p
 \begin{equation}
 	E(r) = -\nabla V(r)\text{.} \label{eq:potencial}
 \end{equation}
+
 Con esta aproximación cuasi-estática, el flujo de corriente $J(r')$ en un punto $r'$ pueder ser relacionado con el campo magnético $B(r)$ en un punto $r$ mediante la ley de Biot-Savart
 \begin{equation}
 	B(r) = \frac{\mu_{0}}{4\pi} \int J(r') \times \frac{(r - r')}{||r - r'||^3} dV'\text{.} \label{eq:biot-savart}
@@ -119,10 +120,10 @@ Tanto en \cref{bem} como en \cref{bem2} se observa el rol que la razón entre la
 Estas ecuaciones pueden ser transformadas en un set de ecuaciones lineares:
 \begin{equation}
 	\label{lineal}
-	V = BV + V_{0},
+	V = BL + V_{0},
 \end{equation}
 donde $V$ y $V_{0}$ son vectores que denotan el potencial buscado en cada nodo y el potencial en un medio infinito respectivamente.
-$B$ corresponde a la matriz generada por las integrales, la cual depende de la geometría de las superficies y la conductividad asignada a cada una de estas \cite{Hallez2007}.
+$L$ corresponde a la matriz generada por las integrales, la cual depende de la geometría de las superficies y la conductividad asignada a cada una de estas \cite{Hallez2007}.
 
 \section{Problema Inverso del EEG}
 \label{sec:intro:inverse}
