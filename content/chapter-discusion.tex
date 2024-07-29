@@ -4,10 +4,11 @@
 \label{sec:discusion}
 
 \section{Error en el grupo de señales de EEG simuladas con
-el dipolo en la zona somatosensorial y SNR 1 }
+el dipolo en la zona somatosensorial y SNR 1}
+\label{sec:discusion:d1n1}
 
-Analizando los resultados obtenidos, se puede observar que el error en la localización de la fuente de actividad neuronal disminuye a medida que el valor de BSCR disminuye, siendo el BSCR 10 el más preciso en la localización de la fuente de actividad neuronal y más cercano a la CRB, mientras que el BSCR 200 es el menos preciso y más alejado de la CRB.
-Cabe mencionar que el BSCR 10 y el BSCR 200 son valores extremos dentro del rango de valores de BSCR reportados en la literatura y son considerados atípicos. 
+Analizando los resultados obtenidos en la \cref{fig:error-results-d1n1}, se puede observar que el error en la localización de la fuente de actividad neuronal disminuye a medida que el valor de BSCR disminuye, siendo el BSCR = 10 el más preciso en la localización de la fuente de actividad neuronal y más cercano a la CRB, mientras que el BSCR = 200 es el menos preciso y más alejado de la CRB.
+Cabe mencionar que el BSCR = 10 y el BSCR = 200 son valores extremos dentro del rango de valores de BSCR reportados en la literatura y son considerados atípicos. 
 
 Esta diferencia en la proporción de la conductividad de los tejidos del cráneo puede ser explicada por el origen de las mediciones de la conductividad, donde el valor de BSCR 200 fue obtenido por medio del método de suma de cuadrados mínimos con un modelo de esferas concéntricas, pero el mismo autor menciona problemas existentes en la metodología utilizada para obtener el valor de BSCR, los cuales luego fueron corregidos por otros autores que obtuvieron un valor de BSCR más cercano a los reportados en la literatura haciendo este modelo una opción viable \cite{eriksenVivoHumanHead1990, Gutierrez2004}. 
 Por otro lado, el valor de BSCR 10 fue obtenido por medio del método de elementos finitos en conjunto con el método de elementos de frontera en geometrías realistas del cráneo, con la particularidad de que los autores utilizaron como referencia mediciones de MEG y EEG de infantes de un año de edad, lo que podría explicar la diferencia en los valores de BSCR obtenidos \cite{acarHighresolutionEEGSource2016}.
@@ -19,23 +20,22 @@ Mientras tanto, el BSCR 80 presenta una mayor variabilidad en los resultados obt
 diferentes zonas de la corteza cerebral y niveles de
 SNR para BSCR 20 y 80}
 
-En la \cref{fig:error-results-d2}, se aprecia el mismo fenómeno observado en la \cref{sec:results:error:d1n1}, donde se observa una relación positiva entre el error en la localización de la fuente de actividad neuronal y el valor de BSCR.
-En el caso del valor de BSCR 20, el error de localización tiene una variabilidad y diferencia menor en la magnitud del error comparando con el valor de BSCR 80.
-Su desempeño es consistente y con una buena exactitud incluso al presentar una mayor magnitud de ruido agregado y utilizar valores atípicos de BSCR en la solución del problema inverso como el BSCR 200.
-Por otro lado, el valor de BSCR 80 presenta una mayor variabilidad en los resultados obtenidos, únicamente en el caso en el que se implementan valores cercanos a BSCR 80 en la solución del problema inverso se obtiene un error menor y más consistente en la localización de la fuente de actividad neuronal.
-Otra observación importante es que en el caso del error incurrido con el BSCR 80 con nivel de SNR: 10\% (\cref{fig:error-d2c9n3}) este es menor que el que la CRB indica posible para un estimador no sesgado.
+En la \cref{fig:error-results-d2}, se aprecia el mismo fenómeno discutido en la \cref{sec:discusion:d1n1}, donde se observa una relación positiva entre el error en la localización de la fuente de actividad neuronal y el valor de BSCR.
+En el caso del valor de BSCR = 20, el error de localización tiene una variabilidad y diferencia menor en la magnitud del error comparando con el valor de BSCR 80.
+Su desempeño es consistente y con una buena exactitud incluso al presentar una mayor magnitud de ruido agregado y utilizar valores atípicos de BSCR en la solución del problema inverso como el BSCR = 200.
+Por otro lado, el valor de BSCR = 80 presenta una mayor variabilidad en los resultados obtenidos, únicamente en el caso en el que se implementan valores cercanos a BSCR = 80 en la solución del problema inverso se obtiene un error menor y más consistente en la localización de la fuente de actividad neuronal.
+Otra observación importante es que en el caso del error incurrido con el BSCR = 80 con nivel de SNR: 10\% (\cref{fig:error-d2c9n3}) este es menor que el que la CRB indica posible para un estimador no sesgado.
 
 Estos fenómenos pueden ser atribuidos a la posición del dipolo en la malla representativa de la corteza cerebral. 
-Como se mencionó en la \cref{sec:methodology:direct_solved}, el dipolo 2 se encuentra en la corteza visual primaria colocandolo en la región occipital de la malla.
-Con esto en mente, revisando la \cref{fig:methodology:model} se puede observar que la región occipital de la malla es la más alejada de los electrodos, además de una menor concentración de estos en comparación con las posicones de los otros dipolos. 
-Lo que implica que el desempeño de la solución del problema inverso con el método de elementos de frontera sea menos preciso en la localización de la fuente de actividad neuronal debido a las limitaciones de la técnica.
-Quizá una solución a este problema sería utilizar un método de solución más adecuado para este escenario, como el método de elementos finitos, que permite trabajar con potenciales propagados en volumenes anisotrópicos en lugar de una superficies isotrópicas como lo hace el método de elementos de frontera.
+Como se mencionó en la \cref{sec:methodology:direct_solved}, el dipolo 2 se encuentra en la corteza visual primaria colocándolo en la región occipital de la malla.
+Con esto en mente, revisando la \cref{fig:methodology:model} se puede observar que la región occipital de la malla es la más alejada de los electrodos, además de tener una menor concentración de estos en comparación con las posiciones de los otros dipolos. 
+Lo que implica que la exactitud en la solución del problema inverso con el método de elementos de frontera es menos precisa en la localización de la fuente de actividad neuronal debido a las limitaciones de la técnica.
+Quizá una alternativa para evitar esta situación, sería utilizar un método de solución más adecuado para este escenario, como el método de elementos finitos, que permite trabajar con potenciales propagados en volúmenes anisotrópicos en lugar de superficies isotrópicas como lo hace el método de elementos de frontera.
 
-En el caso del dipolo 3, ubicado en la corteza auditiva primaria, se observa un patrón similar al de los resultados anteriores, teniendo el BSCR 20 un mejor desempeño en la localización de la fuente de actividad neuronal y una menor variabilidad en los resultados obtenidos.
+En el caso del dipolo 3, ubicado en la corteza auditiva primaria, se observa un patrón similar al de los resultados anteriores, teniendo el BSCR 20 un menor error en la localización de la fuente de actividad neuronal y una menor variabilidad en los resultados obtenidos.
 También se presenta el mismo fenómeno observado que en las pruebas con el dipolo 2, donde el error incurrido con el BSCR 80 y SNR 10\% es menor que el que la CRB indica posible para un estimador no sesgado.
-Siendo nuestra intención probar casos distintos, el dipolo 3 fue colocado en uno de los pliegues de la corteza auditiva primaria, haciendo la dirección del campo eléctrico generado por el dipolo paralelo al resto de las mallas que componen la cabeza.
-dipolo perpendicular al resto de las mallas que componen la cabeza.
-Esta posición del dipolo le da la particularidad de encontraste en una región de la malla con una mayor concentración de vértices, lo que implica que la solución del problema inverso con el método de elementos de frontera sea más precisa en la localización de la fuente de actividad neuronal por el mayor número de puntos de referencia en la malla a comparación de otras zonas, lo que representa que en efecto en este caso es un estimador sesgado. \TODO{esto es un sesgo?}
+Siendo nuestra intención probar casos distintos, el dipolo 3 fue colocado en uno de los pliegues de la corteza auditiva primaria, haciendo la dirección del campo eléctrico generado por el dipolo perpendicular a la superficie de medición.
+Esta posición del dipolo le da la particularidad de encontrarse en una región de la malla con una mayor concentración de vértices, lo que implica que la solución del problema inverso con el método de elementos de frontera sea más precisa en la localización de la fuente de actividad neuronal por el mayor número de puntos de referencia en la malla a comparación de otras zonas, lo que representa que en efecto en este caso es un estimador sesgado.
 
 \section{Desempeño del Error Incurrido en la Localización de Fuentes de Actividad Neuronal}
 
