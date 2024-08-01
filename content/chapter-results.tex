@@ -24,7 +24,6 @@ Dada la cantidad de datos obtenidos, en la \cref{fig:eeg-simulated} se presentan
 Esos valores de BSCR fueron seleccionados por su relevancia en la literatura (en el caso de BSCR = 20 y 80) y por ser los valores más alejados de estos (BSCR = 10 y 200).
 Además, otra razón de incluir solo estas señales, es debido a que presentar los resultados individuales de todos los valores no aportaría diferencias discernibles viéndolas a este nivel de detalle (LOD, del inglés \emph{level of detail}) y extendería el documento sin causa.
 
-
 \begin{figure}[p]
     \centering
     \begin{subfigure}{\textwidth}
@@ -112,7 +111,7 @@ Las señales de EEG simuladas tienen una componente en el tiempo, por tanto, el 
 \end{figure}
 
 Los resultados mostrados en la figura en cuestión, representan la proyección de la fuente de actividad neuronal en la malla representativa de la corteza cerebral en forma del mapa del PNAI.
-Las mallas tienen una área marcada en rojo \TODO{cambair color} que corresponde a la región donde se realizó la búsqueda de las fuentes de actividad neuronal en la simulación de las señales de EEG para el dipolo ubicado en la zona somatosensorial.
+Las mallas tienen una área marcada en rojo \TODO{cambiar color} que corresponde a la región donde se realizó la búsqueda de las fuentes de actividad neuronal en la simulación de las señales de EEG para el dipolo ubicado en la zona somatosensorial.
 Mientras que las áreas entre azul y amarillo correspondientes al rango inscrito en las figuras, representan la magnitud del PNAI, donde el azul indica la menor magnitud y el amarillo la mayor magnitud.
 
 Las figuras muestran la localización de la fuente de actividad neuronal utilizando el mismo valor de BSCR como parámetro del filtro espacial en la solución del problema inverso y en la simulación de las señales de EEG en el problema directo.
@@ -262,7 +261,7 @@ Las gráficas de ambas figuras siguen la misma estructura ya descrita de la \cre
     \label{fig:error-results-d3}
 \end{figure}
 
-\newpage
+%\newpage
 
 \section{Desempeño del Error Incurrido en la Localización de Fuentes de Actividad Neuronal}
 \label{sec:results:bscr-performance}
@@ -286,9 +285,10 @@ Siendo cada uno de estos últimos nodos, los que se presentan en el eje horizont
 
 Retomando la \cref{fig:bscr-performance}, cada una de las gráficas nos permite observar y comparar el desempeño del error en la localización de la fuente de actividad neuronal.
 En cada gráfica, el eje horizontal muestra los valores de BSCR utilizados en la solución del problema directo, mientras que el eje vertical indica la distribución de los valores del error obtenido en el problema inverso en función de la distancia media entre vértices de la malla de la corteza cerebral.
-Las cajas representan el rango intercuartílico de los valores del error, mientras que las líneas horizontales dentro de las cajas representan la mediana de los valores del error.
+Las cajas representan el rango intercuartílico de los valores del error, mientras que las líneas horizontales dentro de las cajas representan la mediana de los valores del error, y las muescas cercanas a estas líneas horizontales representan el intervalo de confianza del 95\% de los valores del error
 Los bigotes representan el rango de los valores del error, mientras que los puntos fuera de los bigotes representan los valores atípicos de los datos.
-Por último, las muescas cercanas a las líneas horizontales representan el intervalo de confianza del 95\% de los valores del error.
+Por último, las cruces rojas a los extremos de los bigotes representan los valores extremos de los datos y se encuentran a una distancia de 1.5 veces el rango intercuartílico de los valores del error.
+Estos valores extremos se consideran atípicos y aunque pareciera que son numerosos en gráficas como la \cref{fig:error-overall-d2n1,fig:crb-overall-d2n3,fig:error-overall-d3n1,fig:crb-overall-d3n3}, estos representan una fracción mínima de los datos obtenidos, ya que representan cantidades de 20 a 70 valores atípicos de un total de 1000 valores obtenidos en cada permutación.
 
 \begin{figure}[p]
     \centering
