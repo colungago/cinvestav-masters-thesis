@@ -19,8 +19,7 @@ En contraparte, el problema inverso resolverá las posiciones de las fuentes sim
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\textwidth]{pipeline}
-	\caption{Proceso del problema directo e inverso del EEG
-		\TODO{Reemplazar imagen por una con mejor calidad}}
+	\caption{Proceso del problema directo e inverso del EEG}
 	\label{fig:methodology:pipeline}
 \end{figure}
 
@@ -197,7 +196,7 @@ Habiendo satisfecho los requisitos para la solución del problema directo este s
 		\label{eq:snr}
 		\text{\emph{Source}} = \text{\emph{Source}} + \text{\emph{SNR}}\times(\text{\emph{randn}}(\text{\emph{size}}(\text{\emph{Source}})-0.5)) \times \text{\emph{max}}(\text{\emph{abs}}(\text{\emph{Source}}))\text{,}
 	\end{equation}
-	donde \emph{Source} es la señal de EEG simulada y SNR es la relación señal/ruido.
+	donde \emph{Source} es la señal de EEG simulada y SNR es la razón señal/ruido.
 	\item De esta manera, obtuvimos 3 sets de 10,000 mediciones para cada uno de los 3 dipolos, sumando 90,000 mediciones simuladas de EEG diferentes.
 \end{enumerate}
 
@@ -290,11 +289,11 @@ Esto nos asegura tener una muestra suficiente para observar la variabilidad de l
 \section{Error de Localización de las Fuentes de Actividad Neuronal}
 \label{sec:methodology:estimator}
 
-\TODO{aquí vas} Para la cuantización del error de localización se procedió obtener la posición de magnitud máxima de los mapas de PNAI generados por el kernel de proyección para cada uno de los 90,000 conjuntos de datos. 
+Para la cuantización del error de localización se procedió obtener la posición de magnitud máxima de los mapas de PNAI generados por el kernel de proyección para cada uno de los 90,000 conjuntos de datos. 
 Estos fueron separados y analizados por cada BSCR, dipolo, y nivel de SNR.
 
 La posición de magnitud máxima fue obtenida al implementar el kernel de proyección correspondiente a las mediciones de EEG en el instante $t=$ 397.2 ms, el cual es en el que se encuentra la magnitud máxima de la función del dipolo con respecto al tiempo.
-Con el fin de mejorar la precisión de la localización de la magnitud máxima, se limitó el área sobre la cual se buscó el punto máximo en el mapa de PNAI, siendo tres diferentes áreas de búsqueda, una para cada uno de los distintos dipolos, siendo estas de 29.17 cm$^2$ para el dipolo 1 (correspondiendo al área de la zona somatosensorial), 51.75 cm$^2$ para el dipolo 2 (correspondiente al área visual primaria), y 76.92 cm$^2$ para el dipolo 3 (correspondiente al área auditiva primaria), como se muestra en la \cref{fig:dipoles-zones}.
+Con el fin de mejorar la precisión de la localización de la magnitud máxima, se limitó el área sobre la cual se buscó el punto máximo en el mapa de PNAI, siendo tres diferentes áreas de búsqueda, una para cada uno de los distintos dipolos, siendo estas de 29.17 cm$^2$ para el Dipolo 1 (correspondiendo al área de la zona somatosensorial), 51.75 cm$^2$ para el Dipolo 2 (correspondiente al área visual primaria), y 76.92 cm$^2$ para el Dipolo 3 (correspondiente al área auditiva primaria), como se muestra en la \cref{fig:dipoles-zones}.
 Cabe mencionar que las áreas de búsqueda se apegan a los pliegues y concavidades de la malla de la corteza cerebral, elevando el tamaño de las áreas de búsqueda y permitiendo la localización de la magnitud máxima dentro de estos pliegues.
 
 \begin{figure}[tb]
@@ -314,29 +313,28 @@ Cabe mencionar que las áreas de búsqueda se apegan a los pliegues y concavidad
     \label{fig:dipoles-zones}
 \end{figure}
 
-Las posiciones de magnitud máxima de cada medición de EEG, correspondientes a sus respectivas áreas de búsqueda, fueron obtenidas en coordenadas SCS y agrupadas en sus respectivos dipolos, valor de BSCR, y niveles de SNR.
-Obteniendo como resultado, 900 conjuntos de 100 posiciones de magnitud máxima. 
+Las posiciones de magnitud máxima de cada medición de EEG, correspondientes a sus respectivas áreas de búsqueda, fueron obtenidas en coordenadas SCS y agrupadas en sus respectivos dipolos, valor de BSCR, y niveles de SNR, obteniendo como resultado 900 conjuntos de 100 posiciones de magnitud máxima. 
 Al explorar la distribución de las posiciones de magnitud máxima se observó que estas no se distribuían normalmente.
 Como era de esperarse, la distribución de los resultados en general tenía una tendencia natural a 0, lo que generaba una distribución sesgada a la derecha, por lo que se decidió utilizar la media del percentil P$_{95}$ como el estimador de la posición de magnitud máxima, y la distancia Euclidiana entre la posición real y la posición de magnitud máxima como el estimador del error de localización.
 Una vez obtenidos los estimadores de la posición de magnitud máxima y el error de localización, se procedió a estandarizar el error de localización con respecto a la resolución de la malla de la corteza cerebral utilizando la distancia media y la desviación estándar entre los vértices de los triángulos de la malla de la corteza cerebral.
 Por lo tanto, los estimadores de la posición de magnitud máxima y el error de localización se definieron como:
 \begin{equation}
 	\label{eq:mean_error}
-	\text{Error}_{\text{estandarizado}} = \frac{\text{Posición}_{\text{localización}}-\text{Posición}_{\text{real}}}{\text{Distancia media}_{\text{vértices}}}
+	\text{Error}_{\text{estandarizado}} = \frac{\text{Posición}_{\text{localización}}-\text{Posición}_{\text{real}}}{\text{Distancia media}_{\text{vértices}}}\text{,}
 \end{equation}
 para el la estandarización del error de localización, y
 \begin{equation}
 	\label{eq:sd_error}
-	\text{Desviación estándar}_{\text{estandarizada}} = \frac{\text{Desviación estándar}_{\text{localización}}}{\text{Distancia media}_{\text{vértices}}}
+	\text{Desviación estándar}_{\text{estandarizada}} = \frac{\text{Desviación estándar}_{\text{localización}}}{\text{Distancia media}_{\text{vértices}}}\text{,}
 \end{equation}
 para la desviación estándar del error de localización.
 
-\section{Análisis Estadístico del Estimador}
+\section{Análisis Estadístico Propuesto}
 \label{sec:methodology:cbr-analysis}
 
-Para determinar el desempeño del estimador se utilizó la frontera de Cramér-Rao (CRB, del inglés \emph{Cramér-Rao bound}), la cual proporciona un límite inferior en la varianza de los errores en la estimación de parámetros no sesgados.
+Para determinar el desempeño del estimador se utilizó la CRB, la cual proporciona un límite inferior en la varianza de los errores en la estimación de parámetros no sesgados.
 La CRB tiene la característica de ser universal, es decir, independiente del algoritmo utilizado para estimadores no sesgados, y asintóticamente ajustado, lo que significa que para ciertas distribuciones, existen algoritmos que alcanzan el límite a medida que el número de muestras aumenta \cite{Muravchik1999, Escalona-Vargas2013}.
-Siendo esta última característica la de particular interés para nuestro proyecto, y una razón más para realizar las 100 simulaciones de EEG para cada combinación de dipolos, valor de BSCR, y nivel de SNR durante el proceso del problema directo.
+Esta última característica es de particular interés para nuestro proyecto, y una razón más para realizar las 100 simulaciones de EEG para cada combinación de dipolos, valor de BSCR, y nivel de SNR durante el proceso del problema directo.
 
 Este límite teórico inferior de la varianza del error para un estimador no sesgado se representa como una desigualdad con el valor esperado del estimador de la forma:
 \begin{equation}
@@ -356,15 +354,15 @@ que en nuestro caso está dada como la inversa de la matriz de información corr
 siendo la matriz de información de Fisher para el EEG
 \begin{equation}
 	\label{eq:fisher}
-	J_{ij}^{\text{EEG}}(\theta) = q^{\text{T}}\left(\pdv{k_{\infty}}{\theta_{i}}\right)^{\text{T}}\frac{\text{L}^{\text{T}}\text{L}}{\sigma^2_{\text{E}}}\left(\pdv{k_{\infty}}{\theta_{i}}\right)q\text{,}
+	J_{ij}^{\text{EEG}}(\theta) = q^{\text{T}}\left(\pdv{k}{\theta_{i}}\right)^{\text{T}}\frac{\text{L}^{\text{T}}\text{L}}{\sigma^2_{\text{E}}}\left(\pdv{k}{\theta_{i}}\right)q\text{,}
 \end{equation}
-donde $q$ es la magnitud del dipolo en el instante de 397.2 ms, $\text{L}$ es la matriz de ganancia, $\sigma^2_{\text{E}}$ es la varianza del ruido de las mediciones de EEG, y $\pdv{k_{\infty}}{\theta_{i}}$ es la derivada parcial de las posiciones de los dipolos con respecto a la posición de los sensores de EEG \cite{nielsenCramerRaoLowerBound2013, Stoica1988, Muravchik1999}. 
+donde $q$ es la magnitud del dipolo en el instante de 397.2 ms, $\text{L}$ es la matriz de ganancia, $\sigma^2_{\text{E}}$ es la varianza del ruido de las mediciones de EEG, y $\pdv{k}{\theta_{i}}$ es la derivada parcial de las posiciones de los dipolos con respecto a la posición de los sensores de EEG \cite{nielsenCramerRaoLowerBound2013, Stoica1988, Muravchik1999}. 
 
-Este análisis estadístico se realizó con cada matriz de ganancia de los 10 BSCR, para cada uno de los 3 dipolos, y para cada uno de los 3 niveles de SNR. 
+Este análisis estadístico se realizó con cada matriz de ganancia de los 10 BSCR, para cada uno de los tres dipolos, y para cada uno de los tres niveles de SNR. 
 Dando como resultado en 90 valores de CRB. 
 Este proceso, junto con la estimación del error incurrido en la localización de fuentes de actividad neuronal, se puede visualizar en la \cref{fig:methodology:statistical_pipeline}.
 
-\begin{figure}[tb]
+\begin{figure}[tbp]
 	\centering
 	\begin{tikzpicture}[node distance = 3.5cm, auto]
 		% Define block styles
