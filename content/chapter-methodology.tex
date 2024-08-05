@@ -4,12 +4,13 @@
 \label{sec:methodology}
 
 En esta sección revisamos el método propuesto para probar nuestra hipótesis junto a las consideraciones tomadas para su uso.
-Las divisiones principales se enfocan en: la preparación del modelo geométrico utilizado para la aproximación estructural y las propiedades bioelectromagnéticas de los tejidos incluidas las variaciones de conductividad, la solución del problema directo utilizando dipolos eléctricos que modelan puntos fijos de actividad neuronal equivalentes a respuestas evocadas (ER, del inglés \emph{evoked response}) y una representación matricial de las variaciones espacio-temporales de dicho dipolo, la solución del problema inverso de las señales simuladas para identificar la posición de las fuentes de actividad neuronal, y por último un análisis estadístico del estimador utilizando la frontera de Cramer-Rao para verificar su desempeño como estimador no sesgado.
+Las divisiones principales se enfocan en:\linebreak
+(i) la preparación del modelo geométrico utilizado para la aproximación estructural y las propiedades bioelectromagnéticas de los tejidos incluidas las variaciones de conductividad, (ii) la solución del problema directo utilizando dipolos eléctricos que modelan puntos fijos de actividad neuronal equivalentes a respuestas evocadas (ER, del inglés \emph{evoked response}) y una representación matricial de las variaciones espacio-temporales de dicho dipolo, (iii) la solución del problema inverso de las señales simuladas para identificar la posición de las fuentes de actividad neuronal, y por último (iv) un análisis estadístico del estimador utilizando la frontera de Cramer-Rao para verificar su desempeño como estimador no sesgado.
 
 \section{Método Propuesto}
 \label{sec:methodology:method}
 
-El objetivo es resolver el problema inverso y examinar el error asociado con el uso de distintos valores reportados de la razón de la conductividad cerebro-cráneo (BSCR, del inglés \emph{brain-to-scalp-conductivity-ratio}) en diferentes áreas de actividad neuronal relacionadas con estímulos sensoriales \cite{McCann2019}.
+El objetivo es resolver el problema inverso y examinar el error asociado con el uso de distintos valores reportados de BSCR en diferentes áreas de actividad neuronal relacionadas con estímulos sensoriales \cite{McCann2019}.
 Para ello, diseñamos un experimento que nos permitiría construir un estimador al implementar una solución del problema inverso con datos completamente simulados, y por ende con total control sobre las variables definidas como: la conductividad, la posición, orientación y magnitud de las fuentes de actividad neuronal, y el ruido añadido a las mediciones.
 El proceso del experimento es una implementación completa de las soluciones a los problemas directo e inverso en el EEG con un posterior análisis estadístico. 
 El problema directo nos permite obtener un modelo detallado de la actividad neuronal en la cabeza y simular mediciones de EEG con diferentes valores del BSCR.
@@ -26,9 +27,9 @@ En contraparte, el problema inverso resolverá las posiciones de las fuentes sim
 Basándonos en trabajo previo, decidimos resolver el problema inverso mediante filtrado espacial, en particular con el filtro propuesto en \cite{VanVeen1988}, el cual es catalogado como un método paramétrico, también conocido como ``método de dipolo de corriente equivalente''.
 Como su nombre lo indica, estos métodos consisten en buscar en una serie predefinida de dipolos de corriente el que mejor se ajuste en su posición y orientación a las fuentes que generaron las mediciones de EEG  \cite{Hallez2007}.
 
-Con el fin de realizar esta prueba de ajuste de los dipolos de corriente equivalente (solución del problema inverso) es necesario obtener la solución del problema directo. Existen varios métodos para obtener dicha solución \cite{Mosher1999}, de los cuales elegimos el método de elementos de frontera (BEM) para modelos geométricamente realistas \cite{Ermer2001}.
+Con el fin de realizar esta prueba de ajuste de los dipolos de corriente equivalente (solución del problema inverso) es necesario obtener la solución del problema directo. Existen varios métodos para obtener dicha solución \cite{Mosher1999}, de los cuales elegimos BEM para modelos geométricamente realistas \cite{Ermer2001}.
 La razón de elegir este método radica en el precedente del uso de modelos con geometrías más sencillas en estudios similares \cite{Gutierrez2004}.
-En la actualidad se cuenta con mayor facilidad de acceso a equipos de cómputo con el suficiente desempeño para obtener resultados en un tiempo razonable, esto aunado al desarrollo de métodos y software mucho más eficientes \cite{open,Clerc2010} nos presenta la posibilidad de implementar el BEM para geometrías realistas como una evolución natural de los métodos utilizados anteriormente.
+En la actualidad se cuenta con mayor facilidad de acceso a equipos de cómputo con el suficiente desempeño para obtener resultados en un tiempo razonable, esto aunado al desarrollo de métodos y software mucho más eficientes \cite{open,Clerc2010} nos presenta la posibilidad de implementar BEM para geometrías realistas como una evolución natural de los métodos utilizados anteriormente.
 
 Una vez establecidos los métodos a utilizar en el método directo e inverso, se procedió a recopilar y formular la información necesaria para realizar los cálculos.
 En el caso del problema directo los datos de entrada requeridos son: el modelo geométricamente realista que representará a los tejidos de la cabeza como un volumen conductor, una serie de dipolos que modelan el fenómeno de respuesta evocada, los valores a probar de la conductividad entre los tejidos, en específico la razón cerebro/cráneo, y por último el arreglo de sensores de EEG que medirán el campo eléctrico simulado.
@@ -104,9 +105,12 @@ Por estas razones es importante que ambas mallas tengan la misma resolución y n
 	\label{fig:methodology:meshes}
 \end{figure}
 
-La fase del cuero cabelludo/aire (mostrada en la \cref{fig:methodology:head}) tiene una resolución menor con 6480 triángulos y 3242 vértices, esta fue definida así porque fue el límite de resolución computable con la RAM de la workstation, aún así, esta es una resolución alta comparada con el uso recomendado del software \cite{tadelMEGEEGGroup2019a}.
+La fase del cuero cabelludo/aire (mostrada en la \cref{fig:methodology:head}) tiene una resolución menor con 6480 triángulos y 3242 vértices.
+Fue definida así porque corresponde al límite de resolución computable con la RAM de la estación de trabajo.
+Aún así, es una resolución alta comparada con el uso recomendado del software \cite{tadelMEGEEGGroup2019a}.
 
-Por último se tiene una malla que representa la corteza cerebral (\cref{fig:methodology:cortex}), esta tiene una resolución de 29988 triángulos compuestos de 15002 vértices, los cuales son importantes mencionar porque la finalidad de esta malla es tener un arreglo de ``dipolos elementales'' sobre los que se proyectarán los resultados, por esta razón aunque la malla es importante para el cálculo del campo eléctrico generado por actividad neuronal no influye drásticamente en el costo computacional y puede utilizarse una resolución mayor para representar con detalle los pliegues y concavidades de la corteza cerebral.
+Por último se tiene una malla que representa la corteza cerebral (\cref{fig:methodology:cortex}), la cual cuenta con una resolución de 29988 triángulos compuestos de 15002 vértices, los cuales tienen la finalidad de proporcionar ``dipolos elementales'' sobre los que se proyectarán los resultados. 
+Esta malla es importante para el cálculo del campo eléctrico generado por actividad neuronal no influye drásticamente en el costo computacional y puede utilizarse una resolución mayor para representar con detalle los pliegues y concavidades de la corteza cerebral.
 Todas las mallas en conjunto representan nuestro volumen conductor (mostrado en la \cref{fig:methodology:model}) sobre el que se implementarán los cálculos de BEM y la proyección del resultado del filtro espacial.
 
 \begin{figure}[tbp]
@@ -115,28 +119,29 @@ Todas las mallas en conjunto representan nuestro volumen conductor (mostrado en 
 	\label{fig:methodology:model}
 \end{figure}
 
-\section{Variación de la conductividad y cálculo de la matriz de ganancia por el método de elementos de frontera}
+\section{Variación de la Conductividad y Cálculo de la Matriz de Ganancia}
 \label{sec:methodology:openmeeg}
 
 La finalidad de resolver el problema inverso es ubicar la posición de la fuente de corriente que representa la actividad neuronal por lo que esta ubicación es la variable independiente al momento de hacer el cálculo, mientras que la conductividad se mantiene como un valor fijo.
 
-En el área de neurociencias se suele mantener un valor nominal para la razón de conductividad cerebro-cráneo de 1:80 (\emph{i.e.} $0.33\text{ S/m}$ para el cerebro y $0.0042 \text{ S/m}$ para el cráneo) \cite{Rush1968,Rush1969,Cohen1983}.
+En el área de neurociencias se suele mantener un valor nominal para la razón de conductividad cerebro-cráneo de 1:80 ($0.33\text{ S/m}$ para el cerebro y $0.0042 \text{ S/m}$ para el cráneo) \cite{Rush1968,Rush1969,Cohen1983}.
 Sin embargo, múltiples estudios con diferentes acercamientos han publicado valores de la razón de conductividad cerebro-cráneo que se desvían significativamente del estándar de 1:80 \cite{McCann2019}.
-Por esta razón, el objetivo de nuestro experimento es estimar el valor del error incurrido en la localización de fuentes de actividad neuronal utilizando al BSCR como variable parámetro en la solución del problema inverso, mientras se toma por conocida la posición del dipolo de corriente y manteniéndose fija en todos los experimentos.
+Por esta razón, el objetivo de nuestro experimento es estimar el error incurrido en la localización de fuentes de actividad neuronal utilizando al BSCR como variable parámetro en la solución del problema inverso, mientras se toma por conocida la posición del dipolo de corriente y manteniéndose fija en todos los experimentos.
 
-Regresando a \cref{lineal} $L$ representa la llamada \emph{matriz de ganancia} que determina la sensibilidad del arreglo de electrodos en un EEG y como estos registrarán el campo eléctrico sobre el cuero cabelludo.
-Para el cálculo de esta matriz de ganancia por medio de BEM se utilizó el software OpenMEEG \cite{open,open2}, donde se utilizaron como datos de entrada nuestro modelo geométricamente realista, un arreglo de EEG con 65 sensores posicionados acorde al sistema internacional 10-10 (mostrado en la \cref{fig:EEG10-10}), y los valores de conductividad del cerebro, cráneo, y cuero cabelludo.
-Se completó el cálculo de la matriz de ganancia para 10 valores del BSCR, presentados en la \cref{tab:bscr} de los cuales dos son valores aceptados en la literatura (1:20, 1:80) y los restantes se eligieron de \cite{McCann2019}, el criterio para la elección de estos 8 valores fue el que su estimación se realizó con métodos que involucraban el uso de EEG, EEG/MEG, esto con el fin de mantener relación con nuestra propia estimación y compararlos objetivamente.
-La matriz de ganancia resultante de cada una de los valores del BSCR tiene $45006 \times 65$ elementos, \TODO{Así está correcto o podría ser 45006 $\times$ 65 (45006 \$\textbackslash{times}\$ 65)?} que corresponden a los 65 canales del EEG y su respuesta a los 15002 vértices de la malla de la corteza cerebral del modelo geométrico en sus tres componentes vectoriales.
+Regresando a \cref{lineal}, $L$ representa la llamada \emph{matriz de ganancia} que determina la sensibilidad del arreglo de electrodos en un EEG y como estos registrarán el campo eléctrico sobre el cuero cabelludo.
+Para el cálculo de esta matriz de ganancia por medio de BEM se utilizó el software OpenMEEG \cite{open,open2}, donde las entradas fueron: nuestro modelo geométricamente realista, un arreglo de EEG con 65 sensores posicionados acorde al sistema internacional 10-10 (mostrado en la \cref{fig:EEG10-10}), y los valores de conductividad del cerebro, cráneo, y cuero cabelludo.
+Se completó el cálculo de la matriz de ganancia para 10 valores del BSCR, presentados en la \cref{tab:bscr} de los cuales dos son valores aceptados en la literatura (1:20, 1:80) y los restantes se eligieron de \cite{McCann2019}.
+El criterio para la elección de estos ocho valores fue que su estimación se realizó con métodos que involucraban el uso de EEG o EEG/MEG, esto con el fin de mantener relación con nuestra propia estimación y compararlos objetivamente.
+La matriz de ganancia resultante de cada una de los valores del BSCR tiene $45006 \times 65$ elementos, que corresponden a los 65 canales del EEG y su respuesta a los 15002 vértices de la malla de la corteza cerebral del modelo geométrico en sus tres componentes vectoriales.
 
-\begin{figure}[tbp]
+\begin{figure}[p]
 	\centering
 	\includegraphics[width=0.75\textwidth]{EEG_10-10}
-	\caption{Arreglo de electrodos EEG 10-10(65), tomada de \cite{krolEnglishEEGElectrode2020}.}
+	\caption{Arreglo de electrodos EEG, tomada de \cite{krolEnglishEEGElectrode2020}.}
 	\label{fig:EEG10-10}
 \end{figure}
 
-\begin{table}[tbp]
+\begin{table}[p]
 	\centering
 	\begin{tabular}{@{}rrr@{}}
 		\toprule
@@ -159,7 +164,8 @@ La matriz de ganancia resultante de cada una de los valores del BSCR tiene $4500
 \section{Dipolos de corriente e implementación de la solución del problema directo}
 \label{sec:methodology:direct_solved}
 
-La matriz de ganancia de cada BSCR con el modelo geométrico completan el volumen conductor con sus propiedades electromagnéticas, la pieza restante para el cálculo del problema directo es la fuente de actividad eléctrica que se propagará por dicho volumen conductor.
+La matriz de ganancia de cada BSCR con el modelo geométrico completan el volumen conductor con sus propiedades electromagnéticas.
+La pieza restante para el cálculo del problema directo es la fuente de actividad eléctrica que se propagará por dicho volumen conductor.
 Como se había discutido anteriormente se decidió usar un dipolo eléctrico de posición fija gracias a que la actividad neuronal correspondiente a un ER se puede modelar como tal. 
 Este dipolo varía su magnitud con el tiempo en un periodo de 600 ms, su función se observa en la \cref{fig:methodology:dipole}.
 En cuanto a la posición, se decidió utilizar tres diferentes, cada una en distintas zonas del cerebro correspondientes a lugares de eventos de respuesta evocada, siendo estas: la corteza somatosensorial primaria (coordenadas MNI -52.2, -32.4, 55.8), corteza visual primaria (9.7, -98.6, 2.4), y corteza auditiva primaria (-65.0, -24.7, 11), estas posiciones se muestran en la \cref{fig:dipoles}.
@@ -176,54 +182,62 @@ Cabe mencionar que el sistema de coordenadas MNI es usualmente utilizado como re
 \begin{figure}[tb]
 	\centering
 	\includegraphics[width=\textwidth]{gfx/dipoles.png}
-	\caption{Dipolos posicionados en la malla de la corteza cerebral, dipolo 1 (rojo) corresponde a la zona somatosensorial, dipolo 2 (amarillo) a la zona visual, y dipolo 3 (azul) a la zona auditiva.}
+	\caption{Dipolos posicionados en la malla de la corteza cerebral, Dipolo 1 (rojo) corresponde a la zona somatosensorial, Dipolo 2 (amarillo) a la zona visual, y Dipolo 3 (azul) a la zona auditiva.}
 	\label{fig:dipoles}
 \end{figure}
 
 Habiendo satisfecho los requisitos para la solución del problema directo este se calculó de la siguiente forma:
 
 \begin{enumerate}
-	\item Dentro del software Brainstorm, se crearon \emph{scouts} en la malla de la corteza cerebral. Estos consisten en las coordenadas SCS de las regiones de interés (ROI, del inglés \emph{region-of-interest}). Estos fueron llamados \emph{dip1} (somatosensorial), \emph{dip2} (visual), y \emph{dip3} (auditiva).
-	\item Los scouts fueron utilizados como dato de entrada junto con la función del dipolo con respecto al tiempo, el volumen conductor compuesto por el modelo geométricamente realista y la matriz de ganancia de cada BSCR importadas a Brainstorm, y por último el arreglo de sensores de EEG.
+	\item Dentro del software Brainstorm, se crearon \emph{scouts} en la malla de la corteza cerebral. Estos consisten en las coordenadas SCS de las ROI. Estos fueron llamados \emph{dip1} (somatosensorial), \emph{dip2} (visual), y \emph{dip3} (auditiva).
+	\item Los scouts fueron utilizados como dato de entrada en la solución del problema directo en Brainstorm junto con la función del dipolo con respecto al tiempo, el volumen conductor compuesto por el modelo geométricamente realista y la matriz de ganancia de cada BSCR importadas a Brainstorm, y por último el arreglo de sensores de EEG.
 	\item Como resultado, obtuvimos 100 mediciones de EEG simuladas correspondientes a cada BSCR para cada uno de los tres scouts, siendo en total 300 mediciones de EEG.
 	\item Tomando en cuenta de que estamos simulando nuestros datos y estamos en control de todas las variables, se procedió a añadir ruido en la implementación del problema directo para considerar otras condiciones de experimentos con pacientes. El ruido se añadió con una relación señal/ruido (SNR, del inglés \emph{signal-to-noise-ratio}) de 1\%, 5\%, y 10\% de la magnitud de las señales, usando una función de Brainstorm correspondiente a la ecuación: 
 	\begin{equation}
 		\label{eq:snr}
-		\text{\emph{Source}} = \text{\emph{Source}} + \text{\emph{NSR}}\times(\text{\emph{randn}}(\text{\emph{size}}(\text{\emph{Source}})-0.5)) \times \text{\emph{max}}(\text{\emph{abs}}(\text{\emph{Source}}))\text{.}
+		\text{\emph{Source}} = \text{\emph{Source}} + \text{\emph{SNR}}\times(\text{\emph{randn}}(\text{\emph{size}}(\text{\emph{Source}})-0.5)) \times \text{\emph{max}}(\text{\emph{abs}}(\text{\emph{Source}}))\text{,}
 	\end{equation}
+	donde \emph{Source} es la señal de EEG simulada y SNR es la relación señal/ruido.
 	\item De esta manera, obtuvimos 3 sets de 10,000 mediciones para cada uno de los 3 dipolos, sumando 90,000 mediciones simuladas de EEG diferentes.
 \end{enumerate}
 
 El proceso del problema directo se puede visualizar en la \cref{fig:methodology:direct_pipeline}.
 
-\begin{figure}[tb]
-	\centering
-	\begin{tikzpicture}[node distance = 3.5cm, auto]
-		% Define block styles
-		\tikzstyle{block} = [rectangle, draw, fill=blue!20,
-		text width=7em, text centered, rounded corners, minimum height=4em]
-		\tikzstyle{line} = [draw, -{Latex}] % Use -{Latex} instead of -latex
+\begin{figure}[!b]
+    \centering
+    \begin{tikzpicture}[node distance = 3.5cm, auto]
+        % Define block styles
+        \tikzstyle{block} = [rectangle, draw, fill=blue!20,
+        text width=7em, text centered, rounded corners, minimum height=4em]
+        \tikzstyle{line} = [draw, -{Latex}] % Use -{Latex} instead of -latex
 
-		% Place nodes
-		\node [block] (BEM) {BEM:\\Una matriz de ganancia por cada BSCR, 10 en total};
-		\node [block, right of=BEM] (PD) {Problema directo:\\100 simulaciones de EEG por cada matriz de ganancia, 1,000 en total};
-		\node [block, right of=PD] (SNR) {Simulación con diferente SNR:\\3 niveles de SNR, 3,000 en total};
-		\node [block, right of=SNR] (Sol) {Implementación para 3 zonas diferentes de la corteza cerebral:\\9,000 en total};
-		% Draw edges
-		\path [line] (BEM) -- (PD);
-		\path [line] (PD) -- (SNR);
-		\path [line] (SNR) -- (Sol);
-	\end{tikzpicture}
-	\caption{Proceso del problema directo del EEG}
-	\label{fig:methodology:direct_pipeline}
+        % Place nodes
+        \node [block] (BEM) {Matriz de ganancia por cada BSCR, 10 en total};
+        \node [block, right of=BEM] (PD) {Problema directo:\\100 simulaciones de EEG por cada matriz de ganancia: 1,000 en total};
+        \node [block, right of=PD] (SNR) {Simulación con diferente SNR:\\3 niveles de SNR, 3,000 en total};
+        \node [block, right of=SNR] (Sol) {Implementación para 3 zonas diferentes de la corteza cerebral:\\9,000 en total};
+        
+        % Add text on top of nodes
+        \node at (BEM.north) [yshift=1em] {BEM con OpenMEEG};
+        \node at (PD.north) [yshift=1em] {Implementando \cref{lineal} con Brainstorm};
+        \node at (SNR.north) [yshift=1em] {Brainstorm};
+        \node at (Sol.north) [yshift=1em] {Brainstorm};
+
+        % Draw edges
+        \path [line] (BEM) -- (PD);
+        \path [line] (PD) -- (SNR);
+        \path [line] (SNR) -- (Sol);
+    \end{tikzpicture}
+    \caption{Proceso del problema directo del EEG}
+    \label{fig:methodology:direct_pipeline}
 \end{figure}
 
 
-\section{Implementación del Problema Inverso del EEG}
+\section{Implementación del Problema Inverso}
 \label{sec:methodology:inverse_solved}
 
-Dado que nuestra meta es estimar el error asociado con la resolución del problema inverso utilizando diferentes valores del BSCR en varias áreas de la corteza cerebral, implementamos la solución de la siguiente manera: Emparejamos las 100 mediciones de EEG resultantes de cada BSCR (1,000 en total) contra cada una de las 10 matrices de ganancia de los diferentes BSCR a probar, lo que resulta en 10,000 combinaciones distintas para un solo dipolo y nivel de ruido.
-Teniendo 3 niveles de ruido y 3 dipolos diferentes, se obtiene un total de 90,000 combinaciones distintas y, por ende, 90,000 implementaciones del problema inverso a resolver, como se muestra en la \cref{fig:methodology:inverse_pipeline}.
+Dado que nuestra meta es estimar el error asociado con la resolución del problema inverso utilizando diferentes valores del BSCR en varias áreas de la corteza cerebral, implementamos la solución de la siguiente manera: emparejamos las 100 mediciones de EEG resultantes de cada BSCR (1,000 en total) con cada una de las 10 matrices de ganancia de los diferentes BSCR a probar, lo que resulta en 10,000 combinaciones distintas para un solo dipolo y nivel de ruido.
+Teniendo 3 niveles de ruido y 3 dipolos diferentes, se obtiene un total de 90,000 combinaciones distintas y, por ende, el mismo número de implementaciones del problema inverso a resolver, como se muestra en la \cref{fig:methodology:inverse_pipeline}.
 
 \begin{figure}[tb]
 	\centering
@@ -238,6 +252,13 @@ Teniendo 3 niveles de ruido y 3 dipolos diferentes, se obtiene un total de 90,00
 		\node [block, right of=1] (2) {Expansión de cada set de mediciones de EEG por BSCR con cada matriz de ganancia:\\10,000 en total};
 		\node [block, right of=2] (3) {Simulación con los 3 niveles de SNR:\\30,000 en total};
 		\node [block, right of=3] (4) {Implementación para 3 zonas diferentes de la corteza cerebral:\\90,000 en total};
+
+        % % Add text on top of nodes
+        % \node at (1.north) [yshift=1em] {Brainstorm};
+        % \node at (2.north) [yshift=1em] {Brainstorm};
+        % \node at (3.north) [yshift=1em] {Brainstorm};
+        % \node at (4.north) [yshift=1em] {LCMV en Brainstorm};
+
 		% Draw edges
 		\path [line] (1) -- (2);
 		\path [line] (2) -- (3);
@@ -262,13 +283,14 @@ Este kernel corresponde al definido por \cref{beamformer4} con la diferencia de 
 Tomando en cuenta que tenemos 90,000 combinaciones de mediciones de EEG y matrices de ganancia, debería de obtenerse un kernel de proyección para cada una de estas combinaciones.
 Sin embargo, dado que el filtro espacial tiene como datos de entrada las mediciones de EEG, la matriz de ganancia, y la matriz de covarianza, esta última puede ser calculada a partir de las 100 mediciones de EEG de cada BSCR, obteniendo un kernel de mayor precisión que puede ser calculado para cada una de esas 100 mediciones de EEG en cualquier momento. 
 De esta manera se reduce el número de archivos necesarios y el espacio ocupado en el disco del equipo de cómputo.
-Esta fue una de las razones de realizar 100 simulaciones de EEG para cada combinación de dipolos y BSCR durante el proceso del problema directo: para mejorar la robustez del estimador y evitar sesgos durante el análisis del problema inverso.
-En total se obtuvieron 900 kernels de proyección, 100 por cada BSCR, para cada uno de los 3 dipolos y 3 niveles de SNR.
+Esta fue una de las razones de realizar 100 simulaciones de EEG para cada combinación de dipolos y BSCR durante el proceso del problema directo: mejorar la robustez del estimador y evitar sesgos durante el análisis del problema inverso.
+En total se obtuvieron 900 kernels de proyección, 100 por cada BSCR, para cada uno de los tres dipolos y tres niveles de SNR.
+Esto nos asegura tener una muestra suficiente para observar la variabilidad de los resultados al utilizar valores distintos de BSCR con el que fueron simuladas las mediciones de EEG, permitiéndonos medir el error de localización de las fuentes de actividad neuronal.
 
-\section{Desarrollo del Estimador del Error de Localización de las Fuentes de Actividad Neuronal}
+\section{Error de Localización de las Fuentes de Actividad Neuronal}
 \label{sec:methodology:estimator}
 
-Para la cuantización del error de localización se procedió obtener la posición de magnitud máxima de los mapas de PNAI generados por el kernel de proyección para cada uno de los 90,000 conjuntos de datos. 
+\TODO{aquí vas} Para la cuantización del error de localización se procedió obtener la posición de magnitud máxima de los mapas de PNAI generados por el kernel de proyección para cada uno de los 90,000 conjuntos de datos. 
 Estos fueron separados y analizados por cada BSCR, dipolo, y nivel de SNR.
 
 La posición de magnitud máxima fue obtenida al implementar el kernel de proyección correspondiente a las mediciones de EEG en el instante $t=$ 397.2 ms, el cual es en el que se encuentra la magnitud máxima de la función del dipolo con respecto al tiempo.
@@ -277,20 +299,18 @@ Cabe mencionar que las áreas de búsqueda se apegan a los pliegues y concavidad
 
 \begin{figure}[tb]
 \centering
-    \begin{subfigure}{0.49\textwidth}
+    \begin{subfigure}[t]{0.49\textwidth}
         \includegraphics[width=\textwidth]{gfx/zone_1-2.png}
         \caption{Zonas de búsqueda de actividad neuronal en el problema inverso correspondientes a las zonas somatosensorial y auditiva de las zonas de Brodmann.}
         \label{fig:zone1-2}
     \end{subfigure}
 	\hfill
-    \begin{subfigure}{0.49\textwidth}
+    \begin{subfigure}[t]{0.49\textwidth}
         \includegraphics[width=\textwidth]{gfx/zone_3.png}
         \caption{Zona de búsqueda 3 correspondiente a la zona visual de las zonas de Brodmann.}
         \label{fig:zone3}
-		\vfill
     \end{subfigure}
-	
-    \caption{Zonas de busqueda en la solución del problema inverso. \TODO{revisar como nivelar las figuras}}
+    \caption{Zonas de busqueda en la solución del problema inverso.}
     \label{fig:dipoles-zones}
 \end{figure}
 
