@@ -1,6 +1,6 @@
 % !TEX root = ../my-thesis.tex
 %
-\chapter{Trabajo Previo Relacionado}
+\chapter{Antecedentes}
 \label{sec:related}
 
 Dada la naturaleza abierta del análisis de localización de fuentes de EEG utilizando la técnica de la solución del problema inverso, múltiples enfoques han sido propuestos por la comunidad científica.
@@ -8,49 +8,48 @@ La gran mayoría de estas propuestas abordan la localización de fuentes de EEG 
 Al tener como objetivo la localización de fuentes de EEG, parámetros como la conductividad de los tejidos son considerados como constantes conocidas y relegadas a un segundo plano.
 A diferencia de los métodos de optimización de localización de fuentes de actividad neuronal, en este trabajo se propone un enfoque basado en la variabilidad de la conductividad de los tejidos; por lo que se considera relevante revisar los antecedentes relacionados con la estimación de la conductividad de los tejidos en el contexto de la localización de fuentes de EEG.
 
-\section{Trabajo Relacionado 1: Review on solving the forward problem in EEG source analysis}
+\section{Revisión de Trabajos en la Solución del Problema Directo}
 \label{sec:related:hallez}
 
 Aunque el objetivo de nuestro trabajo es el análisis del error incurrido en la localización de fuentes de actividad neuronal utilizando diversos valores nominales de conductividad cerebral, este se encuentra sumamente relacionado con los métodos tradicionales de optimización de localización de dichas fuentes.
 Por lo que es importante revisar los antecedentes relacionados con la solución del problema directo en el análisis de fuentes de EEG.
 
-En esta revisión se presentan diversos métodos para la solución del problema directo \cite{Hallez2007}. En particular, se mencionan los métodos de elementos de frontera (BEM), elementos finitos (FEM), y métodos de diferencia finita (FDM).
+En \cite{Hallez2007} se presentan diversos métodos para la solución del problema directo. En particular, se mencionan los métodos de elementos de frontera (BEM), elementos finitos (FEM), y métodos de diferencia finita (FDM).
 Estos métodos son utilizados en conjunto con modelos geométricos que representan la cabeza humana, y que son utilizados para calcular el potencial eléctrico en la superficie del cuero cabelludo.
 Estos modelos pueden ser geometrías simples como esferas concéntricas, o modelos más complejos que representan la anatomía de la cabeza humana por medio de mallas tridimensionales obtenidas a partir de imágenes de resonancia magnética.
 
-En la discusión de los métodos de solución del problema directo, se menciona que el método de elementos de frontera es de los más simples y eficientes en recursos computacionales a comparación de los otros métodos, aunque presenta algunas limitantes como la necesidad de representar la conductividad de los tejidos como isotrópica en cada capa del modelo de la cabeza (información detallada sobre las diferencias se encuentra en \cref{sec:appendix:forward_problem_comparison}).
-Además de que los resultados obtenidos son confiables únicamente en la superficie del cuero cabelludo, y la corteza cerebral, pero no en las regiones más profundas del cerebro. Sopesando las ventajas y desventajas de los métodos de solución del problema directo, se concluyó que en términos del enfoque de nuestro proyecto, el método de elementos de frontera es el más adecuado para el análisis de fuentes de EEG variando la conductividad de los tejidos.
-BEM ofrece el nivel de certidumbre necesario para analizar la actividad cerebral, esto porque el error incurrido es despreciable al analizar solo las superficies de las mallas para explicar lo que sucede dentro de ellas. 
-Y es que, la mayor parte de la actividad cerebral medida por EEG sucede en la corteza, la cual tiene entre 2 y 10 mm de espesor, por lo que la actividad neuronal en ella puede asumirse como ``superficial'' y entonces modelable con BEM.
+Ya en la \cref{sec:intro:direct} se mencionó que BEM es de los más simples y eficientes en recursos computacionales a comparación de los otros métodos, aunque presenta algunas limitantes como la necesidad de representar la conductividad de los tejidos como isotrópica en cada capa del modelo de la cabeza (información detallada sobre las diferencias se encuentra en \cref{sec:appendix:forward_problem_comparison}).
+Además, los resultados obtenidos con BEM son confiables únicamente en la superficie del cuero cabelludo y la corteza cerebral, pero no en las regiones más profundas del cerebro. 
+Sopesando las ventajas y desventajas de los métodos de solución del problema directo, se concluyó que en términos del enfoque de nuestro proyecto, BEM es el más adecuado para el análisis de fuentes de EEG variando la conductividad de los tejidos ya que el error incurrido es despreciable al analizar solo las superficies de las mallas para explicar lo que sucede dentro de ellas. 
+Y es que, la mayor parte de la actividad cerebral medida por EEG sucede en la corteza, la cual tiene entre 2 y 10 mm de espesor, por lo que la actividad neuronal en ella puede asumirse como superficial y entonces modelable con BEM.
 
-\section{Trabajo Relacionado 2: Estimating Brain Conductivities and Dipole Source Signals With EEG Arrays}
+\section{Estimación de las Conductividades a Partir de EEG}
 \label{sec:related:gutierrez}
 
 Uno de los trabajos donde se aborda la localización de fuentes de EEG en el contexto de la variabilidad de la conductividad de los tejidos es \cite{Gutierrez2004}, en donde se propone un método para la estimación de la razón de conductividad de los tejidos que componen la cabeza humana.
-La metodología propuesta en este artículo se tomó como base para el desarrollo de nuestro trabajo, con la diferencia de que en el trabajo previo, los tejidos de la cabeza humana son modelados como esferas concéntricas.
-Este modelo de esferas concéntricas es considerado como un antecedente al modelo geométricamente realista de la cabeza humana, y su uso era común en la literatura contemporánea a la publicación de este artículo.
+La metodología propuesta en este artículo se tomó como base para el desarrollo de nuestro trabajo, con la diferencia de que en \cite{Gutierrez2004}, los tejidos de la cabeza humana son modelados como esferas concéntricas.
+Este modelo de esferas concéntricas es considerado como un antecedente al modelo geométricamente realista de la cabeza humana, y su uso era común en la literatura contemporánea a la publicación de \cite{Gutierrez2004}.
 Cabe mencionar que los métodos de solución del problema directo utilizando geometrías realistas con BEM ya habían sido propuestos, pero su ejecución era computacionalmente costosa, por lo que el uso de esferas concéntricas era una alternativa viable para la solución del problema directo.
 
-Gracias a la actual facilidad de acceso a equipo de cómputo con mayor capacidad de procesamiento, y al progreso en los métodos numéricos necesarios para la solución de sistemas como el BEM, es que se decidió iterar en la metodología propuesta en este artículo. 
-Las demás diferencias entre el trabajo \cite{Gutierrez2004} y el presente se encuentran en la elección de señales de EEG, el método de solución del problema inverso, y el objetivo general de la investigación.
-En el \cite{Gutierrez2004} se utilizan señales reales de EEG y MEG además de las simuladas con el fin de comparar los resultados obtenidos con ambos tipos de señales.
-En cuanto a la solución del problema inverso, se utilizó el método de estimación de máxima verosimilitud (MLE, del inglés \emph{maximum likelihood estimation}) y el método de estimación de máxima probabilidad a posteriori (MAP, del inglés \emph{maximum a posteriori probability}).
+Gracias a la actual facilidad de acceso a equipo de cómputo con mayor capacidad de procesamiento, y al progreso en los métodos numéricos necesarios para la solución de sistemas como el BEM, es que se decidió iterar en la metodología propuesta en \cite{Gutierrez2004} aunque con diferencias en la elección de señales de EEG, el método de solución del problema inverso, y el objetivo general de la investigación.
+En \cite{Gutierrez2004} se utilizan señales reales de EEG y MEG además de las simuladas con el fin de comparar los resultados obtenidos con ambos tipos de señales.
+En cuanto a la solución del problema inverso, se utilizó el método de estimación de máxima verosimilitud (MLE, del Inglés \emph{maximum likelihood estimation}) y el método de estimación de máxima probabilidad a posteriori (MAP, del Inglés \emph{maximum a posteriori probability}).
 Por último, el objetivo general de \cite{Gutierrez2004} fue la estimación de la razón de conductividad de los tejidos, y la localización de fuentes de actividad neuronal en la corteza cerebral comparando con la solución del problema inverso de los datos reales contra los simulados.
 
-En contraste, el objetivo de nuestro trabajo es la comparación de los errores incurridos en la localización de fuentes de actividad neuronal utilizando diversos valores nominales de conductividad cerebral. 
-Por lo que se decidió utilizar señales simuladas de EEG, y BEM como método de solución del problema directo en una geometría realista compuesta por mallas tridimensionales.
+En contraste, el objetivo de este trabajo de tesis es la comparación de los errores incurridos en la localización de fuentes de actividad neuronal utilizando diversos valores nominales de conductividad cerebral. 
+Por ello se decidió utilizar señales simuladas de EEG y BEM como método de solución del problema directo en una geometría realista compuesta por mallas tridimensionales.
 Además, se utilizó el método de filtrado espacial para la solución del problema inverso, y se compararon los resultados obtenidos con diferentes valores de conductividad en las mallas.
-Otros elementos que se comparten con el artículo en cuestión son la elección de un dipolo de corriente eléctrica como modelo de un evento de respuesta evocada, y el uso de la frontera de Crámer-Rao (CRB, del inglés \emph{Crámer-Rao bound}) como métrica de evaluación de la precisión de la localización de fuentes de actividad neuronal.
+Otros elementos que se comparten \cite{Gutierrez2004} son la elección de un dipolo de corriente eléctrica como modelo de un evento de respuesta evocada, y el uso de la frontera de Crámer-Rao (CRB, del Inglés \emph{Crámer-Rao bound}) como métrica de evaluación de la precisión de la localización de fuentes de actividad neuronal.
 
-\section{Trabajo Relacionado 3: Variation in Reported Human Head Tissue Electrical Conductivity Values}
+\section{Variaciones en los Valores Reportados de las Conductividades}
 \label{sec:related:mccann}
 
-Esta revisión aborda la variabilidad de los valores de conductividad de los tejidos de la cabeza humana reportados en la literatura, y expone la inquietud de utilizar valores nominales asumidos por la literatura en la solución del problema directo en el análisis de fuentes de EEG y MEG \cite{McCann2019}.
+En \cite{McCann2019} se aborda la variabilidad de los valores de conductividad de los tejidos de la cabeza humana reportados en la literatura, y se expone la inquietud de utilizar valores nominales asumidos por la literatura en la solución del problema directo en el análisis de fuentes de EEG y MEG.
 El artículo reúne en un meta-análisis los valores de conductividad reportados de 56 estudios los cuales fueron categorizados de acuerdo al tipo de tejido, la técnica y condiciones de medición, frecuencia de corriente utilizada, temperatura del tejido, patologías presentes y la edad de los sujetos de estudio.
-Los resultados obtenidos en este meta-análisis muestran que los valores de conductividad de los tejidos de la cabeza humana varían considerablemente entre los estudios. 
-En el caso del BSCR que es nuestra principal variable de interés, el valor medio reportado fue de 50.4$\mathbf{\pm}$39, acuñado en su mayoría a la demografía, edad, y patologías presentes en los sujetos de estudio.
+Los resultados obtenidos en este meta-análisis muestran que los valores de conductividad de los tejidos de la cabeza humana varían considerablemente entre los estudios, esta variación es atribuida en su mayoría a la demografía, edad, y patologías presentes en los sujetos de estudio.
+En el caso del BSCR que es nuestra principal variable de interés, el valor medio reportado fue de 50.4$\mathbf{\pm}$39. 
 
 Tomando en cuenta la disparidad de los valores de conductividad reportados en la literatura, se buscó poner en práctica si el uso de diferentes valores de conductividad en la solución del problema directo afecta la localización de fuentes de actividad neuronal.
 Para ello, se tomó como base esta recopilación de valores de conductividad, particularmente los que se obtuvieron bajo las mismas condiciones que simulamos en nuestro estudio, esto es, valores obtenidos utilizando técnicas no invasivas que involucraran el uso de EEG y MEG, sin importar la edad, demográfica, y patologías.
-Información adicional acerca de las diferentes técnicas de estimación de la conductividad de los tejidos se encuentra en \cref{sec:appendix:conductivity_comparison}.
+Información adicional acerca de las diferentes técnicas de estimación de la conductividad de los tejidos se encuentra en \Cref{sec:appendix:conductivity_comparison}.
 

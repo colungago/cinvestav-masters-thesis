@@ -6,3 +6,4 @@ beamforming
 BSCR
 bioelectromagnéticas
 somatosensorial
+magnetoencefalografía
