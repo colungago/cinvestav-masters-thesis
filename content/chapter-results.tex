@@ -90,9 +90,9 @@ Las señales de EEG simuladas tienen una componente en el tiempo, por tanto, el 
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.45\textwidth}
-        \includegraphics[width=\textwidth]{inverse/inverse-d1n1c8c8.png}
-        \caption{PNAI obtenido con BSCR = 10.}
-        \label{fig:inverse-d1n2c2c2}
+        \includegraphics[width=\textwidth]{inverse/inverse-d1n1c10c10.png}
+        \caption{PNAI obtenido con BSCR = 80.}
+        \label{fig:inverse-d1n4c2c2}
     \end{subfigure}
     \vskip\baselineskip
     \begin{subfigure}{0.45\textwidth}
@@ -102,12 +102,13 @@ Las señales de EEG simuladas tienen una componente en el tiempo, por tanto, el 
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.45\textwidth}
-        \includegraphics[width=\textwidth]{inverse/inverse-d1n1c10c10.png}
-        \caption{PNAI obtenido con BSCR = 80.}
-        \label{fig:inverse-d1n4c2c2}
+        \includegraphics[width=\textwidth]{inverse/inverse-d1n1c8c8.png}
+        \caption{PNAI obtenido con BSCR = 10.}
+        \label{fig:inverse-d1n2c2c2}
     \end{subfigure}
     \caption{Resultados de la implementación del problema inverso con discrepancia de valores de BSCR usados en el problema directo e inverso en el dipolo ubicado en la zona somatosensorial, la cual se presenta como el área roja.}
     \label{fig:inverse-results}
+    % Cambié el orden de las figuras
 \end{figure}
 
 Los resultados mostrados en la figura en cuestión, representan la proyección de la fuente de actividad neuronal en la malla representativa de la corteza cerebral en forma del mapa del PNAI.
@@ -147,9 +148,9 @@ Estas gráficas siguen la misma estructura descrita anteriormente en la agrupaci
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]{individual_graphs/d1c8n1.png}
-        \caption{Error en la localización de la fuente de actividad neuronal con BSCR 10.}
-        \label{fig:error-d1c8n1}
+        \includegraphics[width=\textwidth]{individual_graphs/d1c10n1.png}
+        \caption{Error en la localización de la fuente de actividad neuronal con BSCR 80.}
+        \label{fig:error-d1c10n1}
     \end{subfigure}
     \vskip\baselineskip
     \begin{subfigure}{0.49\textwidth}
@@ -159,12 +160,13 @@ Estas gráficas siguen la misma estructura descrita anteriormente en la agrupaci
     \end{subfigure}
     \hfill
     \begin{subfigure}{0.49\textwidth}
-        \includegraphics[width=\textwidth]{individual_graphs/d1c10n1.png}
-        \caption{Error en la localización de la fuente de actividad neuronal con BSCR 80.}
-        \label{fig:error-d1c10n1}
+        \includegraphics[width=\textwidth]{individual_graphs/d1c8n1.png}
+        \caption{Error en la localización de la fuente de actividad neuronal con BSCR 10.}
+        \label{fig:error-d1c8n1}
     \end{subfigure}
     \caption{Error incurrido en la localización de la fuente de actividad neuronal en con el dipolo en la zona somatosensorial y SNR = 1\%.}
     \label{fig:error-results-d1n1}
+    % Cambié el orden de las figuras y el límite del eje y
 \end{figure}
 
 En cada gráfica, el eje horizontal muestra los valores de BSCR utilizados en la solución del problema inverso, mientras que el eje vertical indica la media del error la localización de la fuente de actividad neuronal obtenido en las 100 pruebas de cada permutación de BSCR en función de la distancia media entre vértices de la malla de la corteza cerebral.

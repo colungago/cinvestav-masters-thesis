@@ -42,7 +42,9 @@ Cabe mencionar que las neuronas vecinas tienen que estar acomodadas en forma par
 La limitante anterior es en parte producto de que el tejido del cráneo y el cuero cabelludo interfieren con la conducción del campo eléctrico generado por los potenciales de las neuronas.
 Evidentemente, la conductividad eléctrica (medida en Siemens S) de los tejidos (normalmente representada por $\sigma$) que se encuentran entre el cerebro y los electrodos usados para la medición del EEG son diferentes a cero, porque permiten la detección de la actividad eléctrica en cuestión. 
 La incógnita en este caso, es el valor exacto de la conductividad eléctrica de los tejidos.
-Se han realizado numerosos estudios que han dado diferentes valores de dicha conductividad \cite{Gutierrez2004, McCann2019}, por lo que es de interés comparar con datos obtenidos experimentalmente, y así determinar cuáles producen resultados similares a los datos observados.
+Se han realizado numerosos estudios que han propuesto distintos valores de dicha conductividad obtenidos a través de diferentes métodos, \cite{McCann2019} contiene una muestra de 56 de ellos. 
+Esta variabilidad en los valores propuestos de la conductividad es la razón por la cual sigue siendo un problema abierto en el área de las neurociencias, y es el objeto de estudio de este proyecto de tesis.
+% Eliminé la cita de Gutierrez2004 porque viene incluida en la de McCann2019, modifiqué la oración para que tenga sentido con el contexto.
 
 \section{Modelo Cuasi-Estático de las Leyes de Maxwell}
 \label{sec:intro:physics}
@@ -86,10 +88,10 @@ siendo $V_0(r)$ el potencial eléctrico en un punto $r$ con $\sigma_{0}$ como la
 \section{Problema Directo del EEG}
 \label{sec:intro:direct}
 
-Dado que las señales de EEG se ajustan al modelo electromagnético de las ecuaciones de Maxwell en su versión cuasi-estática.
-Las señales de EEG pueden ser simuladas mediante la solución del problema directo.
+Dado que las señales de EEG se ajustan al modelo electromagnético de las ecuaciones de Maxwell en su versión cuasi-estática, las señales de EEG pueden ser simuladas mediante la solución del problema directo.
 Este consiste en calcular el potencial eléctrico presente en el cuero cabelludo mediante el modelado de la transducción de la corriente eléctrica generada por una fuente posicionada en la corteza cerebral, en este caso siendo modelada como un dipolo eléctrico que aproxima la actividad neuronal en eventos de respuesta evocada \cite{Mosher1999, Hallez2007}.
-El cálculo del potencial generado por el dipolo de corriente $\mathbf{q}$ con momento dipolar  $\mathbf{q} = [q_x,\,q_y,\,q_z]^T$ y posición $\mathbf{r}_{q} = [r_{qx},\,r_{qy},\,r_{qz}]^T$ en un medio conductor infinito con conductividad $\sigma$ se describe por: \begin{equation}
+El cálculo del potencial generado por el dipolo de corriente $\mathbf{q}$ con momento dipolar  $\mathbf{q} = [q_x,\,q_y,\,q_z]^T$ y posición $\mathbf{r}_{q} = [r_{qx},\,r_{qy},\,r_{qz}]^T$ en un medio conductor infinito con conductividad $\sigma$ se describe por: 
+\begin{equation}
 	\label{fdip}
 	V(\mathbf{r},\mathbf{r}_{q},\mathbf{q})=\frac{\mathbf{q}\cdot(\mathbf{r}-\mathbf{r}_{q})}{4\pi \sigma {||\mathbf{r}-\mathbf{r}_{q}||}^{3}}\text{,}
 \end{equation}
