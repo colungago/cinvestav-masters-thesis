@@ -47,7 +47,7 @@ Revisando la \cref{fig:bscr-performance}, se observa que, en general los valores
 En cuanto a los valores fuera de este rango (10 y mayor a 35), se observa una mayor variabilidad en los resultados obtenidos, aumentando esta considerablemente conforme aumenta el BSCR. 
 
 En el caso de BSCR = 10, este tiene un error en la localización de la fuente de actividad neuronal similar al del rango de BSCR = 20-35, e incluso un intervalo de confianza que se solapa con los valores de este rango como en el caso del Dipolo 1 y 2, especialmente en el Dipolo 2 como se muestra en las \cref{fig:error-overall-d2n1,fig:crb-overall-d2n3} aún cuando el nivel de SNR es de 10\%.
-Pero, recordand las peculiaridades de la zona donde se encuentra el Dipolo 2, se puede inferir que el BSCR = 10 tiene estos resultados debido a la geometría de la malla y la posición del dipolo en la misma, no porque sea un valor adecuado de BSCR para la solución del problema inverso para casos más generales, como se observa en los resultados obtenidos con el Dipolo 3 en la \cref{fig:error-overall-d3n1}.
+Pero, recordando las peculiaridades de la zona donde se encuentra el Dipolo 2, se puede inferir que el BSCR = 10 tiene estos resultados debido a la geometría de la malla y la posición del dipolo en la misma, no porque sea un valor adecuado de BSCR para la solución del problema inverso para casos más generales, como se observa en los resultados obtenidos con el Dipolo 3 en la \cref{fig:error-overall-d3n1}.
 
 Enfocando la atención en los valores de BSCR cercanos a BSCR = 80, se observa que aunque estos presentan un error en la localización de la fuente de actividad neuronal mayor y sus intervalos de confianza no se solapan con los valores de BSCR = 20-35 haciéndolos significativamente diferentes, los valores de error obtenidos no son extremadamente altos.
 Esto ejemplifica el uso común del valor de BSCR = 80 en la solución del problema inverso en la literatura, y que los resultados obtenidos con este valor de BSCR no son necesariamente erróneos. 
@@ -58,7 +58,8 @@ Recordando que el valor de BSCR = 200 es un valor atípico y no es comúnmente u
 \section{Conclusiones}
 
 Consolidando los resultados obtenidos en las pruebas realizadas, se puede llegar a la conclusión de que los valores de BSCR en un rango de 20-35 presentan un menor error en la localización de la fuente de actividad neuronal y una menor variabilidad en los resultados obtenidos, en comparación con los valores de BSCR = 10, 80 y 200.
-Incluso sin importar la geometría de la malla utilizada para la solución del problema directo, la posición del dipolo en la misma o el nivel de SNR agregado a las señales de EEG simuladas.
+Incluso sin importar las variaciones de los parámetros utilizados en la solución del problema directo como: los valores de conductividad definidos para cada malla del modelo geométrico utilizado como volumen conductor, la posición del dipolo en este modelo o la proporción de ruido agregada en la respuesta proveniente de la fuente de actividad neuronal.
+% En efecto, la geometría de la malla no se modificó en ningún momento, lo que se varió fue la conductividad asociada a cada malla. Reescrbí la oración para que fuera más apegada a lo descrito en el diseño experimental
 Además de que los valores de BSCR en este rango presentan un desempeño estadísticamente consistente en la solución del problema inverso.
 
 El uso de valores atípicos de BSCR como el BSCR = 10 y BSCR = 200 pueden presentar resultados dentro de lo esperado en la solución del problema inverso, pero tienen una mayor variabilidad y no son consistentes en diferentes condiciones de ruido y posiciones de fuentes de actividad neuronal.

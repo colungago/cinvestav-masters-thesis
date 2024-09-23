@@ -89,7 +89,21 @@ siendo $V_0(r)$ el potencial eléctrico en un punto $r$ con $\sigma_{0}$ como la
 \label{sec:intro:direct}
 
 Dado que las señales de EEG se ajustan al modelo electromagnético de las ecuaciones de Maxwell en su versión cuasi-estática, las señales de EEG pueden ser simuladas mediante la solución del problema directo.
-Este consiste en calcular el potencial eléctrico presente en el cuero cabelludo mediante el modelado de la transducción de la corriente eléctrica generada por una fuente posicionada en la corteza cerebral, en este caso siendo modelada como un dipolo eléctrico que aproxima la actividad neuronal en eventos de respuesta evocada \cite{Mosher1999, Hallez2007}.
+Este consiste en calcular el potencial eléctrico presente en el cuero cabelludo mediante el modelado de la transducción de la corriente eléctrica generada por una fuente posicionada en la corteza cerebral, en este caso siendo modelada como un dipolo eléctrico que aproxima la actividad neuronal en eventos de respuesta evocada.
+
+El uso de un dipolo eléctrico para modelar la actividad neuronal de los SEPs es una simplificación del fenómeno real, pero es una aproximación válida en este contexto.
+La necesidad de esta aproximación nace de la complejidad del tejido de la corteza cerebral, el cual está compuesto por múltiples capas de billones de neuronas piramidales y células gliales, lo que hace complicado modelar la actividad neuronal en su totalidad. 
+Por esta razón es que se recurre a un dipolo eléctrico como modelo simplificado de la actividad neuronal en la corteza cerebral. 
+
+Su justificación radica en la distribución de la corriente eléctrica en la corteza cerebral generada por los cúmulos de neuronas activadas en respuesta a un estímulo sensorial, cognitivo o motor.
+Regresando a \cref{eq:corriente3}, $J^{P}(r')$ representa la densidad de corriente generada por la actividad neuronal en un punto $\mathbf{r}_{q}$ con respecto al punto de
+observación $r$, y a su vez, esta densidad de corriente puede ser modelada como una fuente puntual de corriente eléctrica definida por
+\begin{equation}
+	J^{P}(r') = \mathbf{q} \delta(r' - r_{q})\text{,} \label{eq:corriente4}
+\end{equation}
+donde $\delta(r)$ es la función delta de Dirac, con momento dipolar $\mathbf{q}=\int J^{P}(r') dr'$, y posición $\mathbf{r}_{q}$ en la corteza cerebral.
+Por lo tanto, el dipolo de corriente $J^{P}(r')$ puede describir la distribución de la corriente eléctrica en la corteza cerebral generada por la actividad conjunta de un cúmulo de neuronas como es el caso de un SEP, y a su vez, puede ser dividido en regiones más pequeñas representadas por dipolos de corriente equivalente modelando regiones más específicas de la corteza cerebral \cite{Baillet2001}.
+
 El cálculo del potencial generado por el dipolo de corriente $\mathbf{q}$ con momento dipolar  $\mathbf{q} = [q_x,\,q_y,\,q_z]^T$ y posición $\mathbf{r}_{q} = [r_{qx},\,r_{qy},\,r_{qz}]^T$ en un medio conductor infinito con conductividad $\sigma$ se describe por: 
 \begin{equation}
 	\label{fdip}
