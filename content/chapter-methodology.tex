@@ -111,15 +111,15 @@ Por estas razones es importante que ambas mallas tengan la misma resolución y n
 
 La fase del cuero cabelludo/aire (mostrada en la \cref{fig:methodology:head}) tiene una resolución menor con 6480 triángulos y 3242 vértices.
 Fue definida así porque corresponde al límite de resolución computable con la RAM de la estación de trabajo.
-Aún así, es una resolución alta comparada con el uso recomendado del software \cite{tadelMEGEEGGroup2019a}.
+Aun así, es una resolución alta comparada con el uso recomendado del software \cite{tadelMEGEEGGroup2019a}.
 
 Por último se tiene una malla que representa la corteza cerebral (\cref{fig:methodology:cortex}), la cual cuenta con una resolución de 29988 triángulos compuestos de 15002 vértices, los cuales tienen la finalidad de proporcionar ``dipolos elementales'' sobre los que se proyectarán los resultados. 
 Esta malla es importante para el cálculo del campo eléctrico generado por actividad neuronal no influye drásticamente en el costo computacional y puede utilizarse una resolución mayor para representar con detalle los pliegues y concavidades de la corteza cerebral.
-Todas las mallas en conjunto representan nuestro volumen conductor (mostrado en la \cref{fig:methodology:model}) sobre el que se implementarán los cálculos de BEM y la proyección del resultado del filtro espacial.
+Todas las mallas en conjunto representan nuestro volumen conductor(mostrado en la \cref{fig:methodology:model} junto con los ejes de referencia) sobre el que se implementarán los cálculos de BEM y la proyección del resultado del filtro espacial. 
 
-\begin{figure}[tbp]
+\begin{figure}[bp]
 	\includegraphics[width=\textwidth]{whole_model}
-	\caption{Modelo geométricamente realista completamente anidado con sensores de EEG}
+	\caption{Modelo geométricamente realista completamente anidado con sensores de EEG y sus ejes de referencia. Donde el eje X es la dirección anterior-posterior (rojo), el eje Y es la dirección lateral izquierda-derecha (verde), y el eje Z es la dirección dorsal-ventral (azul).}
 	\label{fig:methodology:model}
 \end{figure}
 
@@ -127,14 +127,12 @@ Todas las mallas en conjunto representan nuestro volumen conductor (mostrado en 
 \label{sec:methodology:openmeeg}
 
 En el área de las neurociencias se suele resolver el problema inverso con la finalidad de ubicar la posición de la fuente de actividad neuronal en la corteza cerebral asociada a un evento de respuesta evocada. 
-Por lo tanto, 
-conductividad se toma  se mantiene como un valor fijo, mientras que la posición y magnitud del dipolo de corriente se varían para obtener una estimación de la posición de la fuente de actividad neuronal real. 
+Por lo tanto, la conductividad se mantiene como un valor fijo, mientras que la posición y magnitud del dipolo de corriente se varían para obtener una estimación de la posición de la fuente de actividad neuronal real. 
 % Modifiqué la oración para que sea más claro el punto de los objetivos y procedimientos usuales en la literatura y ligar con el experimento propuesto en el siguiente párrafo.
 
 El valor nominal de la razón de conductividad cerebro-cráneo es de 80:1 ($0.33\text{ S/m}$ para el cerebro y $0.0042 \text{ S/m}$ para el cráneo) \cite{Rush1968,Rush1969,Cohen1983}.
 Sin embargo, múltiples estudios con diferentes acercamientos han publicado valores de la razón de conductividad cerebro-cráneo que se desvían significativamente del estándar de 80:1 \cite{McCann2019}.
 Por esta razón, el objetivo de nuestro experimento es estimar el error incurrido en la localización de fuentes de actividad neuronal utilizando al BSCR como variable parámetro en la solución del problema inverso, mientras se toma por conocida la posición y magnitud del dipolo de corriente, manteniéndose como constante en todos los experimentos realizados con el mismo dipolo.
-
 
 Regresando a \cref{lineal}, $L$ representa la llamada \emph{matriz de ganancia} que determina la sensibilidad del arreglo de electrodos en un EEG y como estos registrarán el campo eléctrico sobre el cuero cabelludo.
 Para el cálculo de esta matriz de ganancia por medio de BEM se utilizó el software OpenMEEG \cite{open,open2}, donde las entradas fueron: nuestro modelo geométricamente realista, un arreglo de EEG con 65 sensores posicionados acorde al sistema internacional 10-10 (mostrado en la \cref{fig:EEG10-10}), y los valores de conductividad del cerebro, cráneo, y cuero cabelludo.
@@ -175,30 +173,35 @@ La matriz de ganancia resultante de cada una de los valores del BSCR tiene $4500
 La matriz de ganancia de cada BSCR con el modelo geométrico completan el volumen conductor con sus propiedades electromagnéticas.
 La pieza restante para el cálculo del problema directo es la fuente de actividad eléctrica que se propagará por dicho volumen conductor.
 Como se había discutido anteriormente, se decidió utilizar un dipolo eléctrico de posición fija gracias a que la actividad neuronal correspondiente a un ER se puede modelar como tal. 
-Este dipolo varía su magnitud y dirección en función del tiempo en un periodo de 600 ms y se muestra en la \cref{fig:methodology:dipolefun}. 
-La respuesta del dipolo se observa en la \cref{fig:methodology:dipole}, mientras que una representación de su máxima magnitud y dirección en el espacio se muestra en la \cref{fig:methodology:dipolefig}.
+
+Este dipolo varía su magnitud y dirección en función del tiempo en un periodo de 600 ms, su respuesta se muestra en la \cref{fig:methodology:dipole} donde se observan las señales S1, S2, y S3, las cuales representan la magnitud de la respuesta del dipolo en los ejes X, Y, y Z correspondientemente, los cuales a su vez también corresponden a los ejes del modelo geométrico.
+La dirección y magnitud del vector resultante pueden ser calculados en cada instante de tiempo a partir de las coordenadas cartesianas compuestas por la magnitud de las señales S1, S2, y S3.
+De acuerdo a la función del dipolo, su máxima magnitud se alcanza a los 397.2 ms y tiene un ángulo de elevación de -22.55° con respecto al plano XY (mostrado en la \cref{fig:methodology:model}). 
+La representación gráfica del dipolo en el intervalo de tiempo correspondiente a su máxima magnitud se muestra en la \cref{fig:methodology:dipolefig}.
+
 % Rescribí la oración para que sea más clara y citar la figura correspondiente.
 En cuanto a la posición, se decidió utilizar tres diferentes, cada una en distintas zonas del cerebro correspondientes a lugares de eventos de respuesta evocada, siendo estas: la corteza somatosensorial primaria (coordenadas MNI -52.2, -32.4, 55.8), corteza visual primaria (9.7, -98.6, 2.4), y corteza auditiva primaria (-65.0, -24.7, 11), estas posiciones se muestran en la \cref{fig:dipoles}.
+
 Cabe mencionar que el sistema de coordenadas MNI es usualmente utilizado como referencia para la comparación de diferentes sujetos, pero el software utiliza para sus cálculos el sistema CTF/MRI al que denomina \emph{subject coordinate system} (SCS), por lo que toda futura mención de coordenadas corresponden a dicho sistema.
 
 \begin{figure}[tbp]
 	\centering
 	\begin{subfigure}[t]{0.8\textwidth}
-		\includegraphics[width=\textwidth]{dipole-function}
+		\includegraphics[width=\textwidth]{dipole_fix}
 		\caption{Función del dipolo eléctrico con respecto al tiempo. Dado que el dipolo es sintético, la amplitud no tiene unidades. Pero al momento de calcular el campo eléctrico generado por el dipolo, la magnitud se introduce en el cálculo con unidades de nAm.}
 		\label{fig:methodology:dipole}
 	\end{subfigure}
 	\vspace{0.5cm} % Add vertical space between the subfigures
 	\begin{subfigure}[t]{0.8\textwidth}
 		\includegraphics[width=\textwidth]{dipolefig}
-		\caption{Representación del dipolo eléctrico en el espacio con su magnitud y dirección máxima. La posición del dipolo se mantiene fija pero su magnitud y dirección varían en función del tiempo. La magnitud del dipolo tiene unidades de nAm.}
+		\caption{Representación del dipolo eléctrico en el espacio con su magnitud y dirección máxima. La posición del dipolo se mantiene fija, pero su magnitud y dirección varían en función del tiempo. }
 		\label{fig:methodology:dipolefig}
 	\end{subfigure}
 	\caption{Dipolo eléctrico utilizado en la solución del problema directo.}
 	\label{fig:methodology:dipolefun}
 \end{figure}
 
-\begin{figure}[tb]
+\begin{figure}[tbp]
 	\centering
 	\includegraphics[width=\textwidth]{gfx/dipoles.png}
 	\caption{Dipolos posicionados en la malla de la corteza cerebral, Dipolo 1 (rojo) corresponde a la zona somatosensorial, Dipolo 2 (amarillo) a la zona visual, y Dipolo 3 (azul) a la zona auditiva.}
