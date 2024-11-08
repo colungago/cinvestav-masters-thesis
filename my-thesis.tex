@@ -2,12 +2,12 @@
 % Document Class Definition
 % **************************************************
 \documentclass[%
-    paper=A4,               % paper size --> A4 is default in Germany
+    paper=letter,               % paper size --> A4 is default in Germany
     twoside=true,           % onesite or twoside printing
     openright,              % doublepage cleaning ends up right side
     parskip=half,           % spacing value / method for paragraphs
     chapterprefix=true,     % prefix for chapter marks
-    11pt,                   % font size
+    12pt,                   % font size
     headings=normal,        % size of headings
     bibliography=totoc,     % include bib in toc
     listof=totoc,           % include listof entries in toc
@@ -30,10 +30,11 @@
 % **************************************************
 \begin{document}
 
+\onehalfspacing
 % uncomment the following command to fill up pages with
 % whitespace instead of aligning the first and last lines
 % of a page (see \raggedbottom vs. \flushbottom)
-%\raggedbottom
+\raggedbottom
 
 % --------------------------
 % rename document parts
@@ -47,21 +48,21 @@
 % --------------------------
 % Front matter
 % --------------------------
-\pagenumbering{roman}			% roman page numbing (invisible for empty page style)
+\pagenumbering{Alph}			% roman page numbing (invisible for empty page style)
 \pagestyle{empty}				% no header or footers
 \input{content/titlepages}		% INCLUDE: all titlepages
 \cleardoublepage
 
-% \pagestyle{plain}				% display just page numbers
+\pagestyle{plain}				% display just page numbers
 % \input{content/todo_list}		% INCLUDE: the abstracts (english and german)
 % \cleardoublepage
-
-% \input{content/abstract}		% INCLUDE: the abstracts (english and german)
-% \cleardoublepage
-% %
-% \input{content/acknowledgement} % INCLUDE: acknowledgement
-% \cleardoublepage
+\pagenumbering{Roman}			% roman page numbing (invisible for empty page style)
+\input{content/abstract}		% INCLUDE: the abstracts (english and german)
+\cleardoublepage
 %
+\input{content/acknowledgement} % INCLUDE: acknowledgement
+\cleardoublepage
+
 \currentpdfbookmark{\contentsname}{toc}
 \setcounter{tocdepth}{2}		% define depth of toc
 \tableofcontents				% display table of contents
@@ -116,8 +117,8 @@
 \appendix\cleardoublepage
 \input{content/chapter-appendix}       % INCLUDE: appendix
 
-%\cleardoublepage
-%\input{content/colophon}
+\cleardoublepage
+\input{content/colophon}
 
 \cleardoublepage
 \input{content/declaration}
