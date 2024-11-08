@@ -239,11 +239,11 @@ El proceso del problema directo se puede visualizar en la \cref{fig:methodology:
         \node [block, right of=PD] (SNR) {Simulación con diferente SNR:\\3 niveles de SNR, 3,000 en total};
         \node [block, right of=SNR] (Sol) {Implementación para 3 zonas diferentes de la corteza cerebral:\\9,000 en total};
         
-        % Add text on top of nodes
-        \node at (BEM.north) [yshift=1em] {BEM con OpenMEEG};
-        \node at (PD.north) [yshift=1em] {Implementando \cref{lineal} con Brainstorm};
-        \node at (SNR.north) [yshift=1em] {Brainstorm};
-        \node at (Sol.north) [yshift=1em] {Brainstorm};
+		% Add text on top of nodes
+		\node at (BEM.north) [yshift=1em] {\small BEM con OpenMEEG};
+		\node at (PD.north) [yshift=1em] {\small Implementando \cref{lineal} con Brainstorm};
+		\node at (SNR.north) [yshift=1em] {\small Brainstorm};
+		\node at (Sol.north) [yshift=1em] {\small Brainstorm};
 
         % Draw edges
         \path [line] (BEM) -- (PD);
